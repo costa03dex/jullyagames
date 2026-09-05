@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
   <title>Jullya Games 🎮</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -16,12 +14,12 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    body {
-      background:
-        radial-gradient(circle at top left, #0d2a5c, transparent 35%),
-        radial-gradient(circle at bottom right, #061a3d, transparent 35%),
-        #070b15;
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      background: #07152e;
       color: white;
       min-height: 100vh;
     }
@@ -32,31 +30,22 @@
 
     header {
       width: 100%;
-      padding: 20px 7%;
-
+      background: rgba(5, 18, 42, 0.95);
+      border-bottom: 1px solid #173a70;
+      padding: 18px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-
-      background: rgba(7, 11, 21, 0.9);
-
-      border-bottom: 1px solid rgba(255,255,255,.08);
-
+      justify-content: space-between;
       position: sticky;
       top: 0;
-
-      z-index: 100;
-
-      backdrop-filter: blur(12px);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
     }
 
     .logo {
       font-size: 25px;
       font-weight: bold;
-    }
-
-    .logo span {
-      color: #3b82f6;
+      color: #5ca9ff;
     }
 
     nav {
@@ -65,25 +54,19 @@
     }
 
     nav button {
-      border: none;
       background: transparent;
-
-      color: #ddd;
-
+      color: #d9eaff;
+      border: 1px solid #24518d;
       padding: 10px 16px;
-
       border-radius: 10px;
-
       cursor: pointer;
-
-      font-size: 15px;
-
-      transition: .2s;
+      transition: 0.3s;
     }
 
     nav button:hover {
-      background: #ffffff12;
-      color: white;
+      background: #0d2d5c;
+      border-color: #5ca9ff;
+      transform: translateY(-2px);
     }
 
     /* =========================
@@ -91,407 +74,340 @@
     ========================= */
 
     .hero {
+      min-height: 550px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 90px 20px 55px;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at center, #103c76 0%, #07152e 65%);
     }
 
-    .badge {
-      display: inline-block;
+    .hero-content {
+      max-width: 900px;
+    }
 
-      background: #3b82f620;
-
-      border: 1px solid #3b82f655;
-
-      color: #93c5fd;
-
-      padding: 8px 15px;
-
-      border-radius: 30px;
-
-      margin-bottom: 20px;
-
-      font-size: 14px;
+    .hero-small {
+      color: #70b7ff;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
     }
 
     .hero h1 {
-      font-size: clamp(45px, 8vw, 80px);
-
-      margin-bottom: 15px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #ffffff,
-          #60a5fa
-        );
-
+      font-size: clamp(50px, 9vw, 100px);
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #65b5ff, #ffffff, #4d9fff);
       -webkit-background-clip: text;
-
-      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      max-width: 650px;
-
+      color: #c7dcf7;
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 720px;
       margin: auto;
-
-      color: #aaa;
-
-      font-size: 18px;
-
-      line-height: 1.6;
     }
 
     .hero-buttons {
       margin-top: 30px;
-
       display: flex;
-
       justify-content: center;
-
-      gap: 12px;
-
+      gap: 15px;
       flex-wrap: wrap;
     }
 
-    /* =========================
-       BOTÕES
-    ========================= */
-
     .btn {
       border: none;
-
-      padding: 14px 22px;
-
+      padding: 14px 23px;
       border-radius: 12px;
-
       cursor: pointer;
-
       font-weight: bold;
-
       font-size: 15px;
-
-      transition: .2s;
+      transition: 0.3s;
     }
 
     .btn-primary {
-      background: #2563eb;
-
+      background: #2385ff;
       color: white;
+      box-shadow: 0 0 25px rgba(35, 133, 255, 0.25);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-
-      background: #3b82f6;
+      transform: translateY(-3px);
+      background: #3c96ff;
     }
 
     .btn-secondary {
-      background: #ffffff0d;
-
-      color: white;
-
-      border: 1px solid #ffffff18;
+      background: #0b2447;
+      color: #cfe6ff;
+      border: 1px solid #285890;
     }
 
     .btn-secondary:hover {
-      background: #ffffff18;
+      background: #123663;
+      transform: translateY(-3px);
     }
 
     /* =========================
-       ESTATÍSTICAS
+       STATS
     ========================= */
 
     .stats {
-      max-width: 900px;
-
-      margin: 0 auto 60px;
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 15px;
-
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: -45px auto 70px;
       padding: 0 20px;
+      position: relative;
     }
 
     .stat {
-      background: #ffffff08;
-
-      border: 1px solid #ffffff10;
-
-      border-radius: 16px;
-
-      padding: 25px;
-
+      background: #0b2143;
+      border: 1px solid #194578;
+      border-radius: 18px;
+      padding: 28px;
       text-align: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
     }
 
     .stat strong {
       display: block;
-
       font-size: 30px;
-
-      margin-bottom: 5px;
+      color: #5ca9ff;
+      margin-bottom: 8px;
     }
 
     .stat span {
-      color: #999;
+      color: #b8cdeb;
     }
 
     /* =========================
-       CONTAINER
+       SECTIONS
     ========================= */
 
-    .container {
-      max-width: 1150px;
-
-      margin: auto;
-
-      padding: 0 20px 70px;
+    section {
+      padding: 70px 6%;
     }
 
     .section-title {
-      font-size: 28px;
-
-      margin: 45px 0 20px;
-    }
-
-    /* =========================
-       DESTAQUE
-    ========================= */
-
-    .featured {
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 25px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #2563eb22,
-          #ffffff08
-        );
-
-      border: 1px solid #ffffff12;
-
-      border-radius: 25px;
-
-      padding: 30px;
-
-      align-items: center;
-    }
-
-    .featured-icon {
-      font-size: 100px;
-
       text-align: center;
-
-      background: #ffffff08;
-
-      border-radius: 20px;
-
-      padding: 30px;
+      margin-bottom: 40px;
     }
 
-    .featured h2 {
-      font-size: 35px;
-
-      margin-bottom: 12px;
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+      color: #eaf4ff;
     }
 
-    .featured p {
-      color: #aaa;
-
-      line-height: 1.6;
-
-      margin-bottom: 20px;
+    .section-title p {
+      color: #91aaca;
     }
 
     /* =========================
-       PESQUISA
+       SEARCH
     ========================= */
 
     .search-box {
-      margin-bottom: 25px;
+      max-width: 650px;
+      margin: 0 auto 35px;
+      position: relative;
     }
 
     .search-box input {
       width: 100%;
-
-      padding: 16px 18px;
-
-      border-radius: 13px;
-
-      border: 1px solid #ffffff15;
-
-      background: #ffffff08;
-
-      color: white;
-
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid #24518d;
       outline: none;
-
+      background: #0a2143;
+      color: white;
       font-size: 16px;
     }
 
+    .search-box input::placeholder {
+      color: #7690b5;
+    }
+
     .search-box input:focus {
-      border-color: #2563eb;
+      border-color: #4d9fff;
+      box-shadow: 0 0 15px rgba(77,159,255,0.15);
     }
 
     /* =========================
-       JOGOS
+       GAMES GRID
     ========================= */
 
     .games-grid {
+      max-width: 1200px;
+      margin: auto;
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
     }
 
     .game-card {
-      background: #ffffff08;
-
-      border: 1px solid #ffffff12;
-
+      background: #0a1f40;
+      border: 1px solid #1d477d;
       border-radius: 20px;
-
-      padding: 25px;
-
-      transition: .25s;
-
+      padding: 28px;
+      transition: 0.3s;
+      position: relative;
       overflow: hidden;
+    }
+
+    .game-card::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(40, 140, 255, 0.08);
+      border-radius: 50%;
+      top: -80px;
+      right: -70px;
     }
 
     .game-card:hover {
       transform: translateY(-7px);
-
-      border-color: #2563eb55;
-
-      background: #ffffff0d;
+      border-color: #4d9fff;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     }
 
     .game-icon {
-      font-size: 65px;
-
-      background: #ffffff08;
-
-      height: 150px;
-
-      border-radius: 15px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      margin-bottom: 20px;
+      font-size: 50px;
+      margin-bottom: 18px;
     }
 
-    .tag {
-      display: inline-block;
-
-      font-size: 11px;
-
-      color: #93c5fd;
-
-      background: #2563eb22;
-
-      padding: 6px 9px;
-
-      border-radius: 8px;
-
-      margin-bottom: 12px;
+    .game-category {
+      color: #5ca9ff;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 8px;
     }
 
     .game-card h3 {
-      font-size: 23px;
-
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 12px;
     }
 
     .game-card p {
-      color: #999;
+      color: #a9bddb;
+      line-height: 1.6;
+      min-height: 75px;
+    }
 
-      line-height: 1.5;
+    .game-card button {
+      margin-top: 20px;
+      width: 100%;
+      border: none;
+      padding: 13px;
+      border-radius: 10px;
+      background: #1677e8;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-      min-height: 70px;
+    .game-card button:hover {
+      background: #3994ff;
+    }
 
+    /* =========================
+       FEATURED
+    ========================= */
+
+    .featured {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      background: linear-gradient(135deg, #0c2e5d, #092044);
+      border: 1px solid #2d65a4;
+      border-radius: 25px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .featured-text {
+      flex: 1;
+    }
+
+    .featured-label {
+      color: #64b2ff;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .featured h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .featured p {
+      color: #b7cbea;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
 
-    .play {
-      width: 100%;
+    .featured-icon {
+      font-size: 110px;
     }
 
     /* =========================
-       FUTURO
+       MORE GAMES
     ========================= */
 
-    .future {
-      margin-top: 35px;
-
+    .more {
+      max-width: 900px;
+      margin: 50px auto;
       text-align: center;
-
-      padding: 35px;
-
-      border: 1px dashed #ffffff20;
-
+      background: #091d3a;
+      border: 1px dashed #2b578d;
       border-radius: 20px;
+      padding: 40px 20px;
+    }
 
-      color: #888;
+    .more h2 {
+      color: #72b8ff;
+      margin-bottom: 12px;
+    }
+
+    .more p {
+      color: #9fb4d2;
     }
 
     /* =========================
-       BIBLIOTECA
-    ========================= */
-
-    #biblioteca {
-      margin-top: 80px;
-
-      padding-top: 35px;
-
-      border-top: 1px solid #ffffff10;
-    }
-
-    #biblioteca .section-title {
-      margin-top: 0;
-    }
-
-    /* =========================
-       RODAPÉ
+       FOOTER
     ========================= */
 
     footer {
-      border-top: 1px solid #ffffff10;
-
+      margin-top: 60px;
+      padding: 45px 20px;
       text-align: center;
-
-      padding: 35px;
-
-      color: #777;
-
-      line-height: 1.6;
+      background: #041027;
+      border-top: 1px solid #163762;
     }
 
-    footer strong {
-      color: #60a5fa;
+    footer h2 {
+      color: #65adff;
+      margin-bottom: 10px;
     }
 
-    .blessing {
-      color: #60a5fa;
+    footer p {
+      color: #879dbd;
+      margin: 7px;
+    }
 
-      font-weight: bold;
-
-      font-size: 18px;
+    .footer-love {
+      color: #b9d9ff;
+      margin-top: 20px;
     }
 
     /* =========================
@@ -500,132 +416,154 @@
 
     .modal {
       display: none;
-
       position: fixed;
-
+      z-index: 3000;
       inset: 0;
-
-      background:
-        rgba(0,0,0,.78);
-
-      z-index: 500;
-
+      background: rgba(0,0,0,0.75);
       align-items: center;
-
       justify-content: center;
-
       padding: 20px;
-
-      backdrop-filter: blur(5px);
     }
 
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-box {
-      width: min(500px, 100%);
-
-      background: #101827;
-
-      border: 1px solid #ffffff15;
-
+    .modal-content {
+      width: 100%;
+      max-width: 550px;
+      background: #0b2143;
+      border: 1px solid #2c67a8;
       border-radius: 22px;
-
-      padding: 30px;
-
+      padding: 35px;
       text-align: center;
-
-      box-shadow:
-        0 20px 80px #000;
+      position: relative;
+      box-shadow: 0 20px 70px rgba(0,0,0,0.5);
+      animation: aparecer 0.25s ease;
     }
 
-    .modal-icon {
-      font-size: 65px;
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
+    .modal-content h2 {
+      color: #68b2ff;
       margin-bottom: 15px;
     }
 
-    .modal-box h2 {
-      margin-bottom: 10px;
+    .modal-content p {
+      color: #bdd0e9;
+      line-height: 1.7;
+      margin-bottom: 25px;
     }
 
-    .modal-box p {
-      color: #999;
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 17px;
+      font-size: 28px;
+      color: #8da9ca;
+      cursor: pointer;
+    }
 
-      line-height: 1.5;
-
-      margin-bottom: 25px;
+    .close:hover {
+      color: white;
     }
 
     .modal-buttons {
       display: flex;
-
-      gap: 10px;
-
       justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     /* =========================
        RESPONSIVO
     ========================= */
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav button {
+        font-size: 12px;
+        padding: 8px 11px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+        margin-top: -25px;
+      }
 
       .games-grid {
         grid-template-columns: 1fr;
       }
 
+      section {
+        padding: 50px 20px;
+      }
+
       .featured {
-        grid-template-columns: 1fr;
+        padding: 30px 20px;
       }
 
-      .stats {
-        grid-template-columns: 1fr;
+      .featured-icon {
+        font-size: 75px;
       }
-
-      header {
-        padding: 15px 20px;
-      }
-
-      nav {
-        display: none;
-      }
-
     }
-
   </style>
 </head>
 
 <body>
 
   <!-- =========================
-       CABEÇALHO
+       HEADER
   ========================= -->
 
   <header>
-
-    <div class="logo">
-      🎮 <span>Jullya</span> Games
-    </div>
+    <div class="logo">🎮 Jullya Games</div>
 
     <nav>
-
-      <button onclick="irParaJogos()">
-        🎮 Meus jogos
-      </button>
-
-      <button onclick="irParaBiblioteca()">
-        📚 Biblioteca
-      </button>
-
-      <button onclick="mostrarSobre()">
-        💙 Sobre
-      </button>
-
+      <button onclick="irParaJogos()">🎮 Meus jogos</button>
+      <button onclick="abrirBiblioteca()">📚 Biblioteca</button>
+      <button onclick="mostrarSobre()">💙 Sobre</button>
     </nav>
-
   </header>
+
 
   <!-- =========================
        HERO
@@ -633,127 +571,157 @@
 
   <section class="hero">
 
-    <div class="badge">
-      ✨ Bem-vindo ao meu universo de jogos
-    </div>
+    <div class="hero-content">
 
-    <h1>
-      Jullya Games
-    </h1>
+      <div class="hero-small">
+        ✨ Bem-vindo ao meu universo de jogos
+      </div>
 
-    <p>
-      Um lugar para reunir todos os meus jogos
-      em um só site.
-      Escolha um jogo, clique em jogar
-      e divirta-se! 🎮💙
-    </p>
+      <h1>Jullya Games</h1>
 
-    <div class="hero-buttons">
+      <p>
+        Um cantinho feito para reunir jogos, diversão e criatividade.
+        Aqui você encontra meus jogos e também uma biblioteca com
+        vários jogos para jogar diretamente pelo navegador.
+      </p>
 
-      <button
-        class="btn btn-primary"
-        onclick="irParaJogos()"
-      >
-        🎮 Ver meus jogos
-      </button>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="irParaJogos()">
+          🎮 Ver meus jogos
+        </button>
 
-      <button
-        class="btn btn-secondary"
-        onclick="irParaBiblioteca()"
-      >
-        📚 Biblioteca
-      </button>
-
-      <button
-        class="btn btn-secondary"
-        onclick="mostrarSobre()"
-      >
-        💙 Sobre
-      </button>
+        <button class="btn btn-secondary" onclick="abrirBiblioteca()">
+          📚 Abrir biblioteca
+        </button>
+      </div>
 
     </div>
 
   </section>
 
+
   <!-- =========================
-       ESTATÍSTICAS
+       STATS
   ========================= -->
 
   <div class="stats">
 
     <div class="stat">
-
-      <strong>
-        3
-      </strong>
-
-      <span>
-        Jogos criados por mim
-      </span>
-
+      <strong>3</strong>
+      <span>Jogos criados por mim</span>
     </div>
 
     <div class="stat">
-
-      <strong>
-        ∞
-      </strong>
-
-      <span>
-        Diversão
-      </span>
-
+      <strong>∞</strong>
+      <span>Diversão</span>
     </div>
 
     <div class="stat">
-
-      <strong>
-        💙
-      </strong>
-
-      <span>
-        Feito com carinho
-      </span>
-
+      <strong>💙</strong>
+      <span>Feito com carinho</span>
     </div>
 
   </div>
+
 
   <!-- =========================
        MEUS JOGOS
   ========================= -->
 
-  <main
-    class="container"
-    id="jogos"
-  >
+  <section id="jogos">
 
     <div class="section-title">
-      ⭐ Em destaque
+      <h2>🎮 Meus Jogos</h2>
+      <p>Projetos criados por mim e que estão sempre evoluindo!</p>
     </div>
 
-    <div class="featured">
+    <div class="search-box">
+      <input
+        type="text"
+        id="pesquisa"
+        placeholder="🔎 Pesquise um jogo..."
+        oninput="pesquisarJogos()"
+      >
+    </div>
 
-      <div class="featured-icon">
-        🐾
-      </div>
 
-      <div>
+    <div class="games-grid">
 
-        <h2>
-          Pet World 2.0
-        </h2>
+      <!-- JOGO DE MISTÉRIO -->
+
+      <div
+        class="game-card"
+        data-name="jogo de mistério misterio investigação detetive"
+      >
+
+        <div class="game-icon">🕵️</div>
+
+        <div class="game-category">
+          🔎 MISTÉRIO
+        </div>
+
+        <h3>Jogo de Mistério</h3>
 
         <p>
-          Cuide do seu bichinho virtual,
-          alimente, brinque, dê banho,
-          coloque acessórios e divirta-se!
+          Investigue pistas, descubra segredos e tente solucionar
+          um misterioso caso que aconteceu na cidade.
         </p>
 
-        <button
-          class="btn btn-primary"
-          onclick="abrirJogo('pet')"
-        >
+        <button onclick="abrirJogo('misterio')">
+          ▶ Jogar agora
+        </button>
+
+      </div>
+
+
+      <!-- PET WORLD -->
+
+      <div
+        class="game-card"
+        data-name="pet world pets animais cuidar bichinhos"
+      >
+
+        <div class="game-icon">🐾</div>
+
+        <div class="game-category">
+          🐶 SIMULAÇÃO
+        </div>
+
+        <h3>Pet World 2.0</h3>
+
+        <p>
+          Cuide dos seus pets, interaja com eles e explore um
+          mundo cheio de diversão.
+        </p>
+
+        <button onclick="abrirJogo('petworld')">
+          ▶ Jogar agora
+        </button>
+
+      </div>
+
+
+      <!-- NÃO CLIQUE -->
+
+      <div
+        class="game-card"
+        data-name="não clique nao clique botão desafio troll"
+      >
+
+        <div class="game-icon">🔴</div>
+
+        <div class="game-category">
+          😂 DESAFIO
+        </div>
+
+        <h3>Não Clique!</h3>
+
+        <p>
+          Um botão vermelho aparentemente inocente...
+          Mas será que você consegue resistir?
+        </p>
+
+        <button onclick="abrirJogo('naoclique')">
           ▶ Jogar agora
         </button>
 
@@ -761,345 +729,280 @@
 
     </div>
 
-    <div class="section-title">
-      🎮 Meus jogos
-    </div>
 
-    <div class="search-box">
+    <!-- =========================
+         DESTAQUE
+    ========================= -->
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="🔎 Procurar um jogo..."
-        oninput="pesquisarJogos()"
-      >
+    <div class="featured">
 
-    </div>
+      <div class="featured-text">
 
-    <div
-      class="games-grid"
-      id="gamesGrid"
-    >
-
-      <!-- JOGO DE MISTÉRIO -->
-
-      <article
-        class="game-card"
-        data-name="misterio investigação aventura"
-      >
-
-        <div class="game-icon">
-          🕵️
+        <div class="featured-label">
+          ⭐ JOGO EM DESTAQUE
         </div>
 
-        <span class="tag">
-          🕵️ AVENTURA
-        </span>
-
-        <h3>
-          Jogo de Mistério
-        </h3>
+        <h2>🐾 Pet World 2.0</h2>
 
         <p>
-          Entre em uma investigação
-          e descubra os segredos
-          escondidos por trás do mistério.
+          Entre nesse mundo cheio de bichinhos e diversão!
+          O Pet World está sempre recebendo novas ideias,
+          melhorias e atualizações.
         </p>
 
         <button
-          class="btn btn-primary play"
-          onclick="abrirJogo('misterio')"
+          class="btn btn-primary"
+          onclick="abrirJogo('petworld')"
         >
-          ▶ Jogar
+          🎮 Jogar Pet World
         </button>
 
-      </article>
+      </div>
 
-      <!-- PET WORLD -->
-
-      <article
-        class="game-card"
-        data-name="pet world bichinho animal"
-      >
-
-        <div class="game-icon">
-          🐾
-        </div>
-
-        <span class="tag">
-          🐾 SIMULAÇÃO
-        </span>
-
-        <h3>
-          Pet World 2.0
-        </h3>
-
-        <p>
-          Tenha seu próprio pet virtual!
-          Cuide dele, brinque e desbloqueie
-          acessórios.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirJogo('pet')"
-        >
-          ▶ Jogar
-        </button>
-
-      </article>
-
-      <!-- NÃO CLIQUE -->
-
-      <article
-        class="game-card"
-        data-name="nao clique desafio clique"
-      >
-
-        <div class="game-icon">
-          🚫
-        </div>
-
-        <span class="tag">
-          😂 DESAFIO
-        </span>
-
-        <h3>
-          Não Clique!
-        </h3>
-
-        <p>
-          Você realmente deveria clicar?
-          Descubra desafios, segredos
-          e surpresas!
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirJogo('naoclique')"
-        >
-          ▶ Jogar
-        </button>
-
-      </article>
+      <div class="featured-icon">
+        🐶🐱
+      </div>
 
     </div>
 
-    <div class="future">
 
-      🚀
+    <!-- =========================
+         MAIS JOGOS
+    ========================= -->
 
-      <strong>
-        Mais jogos em breve!
-      </strong>
+    <div class="more">
 
-      <br><br>
+      <h2>🚀 Mais jogos em breve!</h2>
 
-      Novos jogos podem aparecer aqui
-      no futuro. 🎮
-
-    </div>
-
-  </main>
-
-  <!-- =========================
-       BIBLIOTECA
-  ========================= -->
-
-  <section
-    class="container"
-    id="biblioteca"
-  >
-
-    <div class="section-title">
-      📚 Biblioteca de jogos
-    </div>
-
-    <p
-      style="
-        color:#999;
-        margin-bottom:25px;
-        line-height:1.6;
-      "
-    >
-      Jogos e experiências de outros projetos,
-      separados das criações da Jullya Games.
-    </p>
-
-    <div class="games-grid">
-
-      <!-- MINECRAFT -->
-
-      <article
-        class="game-card"
-        data-name="minecraft eaglercraft minecraft 1.8.8"
-      >
-
-        <div class="game-icon">
-          ⛏️
-        </div>
-
-        <span class="tag">
-          ⛏️ MINECRAFT
-        </span>
-
-        <h3>
-          Minecraft 1.8.8
-        </h3>
-
-        <p>
-          Jogue Minecraft no navegador
-          através do EaglercraftX 1.8.8 em WASM.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('minecraft')"
-        >
-          ▶ Jogar Minecraft
-        </button>
-
-      </article>
-
-      <!-- SKRIBBL.IO -->
-
-      <article
-        class="game-card"
-        data-name="skribbl skribbl.io desenho adivinhação multiplayer"
-      >
-
-        <div class="game-icon">
-          🎨
-        </div>
-
-        <span class="tag">
-          🎨 DESENHO
-        </span>
-
-        <h3>
-          skribbl.io
-        </h3>
-
-        <p>
-          Desenhe, adivinhe as palavras e
-          tente conseguir a maior pontuação!
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('skribbl')"
-        >
-          ▶ Jogar skribbl.io
-        </button>
-
-      </article>
-
-      <!-- GEOGUESSR -->
-
-      <article
-        class="game-card"
-        data-name="geoguessr geo guessr geografia mundo"
-      >
-
-        <div class="game-icon">
-          🌎
-        </div>
-
-        <span class="tag">
-          🌎 GEOGRAFIA
-        </span>
-
-        <h3>
-          GeoGuessr
-        </h3>
-
-        <p>
-          Explore o mundo e tente descobrir
-          em qual lugar você está!
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('geoguessr')"
-        >
-          ▶ Jogar GeoGuessr
-        </button>
-
-      </article>
+      <p>
+        A Jullya Games está em constante evolução.
+        Novos jogos, desafios e atualizações podem aparecer
+        a qualquer momento!
+      </p>
 
     </div>
 
   </section>
 
+
   <!-- =========================
-       RODAPÉ
+       BIBLIOTECA
+  ========================= -->
+
+  <section id="biblioteca">
+
+    <div class="section-title">
+
+      <h2>📚 Biblioteca de Jogos</h2>
+
+      <p>
+        Uma seleção de jogos para você jogar pelo navegador.
+      </p>
+
+    </div>
+
+
+    <div class="games-grid">
+
+      <!-- MINECRAFT -->
+
+      <div
+        class="game-card"
+        data-name="minecraft minecraft 1.8.8 eaglercraft construção sobrevivência"
+      >
+
+        <div class="game-icon">⛏️</div>
+
+        <div class="game-category">
+          ⛏️ SOBREVIVÊNCIA
+        </div>
+
+        <h3>Minecraft 1.8.8</h3>
+
+        <p>
+          Jogue Minecraft no navegador através do
+          EaglercraftX 1.8.8 em WASM.
+        </p>
+
+        <button onclick="abrirBiblioteca('minecraft')">
+          ▶ Jogar Minecraft
+        </button>
+
+      </div>
+
+
+      <!-- SKRIBBL.IO -->
+
+      <div
+        class="game-card"
+        data-name="skribbl skribbl.io desenho desenhar adivinhar multiplayer"
+      >
+
+        <div class="game-icon">🎨</div>
+
+        <div class="game-category">
+          🎨 DESENHO
+        </div>
+
+        <h3>skribbl.io</h3>
+
+        <p>
+          Desenhe, adivinhe as palavras e tente conseguir
+          a maior pontuação!
+        </p>
+
+        <button onclick="abrirBiblioteca('skribbl')">
+          ▶ Jogar skribbl.io
+        </button>
+
+      </div>
+
+
+      <!-- GEOGUESSR -->
+
+      <div
+        class="game-card"
+        data-name="geoguessr geo guessr geografia mundo lugares mapa"
+      >
+
+        <div class="game-icon">🌎</div>
+
+        <div class="game-category">
+          🌎 GEOGRAFIA
+        </div>
+
+        <h3>GeoGuessr</h3>
+
+        <p>
+          Explore o mundo e tente descobrir em qual
+          lugar você está!
+        </p>
+
+        <button onclick="abrirBiblioteca('geoguessr')">
+          ▶ Jogar GeoGuessr
+        </button>
+
+      </div>
+
+
+      <!-- SLOW ROADS -->
+
+      <div
+        class="game-card"
+        data-name="slow roads slowroads estrada direção dirigir viagem relaxar"
+      >
+
+        <div class="game-icon">🛣️</div>
+
+        <div class="game-category">
+          🛣️ DIREÇÃO
+        </div>
+
+        <h3>Slow Roads</h3>
+
+        <p>
+          Pegue a estrada, relaxe e explore paisagens
+          infinitas em uma viagem tranquila.
+        </p>
+
+        <button onclick="abrirBiblioteca('slowroads')">
+          ▶ Jogar Slow Roads
+        </button>
+
+      </div>
+
+
+      <!-- AMONG US -->
+
+      <div
+        class="game-card"
+        data-name="among us amongus impostor multiplayer online tripulante"
+      >
+
+        <div class="game-icon">🚀</div>
+
+        <div class="game-category">
+          🚀 MULTIPLAYER
+        </div>
+
+        <h3>Among Us Online</h3>
+
+        <p>
+          Entre em uma partida online e descubra
+          quem é o impostor!
+        </p>
+
+        <button onclick="abrirBiblioteca('amongus')">
+          ▶ Jogar Among Us
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
   ========================= -->
 
   <footer>
 
-    🎮
+    <h2>🎮 Jullya Games</h2>
 
-    <strong>
-      Jullya Games
-    </strong>
+    <p>
+      Um universo feito de jogos, criatividade e diversão.
+    </p>
 
-    <br><br>
-
-    <div class="blessing">
+    <p class="footer-love">
       Deus abençoe! 🙏💙
-    </div>
+    </p>
 
-    <br>
-
-    Feito com carinho por
-
-    <strong>
-      Anna Jullya
-    </strong>
+    <p>
+      Feito com carinho por Anna Jullya 💙
+    </p>
 
   </footer>
+
 
   <!-- =========================
        MODAL BIBLIOTECA
   ========================= -->
 
-  <div
-    class="modal"
-    id="libraryModal"
-  >
+  <div class="modal" id="bibliotecaModal">
 
-    <div class="modal-box">
+    <div class="modal-content">
 
-      <div
-        class="modal-icon"
-        id="libraryModalIcon"
+      <span
+        class="close"
+        onclick="fecharBibliotecaModal()"
       >
-        ⛏️
-      </div>
+        &times;
+      </span>
 
-      <h2 id="libraryModalTitle">
-        Minecraft 1.8.8
+      <h2 id="bibliotecaTitulo">
+        🎮 Jogar
       </h2>
 
-      <p id="libraryModalDescription">
-        Você está prestes a abrir o Minecraft
-        1.8.8 no Eaglercraft.
+      <p id="bibliotecaTexto">
+        Você será direcionado para o jogo.
       </p>
 
       <div class="modal-buttons">
-
-        <button
-          class="btn btn-secondary"
-          onclick="fecharBibliotecaModal()"
-        >
-          Voltar
-        </button>
 
         <button
           class="btn btn-primary"
           onclick="confirmarBiblioteca()"
         >
-          🚀 Jogar!
+          ▶ Continuar
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          onclick="fecharBibliotecaModal()"
+        >
+          Cancelar
         </button>
 
       </div>
@@ -1108,46 +1011,44 @@
 
   </div>
 
+
   <!-- =========================
-       MODAL DOS JOGOS
+       MODAL MEUS JOGOS
   ========================= -->
 
-  <div
-    class="modal"
-    id="gameModal"
-  >
+  <div class="modal" id="gameModal">
 
-    <div class="modal-box">
+    <div class="modal-content">
 
-      <div
-        class="modal-icon"
-        id="modalIcon"
+      <span
+        class="close"
+        onclick="fecharModal()"
       >
-        🎮
-      </div>
+        &times;
+      </span>
 
-      <h2 id="modalTitle">
-        Abrir jogo
+      <h2 id="gameTitulo">
+        🎮 Jogar
       </h2>
 
-      <p id="modalDescription">
-        Você está prestes a abrir um jogo.
+      <p id="gameTexto">
+        Você será direcionado para o jogo.
       </p>
 
       <div class="modal-buttons">
 
         <button
-          class="btn btn-secondary"
-          onclick="fecharModal()"
-        >
-          Voltar
-        </button>
-
-        <button
           class="btn btn-primary"
           onclick="confirmarJogo()"
         >
-          🚀 Jogar!
+          ▶ Jogar agora
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          onclick="fecharModal()"
+        >
+          Cancelar
         </button>
 
       </div>
@@ -1156,63 +1057,55 @@
 
   </div>
 
+
   <!-- =========================
        MODAL SOBRE
   ========================= -->
 
-  <div
-    class="modal"
-    id="aboutModal"
-  >
+  <div class="modal" id="sobreModal">
 
-    <div class="modal-box">
+    <div class="modal-content">
 
-      <div class="modal-icon">
-        💙
-      </div>
+      <span
+        class="close"
+        onclick="fecharSobre()"
+      >
+        &times;
+      </span>
 
-      <h2>
-        Sobre a Jullya Games
-      </h2>
+      <h2>💙 Sobre a Jullya Games</h2>
 
       <p>
-
-        A Jullya Games é um site central
-        para reunir os jogos criados por
-        Anna Jullya.
-
+        A Jullya Games é um projeto criado com muito carinho
+        para reunir jogos e experiências divertidas.
         <br><br>
 
-        Aqui você pode encontrar meus jogos
-        e também uma biblioteca com jogos
-        de outros projetos. 🎮✨
-
+        Os jogos estão em constante evolução e novas ideias
+        podem aparecer com o tempo.
         <br><br>
 
-        Os jogos estão em constante evolução
-        e novas atualizações podem chegar
-        no futuro.
-
+        Peço perdão se algum resultado ainda não estiver
+        tão bom. Estou começando na área da programação
+        e aprendendo cada vez mais! 💙
         <br><br>
 
-        Deus abençoe! 🙏💙
-
+        Obrigada por jogar e apoiar meu projeto! 🙏
         <br><br>
 
-        E isso é só o começo...
-
+        <strong>Deus abençoe! 💙</strong>
       </p>
 
       <button
         class="btn btn-primary"
         onclick="fecharSobre()"
       >
-        Fechar
+        💙 Fechar
       </button>
 
     </div>
 
   </div>
+
 
   <!-- =========================
        JAVASCRIPT
@@ -1221,57 +1114,33 @@
   <script>
 
     /* =========================
-       MEUS JOGOS
+       JOGOS CRIADOS
     ========================= */
 
     const jogos = {
 
       misterio: {
-
-        nome:
-          "🕵️ Jogo de Mistério",
-
-        icon:
-          "🕵️",
-
-        descricao:
-          "Entre em uma investigação e descubra os segredos escondidos por trás do mistério.",
-
+        nome: "🕵️ Jogo de Mistério",
+        texto:
+          "Prepare-se para investigar pistas e descobrir os segredos desse misterioso caso!",
         url:
           "https://costa03dex.github.io/meu-jogo-de-misterio/"
-
       },
 
-      pet: {
-
-        nome:
-          "🐾 Pet World 2.0",
-
-        icon:
-          "🐾",
-
-        descricao:
-          "Cuide do seu bichinho virtual, brinque, dê banho, alimente e divirta-se!",
-
+      petworld: {
+        nome: "🐾 Pet World 2.0",
+        texto:
+          "Entre no mundo dos pets e divirta-se cuidando dos seus bichinhos!",
         url:
           "https://costa03dex.github.io/Pet-World/"
-
       },
 
       naoclique: {
-
-        nome:
-          "🚫 Não Clique!",
-
-        icon:
-          "🚫",
-
-        descricao:
-          "Você realmente deveria clicar? Descubra desafios, segredos e surpresas!",
-
+        nome: "🔴 Não Clique!",
+        texto:
+          "Você realmente vai conseguir resistir ao botão vermelho?",
         url:
           "https://costa03dex.github.io/N-o-clique/"
-
       }
 
     };
@@ -1284,120 +1153,118 @@
     const biblioteca = {
 
       minecraft: {
-
-        nome:
-          "⛏️ Minecraft 1.8.8",
-
-        icon:
-          "⛏️",
-
-        descricao:
+        nome: "⛏️ Minecraft 1.8.8",
+        texto:
           "Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.",
-
         url:
           "https://eaglercraft.com/play?version=1.8.8-wasm"
-
       },
 
       skribbl: {
-
-        nome:
-          "🎨 skribbl.io",
-
-        icon:
-          "🎨",
-
-        descricao:
+        nome: "🎨 skribbl.io",
+        texto:
           "Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!",
-
         url:
           "https://skribbl.io/"
-
       },
 
       geoguessr: {
-
-        nome:
-          "🌎 GeoGuessr",
-
-        icon:
-          "🌎",
-
-        descricao:
+        nome: "🌎 GeoGuessr",
+        texto:
           "Explore o mundo e tente descobrir em qual lugar você está!",
-
         url:
           "https://www.geoguessr.com/"
+      },
 
+      slowroads: {
+        nome: "🛣️ Slow Roads",
+        texto:
+          "Pegue a estrada, relaxe e explore paisagens infinitas em uma viagem tranquila.",
+        url:
+          "https://slowroads.io/"
+      },
+
+      amongus: {
+        nome: "🚀 Among Us Online",
+        texto:
+          "Entre em uma partida online e descubra quem é o impostor!",
+        url:
+          "https://amongus-online.net/game/amongus"
       }
 
     };
 
 
-    let jogoBibliotecaSelecionado = null;
+    /* =========================
+       VARIÁVEIS
+    ========================= */
 
+    let jogoSelecionado = null;
+    let bibliotecaSelecionada = null;
+
+
+    /* =========================
+       ABRIR BIBLIOTECA
+    ========================= */
 
     function abrirBiblioteca(id) {
 
-      const jogo = biblioteca[id];
+      if (!id) {
+        document
+          .getElementById("biblioteca")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
 
-      if (!jogo) return;
+        return;
+      }
 
-      jogoBibliotecaSelecionado = jogo;
+      bibliotecaSelecionada = biblioteca[id];
 
-      document
-        .getElementById("libraryModalIcon")
-        .textContent = jogo.icon;
+      document.getElementById("bibliotecaTitulo").textContent =
+        bibliotecaSelecionada.nome;
 
-      document
-        .getElementById("libraryModalTitle")
-        .textContent = jogo.nome;
+      document.getElementById("bibliotecaTexto").textContent =
+        bibliotecaSelecionada.texto;
 
-      document
-        .getElementById("libraryModalDescription")
-        .textContent = jogo.descricao;
-
-      document
-        .getElementById("libraryModal")
-        .classList.add("active");
-
+      document.getElementById("bibliotecaModal").style.display =
+        "flex";
     }
 
+
+    /* =========================
+       CONFIRMAR BIBLIOTECA
+    ========================= */
 
     function confirmarBiblioteca() {
 
-      if (!jogoBibliotecaSelecionado) return;
+      if (
+        bibliotecaSelecionada &&
+        bibliotecaSelecionada.url
+      ) {
 
-      window.open(
-        jogoBibliotecaSelecionado.url,
-        "_blank",
-        "noopener,noreferrer"
-      );
+        window.open(
+          bibliotecaSelecionada.url,
+          "_blank"
+        );
+
+      }
 
       fecharBibliotecaModal();
-
     }
 
+
+    /* =========================
+       FECHAR BIBLIOTECA
+    ========================= */
 
     function fecharBibliotecaModal() {
 
-      document
-        .getElementById("libraryModal")
-        .classList.remove("active");
+      document.getElementById(
+        "bibliotecaModal"
+      ).style.display = "none";
 
-      jogoBibliotecaSelecionado = null;
-
-    }
-
-
-    function irParaBiblioteca() {
-
-      document
-        .getElementById("biblioteca")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
+      bibliotecaSelecionada = null;
     }
 
 
@@ -1405,47 +1272,40 @@
        ABRIR MEUS JOGOS
     ========================= */
 
-    let jogoSelecionado = null;
-
-
     function abrirJogo(id) {
 
-      const jogo = jogos[id];
+      jogoSelecionado = jogos[id];
 
-      if (!jogo) return;
+      document.getElementById("gameTitulo").textContent =
+        jogoSelecionado.nome;
 
-      jogoSelecionado = jogo;
+      document.getElementById("gameTexto").textContent =
+        jogoSelecionado.texto;
 
-      document
-        .getElementById("modalIcon")
-        .textContent = jogo.icon;
-
-      document
-        .getElementById("modalTitle")
-        .textContent = jogo.nome;
-
-      document
-        .getElementById("modalDescription")
-        .textContent = jogo.descricao;
-
-      document
-        .getElementById("gameModal")
-        .classList.add("active");
-
+      document.getElementById("gameModal").style.display =
+        "flex";
     }
 
 
     /* =========================
-       CONFIRMAR MEU JOGO
+       CONFIRMAR JOGO
     ========================= */
 
     function confirmarJogo() {
 
-      if (!jogoSelecionado) return;
+      if (
+        jogoSelecionado &&
+        jogoSelecionado.url
+      ) {
 
-      window.location.href =
-        jogoSelecionado.url;
+        window.open(
+          jogoSelecionado.url,
+          "_blank"
+        );
 
+      }
+
+      fecharModal();
     }
 
 
@@ -1455,12 +1315,11 @@
 
     function fecharModal() {
 
-      document
-        .getElementById("gameModal")
-        .classList.remove("active");
+      document.getElementById(
+        "gameModal"
+      ).style.display = "none";
 
       jogoSelecionado = null;
-
     }
 
 
@@ -1470,24 +1329,22 @@
 
     function mostrarSobre() {
 
-      document
-        .getElementById("aboutModal")
-        .classList.add("active");
-
+      document.getElementById(
+        "sobreModal"
+      ).style.display = "flex";
     }
 
 
     function fecharSobre() {
 
-      document
-        .getElementById("aboutModal")
-        .classList.remove("active");
-
+      document.getElementById(
+        "sobreModal"
+      ).style.display = "none";
     }
 
 
     /* =========================
-       IR PARA MEUS JOGOS
+       IR PARA JOGOS
     ========================= */
 
     function irParaJogos() {
@@ -1502,16 +1359,17 @@
 
 
     /* =========================
-       PESQUISA
+       PESQUISAR JOGOS
     ========================= */
 
     function pesquisarJogos() {
 
-      const texto =
+      const pesquisa =
         document
-          .getElementById("searchInput")
+          .getElementById("pesquisa")
           .value
-          .toLowerCase();
+          .toLowerCase()
+          .trim();
 
       const cards =
         document.querySelectorAll(
@@ -1521,9 +1379,11 @@
       cards.forEach(card => {
 
         const nome =
-          card.dataset.name.toLowerCase();
+          card
+            .getAttribute("data-name")
+            .toLowerCase();
 
-        if (nome.includes(texto)) {
+        if (nome.includes(pesquisa)) {
 
           card.style.display = "";
 
@@ -1539,79 +1399,56 @@
 
 
     /* =========================
-       FECHAR MODAL BIBLIOTECA
+       FECHAR MODAIS AO CLICAR FORA
     ========================= */
 
-    document
-      .getElementById("libraryModal")
-      .addEventListener(
-        "click",
-        function(e) {
+    window.addEventListener(
+      "click",
+      function(event) {
 
-          if (e.target === this) {
+        const bibliotecaModal =
+          document.getElementById(
+            "bibliotecaModal"
+          );
 
-            fecharBibliotecaModal();
+        const gameModal =
+          document.getElementById(
+            "gameModal"
+          );
 
-          }
+        const sobreModal =
+          document.getElementById(
+            "sobreModal"
+          );
 
+        if (event.target === bibliotecaModal) {
+          fecharBibliotecaModal();
         }
-      );
+
+        if (event.target === gameModal) {
+          fecharModal();
+        }
+
+        if (event.target === sobreModal) {
+          fecharSobre();
+        }
+
+      }
+    );
 
 
     /* =========================
-       FECHAR MODAL JOGOS
-    ========================= */
-
-    document
-      .getElementById("gameModal")
-      .addEventListener(
-        "click",
-        function(e) {
-
-          if (e.target === this) {
-
-            fecharModal();
-
-          }
-
-        }
-      );
-
-
-    /* =========================
-       FECHAR MODAL SOBRE
-    ========================= */
-
-    document
-      .getElementById("aboutModal")
-      .addEventListener(
-        "click",
-        function(e) {
-
-          if (e.target === this) {
-
-            fecharSobre();
-
-          }
-
-        }
-      );
-
-
-    /* =========================
-       TECLA ESC
+       ESC FECHA MODAIS
     ========================= */
 
     document.addEventListener(
       "keydown",
-      function(e) {
+      function(event) {
 
-        if (e.key === "Escape") {
-
-          fecharModal();
+        if (event.key === "Escape") {
 
           fecharBibliotecaModal();
-
+          fecharModal();
           fecharSobre();
 
         }
