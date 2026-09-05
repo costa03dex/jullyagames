@@ -86,14 +86,12 @@
       color: white;
     }
 
-
     /* =========================
        HERO
     ========================= */
 
     .hero {
       text-align: center;
-
       padding: 90px 20px 55px;
     }
 
@@ -156,7 +154,6 @@
       flex-wrap: wrap;
     }
 
-
     /* =========================
        BOTÕES
     ========================= */
@@ -201,7 +198,6 @@
       background: #ffffff18;
     }
 
-
     /* =========================
        ESTATÍSTICAS
     ========================= */
@@ -245,7 +241,6 @@
       color: #999;
     }
 
-
     /* =========================
        CONTAINER
     ========================= */
@@ -263,7 +258,6 @@
 
       margin: 45px 0 20px;
     }
-
 
     /* =========================
        DESTAQUE
@@ -319,7 +313,6 @@
       margin-bottom: 20px;
     }
 
-
     /* =========================
        PESQUISA
     ========================= */
@@ -349,7 +342,6 @@
     .search-box input:focus {
       border-color: #2563eb;
     }
-
 
     /* =========================
        JOGOS
@@ -440,7 +432,6 @@
       width: 100%;
     }
 
-
     /* =========================
        FUTURO
     ========================= */
@@ -459,6 +450,21 @@
       color: #888;
     }
 
+    /* =========================
+       BIBLIOTECA
+    ========================= */
+
+    #biblioteca {
+      margin-top: 80px;
+
+      padding-top: 35px;
+
+      border-top: 1px solid #ffffff10;
+    }
+
+    #biblioteca .section-title {
+      margin-top: 0;
+    }
 
     /* =========================
        RODAPÉ
@@ -487,7 +493,6 @@
 
       font-size: 18px;
     }
-
 
     /* =========================
        MODAIS
@@ -561,7 +566,6 @@
       justify-content: center;
     }
 
-
     /* =========================
        RESPONSIVO
     ========================= */
@@ -593,9 +597,7 @@
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =========================
        CABEÇALHO
@@ -610,7 +612,11 @@
     <nav>
 
       <button onclick="irParaJogos()">
-        🎮 Jogos
+        🎮 Meus jogos
+      </button>
+
+      <button onclick="irParaBiblioteca()">
+        📚 Biblioteca
       </button>
 
       <button onclick="mostrarSobre()">
@@ -620,7 +626,6 @@
     </nav>
 
   </header>
-
 
   <!-- =========================
        HERO
@@ -649,7 +654,14 @@
         class="btn btn-primary"
         onclick="irParaJogos()"
       >
-        🎮 Ver jogos
+        🎮 Ver meus jogos
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="irParaBiblioteca()"
+      >
+        📚 Biblioteca
       </button>
 
       <button
@@ -662,7 +674,6 @@
     </div>
 
   </section>
-
 
   <!-- =========================
        ESTATÍSTICAS
@@ -677,11 +688,10 @@
       </strong>
 
       <span>
-        Jogos disponíveis
+        Jogos criados por mim
       </span>
 
     </div>
-
 
     <div class="stat">
 
@@ -694,7 +704,6 @@
       </span>
 
     </div>
-
 
     <div class="stat">
 
@@ -710,9 +719,8 @@
 
   </div>
 
-
   <!-- =========================
-       CONTEÚDO
+       MEUS JOGOS
   ========================= -->
 
   <main
@@ -720,20 +728,15 @@
     id="jogos"
   >
 
-
-    <!-- DESTAQUE -->
-
     <div class="section-title">
       ⭐ Em destaque
     </div>
-
 
     <div class="featured">
 
       <div class="featured-icon">
         🐾
       </div>
-
 
       <div>
 
@@ -758,15 +761,9 @@
 
     </div>
 
-
-    <!-- TODOS OS JOGOS -->
-
     <div class="section-title">
-      🎮 Todos os jogos
+      🎮 Meus jogos
     </div>
-
-
-    <!-- PESQUISA -->
 
     <div class="search-box">
 
@@ -779,16 +776,12 @@
 
     </div>
 
-
     <div
       class="games-grid"
       id="gamesGrid"
     >
 
-
-      <!-- =========================
-           JOGO DE MISTÉRIO
-      ========================= -->
+      <!-- JOGO DE MISTÉRIO -->
 
       <article
         class="game-card"
@@ -822,10 +815,7 @@
 
       </article>
 
-
-      <!-- =========================
-           PET WORLD
-      ========================= -->
+      <!-- PET WORLD -->
 
       <article
         class="game-card"
@@ -859,10 +849,7 @@
 
       </article>
 
-
-      <!-- =========================
-           NÃO CLIQUE
-      ========================= -->
+      <!-- NÃO CLIQUE -->
 
       <article
         class="game-card"
@@ -896,11 +883,7 @@
 
       </article>
 
-
     </div>
-
-
-    <!-- FUTURO -->
 
     <div class="future">
 
@@ -919,6 +902,68 @@
 
   </main>
 
+  <!-- =========================
+       BIBLIOTECA
+  ========================= -->
+
+  <section
+    class="container"
+    id="biblioteca"
+  >
+
+    <div class="section-title">
+      📚 Biblioteca de jogos
+    </div>
+
+    <p
+      style="
+        color:#999;
+        margin-bottom:25px;
+        line-height:1.6;
+      "
+    >
+      Jogos e experiências de outros projetos,
+      separados das criações da Jullya Games.
+    </p>
+
+    <div class="games-grid">
+
+      <!-- MINECRAFT -->
+
+      <article
+        class="game-card"
+        data-name="minecraft eaglercraft minecraft 1.8.8"
+      >
+
+        <div class="game-icon">
+          ⛏️
+        </div>
+
+        <span class="tag">
+          ⛏️ MINECRAFT
+        </span>
+
+        <h3>
+          Minecraft 1.8.8
+        </h3>
+
+        <p>
+          Jogue Minecraft no navegador
+          através do EaglercraftX 1.8.8 em WASM.
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('minecraft')"
+        >
+          ▶ Jogar Minecraft
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
 
   <!-- =========================
        RODAPÉ
@@ -941,12 +986,61 @@
     <br>
 
     Feito com carinho por
+
     <strong>
       Anna Jullya
     </strong>
 
   </footer>
 
+  <!-- =========================
+       MODAL BIBLIOTECA
+  ========================= -->
+
+  <div
+    class="modal"
+    id="libraryModal"
+  >
+
+    <div class="modal-box">
+
+      <div
+        class="modal-icon"
+        id="libraryModalIcon"
+      >
+        ⛏️
+      </div>
+
+      <h2 id="libraryModalTitle">
+        Minecraft 1.8.8
+      </h2>
+
+      <p id="libraryModalDescription">
+        Você está prestes a abrir o Minecraft
+        1.8.8 no Eaglercraft.
+      </p>
+
+      <div class="modal-buttons">
+
+        <button
+          class="btn btn-secondary"
+          onclick="fecharBibliotecaModal()"
+        >
+          Voltar
+        </button>
+
+        <button
+          class="btn btn-primary"
+          onclick="confirmarBiblioteca()"
+        >
+          🚀 Jogar!
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
   <!-- =========================
        MODAL DOS JOGOS
@@ -996,7 +1090,6 @@
 
   </div>
 
-
   <!-- =========================
        MODAL SOBRE
   ========================= -->
@@ -1024,8 +1117,15 @@
 
         <br><br>
 
-        Aqui você pode encontrar todos
-        os jogos em um só lugar. 🎮✨
+        Aqui você pode encontrar meus jogos
+        e também uma biblioteca com jogos
+        de outros projetos. 🎮✨
+
+        <br><br>
+
+        Os jogos estão em constante evolução
+        e novas atualizações podem chegar
+        no futuro.
 
         <br><br>
 
@@ -1048,16 +1148,14 @@
 
   </div>
 
-
   <!-- =========================
        JAVASCRIPT
   ========================= -->
 
   <script>
 
-
     /* =========================
-       JOGOS
+       MEUS JOGOS
     ========================= */
 
     const jogos = {
@@ -1078,7 +1176,6 @@
 
       },
 
-
       pet: {
 
         nome:
@@ -1094,7 +1191,6 @@
           "https://costa03dex.github.io/Pet-World/"
 
       },
-
 
       naoclique: {
 
@@ -1114,13 +1210,97 @@
 
     };
 
+    /* =========================
+       BIBLIOTECA
+    ========================= */
 
-    let jogoSelecionado = null;
+    const biblioteca = {
 
+      minecraft: {
+
+        nome:
+          "⛏️ Minecraft 1.8.8",
+
+        icon:
+          "⛏️",
+
+        descricao:
+          "Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.",
+
+        url:
+          "https://eaglercraft.com/play?version=1.8.8-wasm"
+
+      }
+
+    };
+
+    let jogoBibliotecaSelecionado = null;
+
+    function abrirBiblioteca(id) {
+
+      const jogo = biblioteca[id];
+
+      if (!jogo) return;
+
+      jogoBibliotecaSelecionado = jogo;
+
+      document
+        .getElementById("libraryModalIcon")
+        .textContent = jogo.icon;
+
+      document
+        .getElementById("libraryModalTitle")
+        .textContent = jogo.nome;
+
+      document
+        .getElementById("libraryModalDescription")
+        .textContent = jogo.descricao;
+
+      document
+        .getElementById("libraryModal")
+        .classList.add("active");
+
+    }
+
+    function confirmarBiblioteca() {
+
+      if (!jogoBibliotecaSelecionado) return;
+
+      window.open(
+        jogoBibliotecaSelecionado.url,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+      fecharBibliotecaModal();
+
+    }
+
+    function fecharBibliotecaModal() {
+
+      document
+        .getElementById("libraryModal")
+        .classList.remove("active");
+
+      jogoBibliotecaSelecionado = null;
+
+    }
+
+    function irParaBiblioteca() {
+
+      document
+        .getElementById("biblioteca")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
 
     /* =========================
-       ABRIR JOGO
+       ABRIR MEUS JOGOS
     ========================= */
+
+    let jogoSelecionado = null;
 
     function abrirJogo(id) {
 
@@ -1148,9 +1328,8 @@
 
     }
 
-
     /* =========================
-       CONFIRMAR JOGO
+       CONFIRMAR MEU JOGO
     ========================= */
 
     function confirmarJogo() {
@@ -1161,7 +1340,6 @@
         jogoSelecionado.url;
 
     }
-
 
     /* =========================
        FECHAR MODAL
@@ -1177,7 +1355,6 @@
 
     }
 
-
     /* =========================
        SOBRE
     ========================= */
@@ -1190,7 +1367,6 @@
 
     }
 
-
     function fecharSobre() {
 
       document
@@ -1199,9 +1375,8 @@
 
     }
 
-
     /* =========================
-       IR PARA JOGOS
+       IR PARA MEUS JOGOS
     ========================= */
 
     function irParaJogos() {
@@ -1213,7 +1388,6 @@
         });
 
     }
-
 
     /* =========================
        PESQUISA
@@ -1228,14 +1402,14 @@
           .toLowerCase();
 
       const cards =
-        document.querySelectorAll(".game-card");
-
+        document.querySelectorAll(
+          "#jogos .game-card"
+        );
 
       cards.forEach(card => {
 
         const nome =
           card.dataset.name.toLowerCase();
-
 
         if (nome.includes(texto)) {
 
@@ -1251,9 +1425,27 @@
 
     }
 
+    /* =========================
+       FECHAR MODAL BIBLIOTECA
+    ========================= */
+
+    document
+      .getElementById("libraryModal")
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (e.target === this) {
+
+            fecharBibliotecaModal();
+
+          }
+
+        }
+      );
 
     /* =========================
-       FECHAR MODAL CLICANDO FORA
+       FECHAR MODAL JOGOS
     ========================= */
 
     document
@@ -1271,6 +1463,9 @@
         }
       );
 
+    /* =========================
+       FECHAR MODAL SOBRE
+    ========================= */
 
     document
       .getElementById("aboutModal")
@@ -1287,7 +1482,6 @@
         }
       );
 
-
     /* =========================
        TECLA ESC
     ========================= */
@@ -1299,6 +1493,8 @@
         if (e.key === "Escape") {
 
           fecharModal();
+
+          fecharBibliotecaModal();
 
           fecharSobre();
 
