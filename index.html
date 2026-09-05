@@ -961,6 +961,72 @@
 
       </article>
 
+      <!-- SKRIBBL.IO -->
+
+      <article
+        class="game-card"
+        data-name="skribbl skribbl.io desenho adivinhação multiplayer"
+      >
+
+        <div class="game-icon">
+          🎨
+        </div>
+
+        <span class="tag">
+          🎨 DESENHO
+        </span>
+
+        <h3>
+          skribbl.io
+        </h3>
+
+        <p>
+          Desenhe, adivinhe as palavras e
+          tente conseguir a maior pontuação!
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('skribbl')"
+        >
+          ▶ Jogar skribbl.io
+        </button>
+
+      </article>
+
+      <!-- GEOGUESSR -->
+
+      <article
+        class="game-card"
+        data-name="geoguessr geo guessr geografia mundo"
+      >
+
+        <div class="game-icon">
+          🌎
+        </div>
+
+        <span class="tag">
+          🌎 GEOGRAFIA
+        </span>
+
+        <h3>
+          GeoGuessr
+        </h3>
+
+        <p>
+          Explore o mundo e tente descobrir
+          em qual lugar você está!
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('geoguessr')"
+        >
+          ▶ Jogar GeoGuessr
+        </button>
+
+      </article>
+
     </div>
 
   </section>
@@ -1210,6 +1276,7 @@
 
     };
 
+
     /* =========================
        BIBLIOTECA
     ========================= */
@@ -1230,11 +1297,45 @@
         url:
           "https://eaglercraft.com/play?version=1.8.8-wasm"
 
+      },
+
+      skribbl: {
+
+        nome:
+          "🎨 skribbl.io",
+
+        icon:
+          "🎨",
+
+        descricao:
+          "Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!",
+
+        url:
+          "https://skribbl.io/"
+
+      },
+
+      geoguessr: {
+
+        nome:
+          "🌎 GeoGuessr",
+
+        icon:
+          "🌎",
+
+        descricao:
+          "Explore o mundo e tente descobrir em qual lugar você está!",
+
+        url:
+          "https://www.geoguessr.com/"
+
       }
 
     };
 
+
     let jogoBibliotecaSelecionado = null;
+
 
     function abrirBiblioteca(id) {
 
@@ -1262,6 +1363,7 @@
 
     }
 
+
     function confirmarBiblioteca() {
 
       if (!jogoBibliotecaSelecionado) return;
@@ -1276,6 +1378,7 @@
 
     }
 
+
     function fecharBibliotecaModal() {
 
       document
@@ -1285,6 +1388,7 @@
       jogoBibliotecaSelecionado = null;
 
     }
+
 
     function irParaBiblioteca() {
 
@@ -1296,11 +1400,13 @@
 
     }
 
+
     /* =========================
        ABRIR MEUS JOGOS
     ========================= */
 
     let jogoSelecionado = null;
+
 
     function abrirJogo(id) {
 
@@ -1328,6 +1434,7 @@
 
     }
 
+
     /* =========================
        CONFIRMAR MEU JOGO
     ========================= */
@@ -1340,6 +1447,7 @@
         jogoSelecionado.url;
 
     }
+
 
     /* =========================
        FECHAR MODAL
@@ -1355,6 +1463,7 @@
 
     }
 
+
     /* =========================
        SOBRE
     ========================= */
@@ -1367,6 +1476,7 @@
 
     }
 
+
     function fecharSobre() {
 
       document
@@ -1374,6 +1484,7 @@
         .classList.remove("active");
 
     }
+
 
     /* =========================
        IR PARA MEUS JOGOS
@@ -1388,6 +1499,7 @@
         });
 
     }
+
 
     /* =========================
        PESQUISA
@@ -1425,6 +1537,7 @@
 
     }
 
+
     /* =========================
        FECHAR MODAL BIBLIOTECA
     ========================= */
@@ -1443,6 +1556,7 @@
 
         }
       );
+
 
     /* =========================
        FECHAR MODAL JOGOS
@@ -1463,6 +1577,7 @@
         }
       );
 
+
     /* =========================
        FECHAR MODAL SOBRE
     ========================= */
@@ -1481,6 +1596,7 @@
 
         }
       );
+
 
     /* =========================
        TECLA ESC
