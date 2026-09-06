@@ -467,146 +467,6 @@
     }
 
     /* =========================
-       AVALIAÇÕES
-    ========================= */
-
-    #avaliacoes {
-      margin-top: 80px;
-      padding-top: 35px;
-      border-top: 1px solid #ffffff10;
-    }
-
-    .rating-box {
-      background: #ffffff08;
-      border: 1px solid #ffffff12;
-      border-radius: 20px;
-      padding: 25px;
-    }
-
-    .stars {
-      display: flex;
-      gap: 8px;
-      margin: 15px 0;
-    }
-
-    .star-btn {
-      border: none;
-      background: transparent;
-      color: #555;
-      font-size: 32px;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .star-btn:hover,
-    .star-btn.active {
-      color: #facc15;
-      transform: scale(1.08);
-    }
-
-    .rating-box textarea {
-      width: 100%;
-      min-height: 100px;
-      resize: vertical;
-      padding: 15px;
-      border-radius: 13px;
-      border: 1px solid #ffffff15;
-      background: #ffffff08;
-      color: white;
-      outline: none;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-    .rating-box textarea:focus {
-      border-color: #2563eb;
-    }
-
-    .rating-info {
-      color: #999;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-
-    .rating-average {
-      margin-top: 25px;
-      padding-top: 20px;
-      border-top: 1px solid #ffffff10;
-      color: #aaa;
-    }
-
-    .rating-average strong {
-      color: #facc15;
-      font-size: 24px;
-    }
-
-    .reviews-list {
-      margin-top: 20px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .review-card {
-      background: #ffffff08;
-      border: 1px solid #ffffff10;
-      border-radius: 15px;
-      padding: 16px;
-    }
-
-    .review-stars {
-      color: #facc15;
-      margin-bottom: 8px;
-    }
-
-    .review-card p {
-      color: #bbb;
-      line-height: 1.5;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-    }
-
-    .review-date {
-      color: #666;
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    /* =========================
-       AVISO CELULAR
-    ========================= */
-
-    .mobile-warning {
-      display: none;
-      position: fixed;
-      top: 85px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 30px);
-      max-width: 600px;
-      background: #101827;
-      border: 1px solid #2563eb55;
-      border-radius: 18px;
-      padding: 20px;
-      z-index: 1500;
-      box-shadow: 0 15px 40px #00000055;
-    }
-
-    .mobile-warning h3 {
-      margin-bottom: 8px;
-      color: #60a5fa;
-    }
-
-    .mobile-warning p {
-      color: #aaa;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .mobile-warning button {
-      margin-top: 15px;
-    }
-
-    /* =========================
        RODAPÉ
     ========================= */
 
@@ -734,37 +594,165 @@
 
     }
 
+  /* =========================
+     AVALIAÇÕES
+  ========================= */
+
+  .rating-section {
+    margin-top: 80px;
+    padding-top: 35px;
+    border-top: 1px solid #ffffff10;
+  }
+
+  .rating-box {
+    background: #ffffff08;
+    border: 1px solid #ffffff12;
+    border-radius: 20px;
+    padding: 25px;
+  }
+
+  .stars {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+  }
+
+  .star-btn {
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 32px;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .star-btn:hover,
+  .star-btn.active {
+    color: #facc15;
+    transform: scale(1.08);
+  }
+
+  .rating-box textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    padding: 15px;
+    border-radius: 13px;
+    border: 1px solid #ffffff15;
+    background: #ffffff08;
+    color: white;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .rating-box textarea:focus {
+    border-color: #2563eb;
+  }
+
+  .rating-info {
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .rating-average {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff10;
+    color: #aaa;
+  }
+
+  .rating-average strong {
+    color: #facc15;
+    font-size: 24px;
+  }
+
+  .reviews-list {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .review-card {
+    background: #ffffff08;
+    border: 1px solid #ffffff10;
+    border-radius: 15px;
+    padding: 16px;
+  }
+
+  .review-stars {
+    color: #facc15;
+    margin-bottom: 8px;
+  }
+
+  .review-card p {
+    color: #bbb;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .review-date {
+    color: #666;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .mobile-warning {
+    display: none;
+    position: fixed;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+    max-width: 600px;
+    background: #101827;
+    border: 1px solid #2563eb55;
+    border-radius: 18px;
+    padding: 20px;
+    z-index: 1500;
+    box-shadow: 0 15px 40px #00000055;
+  }
+
+  .mobile-warning h3 {
+    margin-bottom: 8px;
+    color: #60a5fa;
+  }
+
+  .mobile-warning p {
+    color: #aaa;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .mobile-warning button {
+    margin-top: 15px;
+  }
+
+  .library-extra {
+    margin-top: 20px;
+  }
+
+  .library-extra iframe {
+    display: block;
+  }
+
   </style>
-
-  <!-- SUPABASE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 </head>
 
 <body>
 
-  <!-- AVISO CELULAR -->
-
   <div class="mobile-warning" id="mobileWarning">
-
-    <h3>
-      📱 Está jogando pelo celular?
-    </h3>
-
+    <h3>📱 Está jogando pelo celular?</h3>
     <p>
-      Para ter uma experiência melhor nos jogos,
-      recomendamos ativar a opção
-      <strong>"Versão para computador"</strong>
-      no navegador. 💙
+      Para ter uma experiência melhor nos jogos, recomendamos ativar a opção
+      <strong>"Versão para computador"</strong> no navegador. 💙
     </p>
-
-    <button
-      class="btn btn-primary"
-      onclick="fecharAvisoCelular()"
-    >
+    <button class="btn btn-primary" onclick="fecharAvisoCelular()">
       Entendi 👍
     </button>
-
   </div>
 
   <!-- =========================
@@ -960,6 +948,8 @@
       id="gamesGrid"
     >
 
+      <!-- JOGO DE MISTÉRIO -->
+
       <article
         class="game-card"
         data-name="misterio investigação aventura"
@@ -992,6 +982,8 @@
 
       </article>
 
+      <!-- PET WORLD -->
+
       <article
         class="game-card"
         data-name="pet world bichinho animal"
@@ -1023,6 +1015,8 @@
         </button>
 
       </article>
+
+      <!-- NÃO CLIQUE -->
 
       <article
         class="game-card"
@@ -1134,405 +1128,93 @@
 
       </article>
 
-      <!-- SKRIBBL -->
-
-      <article
-        class="game-card"
-        data-name="skribbl desenho palavras"
-      >
-
-        <div class="game-icon">
-          🎨
-        </div>
-
-        <span class="tag">
-          🎨 DESENHO
-        </span>
-
-        <h3>
-          skribbl.io
-        </h3>
-
-        <p>
-          Desenhe, adivinhe as palavras
-          e tente conseguir a maior pontuação!
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('skribbl')"
-        >
+      <!-- SKRIBBL.IO -->
+      <article class="game-card" data-name="skribbl desenho adivinhe palavras">
+        <div class="game-icon">🎨</div>
+        <span class="tag">🎨 DESENHO</span>
+        <h3>skribbl.io</h3>
+        <p>Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('skribbl')">
           ▶ Jogar skribbl.io
         </button>
-
       </article>
 
       <!-- GEOGUESSR -->
-
-      <article
-        class="game-card"
-        data-name="geoguessr geografia mundo"
-      >
-
-        <div class="game-icon">
-          🌎
-        </div>
-
-        <span class="tag">
-          🌎 GEOGRAFIA
-        </span>
-
-        <h3>
-          GeoGuessr
-        </h3>
-
-        <p>
-          Explore o mundo e tente descobrir
-          em qual lugar você está!
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('geoguessr')"
-        >
+      <article class="game-card" data-name="geoguessr geografia mundo lugares">
+        <div class="game-icon">🌎</div>
+        <span class="tag">🌎 GEOGRAFIA</span>
+        <h3>GeoGuessr</h3>
+        <p>Explore o mundo e tente descobrir em qual lugar você está!</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('geoguessr')">
           ▶ Jogar GeoGuessr
         </button>
-
       </article>
 
       <!-- SLOW ROADS -->
-
-      <article
-        class="game-card"
-        data-name="slow roads estrada carro dirigir"
-      >
-
-        <div class="game-icon">
-          🛣️
-        </div>
-
-        <span class="tag">
-          🛣️ DIRIGIR
-        </span>
-
-        <h3>
-          Slow Roads
-        </h3>
-
-        <p>
-          Dirija por estradas infinitas
-          e explore paisagens.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('slowroads')"
-        >
+      <article class="game-card" data-name="slow roads estrada dirigir carro">
+        <div class="game-icon">🛣️</div>
+        <span class="tag">🛣️ DIRIGIR</span>
+        <h3>Slow Roads</h3>
+        <p>Dirija por estradas infinitas e relaxe explorando paisagens.</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('slowroads')">
           ▶ Jogar Slow Roads
         </button>
-
       </article>
 
       <!-- AMONG US -->
-
-      <article
-        class="game-card"
-        data-name="among us impostor tripulante"
-      >
-
-        <div class="game-icon">
-          🚀
-        </div>
-
-        <span class="tag">
-          🚀 MULTIPLAYER
-        </span>
-
-        <h3>
-          Among Us Online
-        </h3>
-
-        <p>
-          Descubra quem é o impostor
-          e tente completar as tarefas.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('amongus')"
-        >
+      <article class="game-card" data-name="among us impostor tripulante online">
+        <div class="game-icon">🚀</div>
+        <span class="tag">🚀 MULTIPLAYER</span>
+        <h3>Among Us Online</h3>
+        <p>Descubra quem é o impostor e tente completar as tarefas.</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('amongus')">
           ▶ Jogar Among Us
         </button>
-
       </article>
 
-      <!-- GTA -->
-
-      <article
-        class="game-card"
-        data-name="gta vice city online"
-      >
-
-        <div class="game-icon">
-          🚗
-        </div>
-
-        <span class="tag">
-          🚗 AÇÃO
-        </span>
-
-        <h3>
-          GTA Vice City Online
-        </h3>
-
-        <p>
-          Explore uma versão para navegador
-          inspirada no clássico Vice City.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('vicecity')"
-        >
+      <!-- GTA VICE CITY -->
+      <article class="game-card" data-name="gta vice city online cidade ação">
+        <div class="game-icon">🚗</div>
+        <span class="tag">🚗 AÇÃO</span>
+        <h3>GTA Vice City Online</h3>
+        <p>Explore uma versão para navegador inspirada no clássico Vice City.</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('vicecity')">
           ▶ Jogar GTA Vice City
         </button>
-
       </article>
 
       <!-- GEOMETRY DASH -->
-
-      <article
-        class="game-card"
-        data-name="geometry dash plataforma ritmo"
-      >
-
-        <div class="game-icon">
-          🔷
-        </div>
-
-        <span class="tag">
-          🔷 PLATAFORMA
-        </span>
-
-        <h3>
-          Geometry Dash
-        </h3>
-
-        <p>
-          Supere obstáculos, acompanhe
-          o ritmo e tente chegar ao final.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('geometrydash')"
-        >
+      <article class="game-card" data-name="geometry dash ritmo plataforma">
+        <div class="game-icon">🔷</div>
+        <span class="tag">🔷 PLATAFORMA</span>
+        <h3>Geometry Dash</h3>
+        <p>Supere obstáculos, acompanhe o ritmo e tente chegar ao final.</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('geometrydash')">
           ▶ Jogar Geometry Dash
         </button>
-
       </article>
 
-      <!-- SUBWAY -->
-
-      <article
-        class="game-card"
-        data-name="subway surfers corrida"
-      >
-
-        <div class="game-icon">
-          🚆
-        </div>
-
-        <span class="tag">
-          🚆 CORRIDA
-        </span>
-
-        <h3>
-          Subway Surfers
-        </h3>
-
-        <p>
-          Corra, desvie dos obstáculos
-          e tente conseguir uma pontuação alta.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('subwaysurfers')"
-        >
+      <!-- SUBWAY SURFERS -->
+      <article class="game-card" data-name="subway surfers corrida corrida infinita">
+        <div class="game-icon">🚆</div>
+        <span class="tag">🚆 CORRIDA</span>
+        <h3>Subway Surfers</h3>
+        <p>Corra, desvie dos obstáculos e tente conseguir uma pontuação alta.</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('subwaysurfers')">
           ▶ Jogar Subway Surfers
         </button>
-
       </article>
 
-      <!-- FIFA -->
-
-      <article
-        class="game-card"
-        data-name="fifa 2007 futebol"
-      >
-
-        <div class="game-icon">
-          ⚽
-        </div>
-
-        <span class="tag">
-          ⚽ FUTEBOL
-        </span>
-
-        <h3>
-          FIFA 2007
-        </h3>
-
-        <p>
-          Entre em campo e reviva
-          um clássico jogo de futebol.
-        </p>
-
-        <button
-          class="btn btn-primary play"
-          onclick="abrirBiblioteca('fifa2007')"
-        >
+      <!-- FIFA 2007 -->
+      <article class="game-card" data-name="fifa 2007 futebol futebol jogo">
+        <div class="game-icon">⚽</div>
+        <span class="tag">⚽ FUTEBOL</span>
+        <h3>FIFA 2007</h3>
+        <p>Entre em campo e reviva um clássico jogo de futebol no navegador.</p>
+        <button class="btn btn-primary play" onclick="abrirBiblioteca('fifa2007')">
           ▶ Jogar FIFA 2007
         </button>
-
       </article>
-
-    </div>
-
-  </section>
-
-  <!-- =========================
-       JOGOS NO NAVEGADOR
-  ========================= -->
-
-  <section
-    class="container"
-    id="jogos-navegador"
-  >
-
-    <div class="section-title">
-      🎮 Jogos para jogar aqui
-    </div>
-
-    <div class="game-card">
-
-      <span class="tag">
-        🚆 CORRIDA
-      </span>
-
-      <h3>
-        Subway Surfers
-      </h3>
-
-      <p>
-        Jogue diretamente nesta página.
-      </p>
-
-      <div
-        style="
-          position:relative;
-          width:100%;
-          max-width:900px;
-          aspect-ratio:16/9;
-        "
-      >
-
-        <iframe
-          src="https://nite.games/embed/subway-surfers"
-          style="
-            position:absolute;
-            inset:0;
-            width:100%;
-            height:100%;
-            border:none;
-            border-radius:8px;
-          "
-          allow="fullscreen; autoplay; gamepad; pointer-lock"
-        ></iframe>
-
-      </div>
-
-      <p
-        style="
-          font-size:12px;
-          margin-top:8px;
-        "
-      >
-        <a
-          href="https://nite.games"
-          target="_blank"
-          rel="noopener noreferrer"
-          style="
-            font-size:0;
-            line-height:0;
-          "
-        >
-          Nite.Games
-        </a>
-      </p>
-
-    </div>
-
-    <div
-      class="game-card"
-      style="margin-top:20px;"
-    >
-
-      <span class="tag">
-        ⚽ FUTEBOL
-      </span>
-
-      <h3>
-        FIFA 2007
-      </h3>
-
-      <p>
-        Jogue diretamente nesta página.
-      </p>
-
-      <div
-        style="
-          position:relative;
-          width:100%;
-          max-width:900px;
-          aspect-ratio:16/9;
-        "
-      >
-
-        <iframe
-          src="https://nite.games/embed/fifa-2007"
-          style="
-            position:absolute;
-            inset:0;
-            width:100%;
-            height:100%;
-            border:none;
-            border-radius:8px;
-          "
-          allow="fullscreen; autoplay; gamepad; pointer-lock"
-        ></iframe>
-
-      </div>
-
-      <p
-        style="
-          font-size:12px;
-          margin-top:8px;
-        "
-      >
-        <a
-          href="https://nite.games"
-          target="_blank"
-          rel="noopener noreferrer"
-          style="
-            font-size:0;
-            line-height:0;
-          "
-        >
-          Nite.Games
-        </a>
-      </p>
 
     </div>
 
@@ -1542,108 +1224,40 @@
        AVALIAÇÕES
   ========================= -->
 
-  <section
-    class="container"
-    id="avaliacoes"
-  >
+  <section class="container rating-section" id="avaliacoes">
 
     <div class="section-title">
       ⭐ Avaliações
     </div>
 
     <div class="rating-box">
-
-      <h3>
-        O que você achou da Jullya Games?
-      </h3>
+      <h3>O que você achou da Jullya Games?</h3>
 
       <p class="rating-info">
-        Escolha uma nota e, se quiser,
-        deixe um comentário.
-        Sua avaliação ajuda o site a melhorar! 💙
+        Escolha uma nota e, se quiser, deixe um comentário. Sua avaliação ajuda o site a melhorar! 💙
       </p>
 
-      <div
-        class="stars"
-        id="ratingStars"
-      >
-
-        <button
-          class="star-btn"
-          data-rating="1"
-          onclick="selecionarNota(1)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star-btn"
-          data-rating="2"
-          onclick="selecionarNota(2)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star-btn"
-          data-rating="3"
-          onclick="selecionarNota(3)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star-btn"
-          data-rating="4"
-          onclick="selecionarNota(4)"
-        >
-          ★
-        </button>
-
-        <button
-          class="star-btn"
-          data-rating="5"
-          onclick="selecionarNota(5)"
-        >
-          ★
-        </button>
-
+      <div class="stars" id="ratingStars">
+        <button class="star-btn" data-rating="1" onclick="selecionarNota(1)">★</button>
+        <button class="star-btn" data-rating="2" onclick="selecionarNota(2)">★</button>
+        <button class="star-btn" data-rating="3" onclick="selecionarNota(3)">★</button>
+        <button class="star-btn" data-rating="4" onclick="selecionarNota(4)">★</button>
+        <button class="star-btn" data-rating="5" onclick="selecionarNota(5)">★</button>
       </div>
 
-      <textarea
-        id="ratingComment"
-        maxlength="500"
-        placeholder="Escreva um comentário (opcional)..."
-      ></textarea>
+      <textarea id="ratingComment" maxlength="500" placeholder="Escreva um comentário (opcional)..."></textarea>
 
-      <button
-        class="btn btn-primary"
-        onclick="enviarAvaliacao()"
-      >
+      <button class="btn btn-primary" onclick="enviarAvaliacao()">
         ⭐ Enviar avaliação
       </button>
 
-      <p
-        id="ratingMessage"
-        class="rating-info"
-        style="
-          margin-top:15px;
-          margin-bottom:0;
-        "
-      ></p>
+      <p id="ratingMessage" class="rating-info" style="margin-top:15px;margin-bottom:0;"></p>
 
-      <div
-        class="rating-average"
-        id="ratingAverage"
-      >
+      <div class="rating-average" id="ratingAverage">
         Carregando avaliações...
       </div>
 
-      <div
-        class="reviews-list"
-        id="reviewsList"
-      ></div>
-
+      <div class="reviews-list" id="reviewsList"></div>
     </div>
 
   </section>
@@ -1900,147 +1514,66 @@
     const biblioteca = {
 
       minecraft: {
-
-        nome:
-          "⛏️ Minecraft 1.8.8",
-
-        icon:
-          "⛏️",
-
-        descricao:
-          "Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.",
-
-        url:
-          "https://eaglercraft.com/play?version=1.8.8-wasm"
-
+        nome: "⛏️ Minecraft 1.8.8",
+        icon: "⛏️",
+        descricao: "Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.",
+        url: "https://eaglercraft.com/play?version=1.8.8-wasm"
       },
 
       skribbl: {
-
-        nome:
-          "🎨 skribbl.io",
-
-        icon:
-          "🎨",
-
-        descricao:
-          "Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!",
-
-        url:
-          "https://skribbl.io/"
-
+        nome: "🎨 skribbl.io",
+        icon: "🎨",
+        descricao: "Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!",
+        url: "https://skribbl.io/"
       },
 
       geoguessr: {
-
-        nome:
-          "🌎 GeoGuessr",
-
-        icon:
-          "🌎",
-
-        descricao:
-          "Explore o mundo e tente descobrir em qual lugar você está!",
-
-        url:
-          "https://www.geoguessr.com/"
-
+        nome: "🌎 GeoGuessr",
+        icon: "🌎",
+        descricao: "Explore o mundo e tente descobrir em qual lugar você está!",
+        url: "https://www.geoguessr.com/"
       },
 
       slowroads: {
-
-        nome:
-          "🛣️ Slow Roads",
-
-        icon:
-          "🛣️",
-
-        descricao:
-          "Dirija por estradas infinitas e relaxe explorando paisagens.",
-
-        url:
-          "https://slowroads.io/"
-
+        nome: "🛣️ Slow Roads",
+        icon: "🛣️",
+        descricao: "Dirija por estradas infinitas e relaxe explorando paisagens.",
+        url: "https://slowroads.io/"
       },
 
       amongus: {
-
-        nome:
-          "🚀 Among Us Online",
-
-        icon:
-          "🚀",
-
-        descricao:
-          "Descubra quem é o impostor e tente completar as tarefas.",
-
-        url:
-          "https://amongus-online.net/game/amongus"
-
+        nome: "🚀 Among Us Online",
+        icon: "🚀",
+        descricao: "Descubra quem é o impostor e tente completar as tarefas.",
+        url: "https://amongus-online.net/game/amongus"
       },
 
       vicecity: {
-
-        nome:
-          "🚗 GTA Vice City Online",
-
-        icon:
-          "🚗",
-
-        descricao:
-          "Explore uma versão para navegador inspirada no clássico Vice City.",
-
-        url:
-          "https://quenq.com/apps/vice-city-online/"
-
+        nome: "🚗 GTA Vice City Online",
+        icon: "🚗",
+        descricao: "Explore uma versão para navegador inspirada no clássico Vice City.",
+        url: "https://quenq.com/apps/vice-city-online/"
       },
 
       geometrydash: {
-
-        nome:
-          "🔷 Geometry Dash",
-
-        icon:
-          "🔷",
-
-        descricao:
-          "Supere obstáculos, acompanhe o ritmo e tente chegar ao final.",
-
-        url:
-          "https://www.geometrydash.com/"
-
+        nome: "🔷 Geometry Dash",
+        icon: "🔷",
+        descricao: "Supere obstáculos, acompanhe o ritmo e tente chegar ao final.",
+        url: "https://www.geometrydash.com/"
       },
 
       subwaysurfers: {
-
-        nome:
-          "🚆 Subway Surfers",
-
-        icon:
-          "🚆",
-
-        descricao:
-          "Corra, desvie dos obstáculos e tente conseguir uma pontuação alta.",
-
-        url:
-          "https://nite.games/embed/subway-surfers"
-
+        nome: "🚆 Subway Surfers",
+        icon: "🚆",
+        descricao: "Corra, desvie dos obstáculos e tente conseguir uma pontuação alta.",
+        url: "https://nite.games/embed/subway-surfers"
       },
 
       fifa2007: {
-
-        nome:
-          "⚽ FIFA 2007",
-
-        icon:
-          "⚽",
-
-        descricao:
-          "Entre em campo e reviva um clássico jogo de futebol no navegador.",
-
-        url:
-          "https://nite.games/embed/fifa-2007"
-
+        nome: "⚽ FIFA 2007",
+        icon: "⚽",
+        descricao: "Entre em campo e reviva um clássico jogo de futebol no navegador.",
+        url: "https://nite.games/embed/fifa-2007"
       }
 
     };
@@ -2049,40 +1582,33 @@
 
     function abrirBiblioteca(id) {
 
-      const jogo =
-        biblioteca[id];
+      const jogo = biblioteca[id];
 
       if (!jogo) return;
 
-      jogoBibliotecaSelecionado =
-        jogo;
+      jogoBibliotecaSelecionado = jogo;
 
       document
         .getElementById("libraryModalIcon")
-        .textContent =
-        jogo.icon;
+        .textContent = jogo.icon;
 
       document
         .getElementById("libraryModalTitle")
-        .textContent =
-        jogo.nome;
+        .textContent = jogo.nome;
 
       document
         .getElementById("libraryModalDescription")
-        .textContent =
-        jogo.descricao;
+        .textContent = jogo.descricao;
 
       document
         .getElementById("libraryModal")
-        .classList
-        .add("active");
+        .classList.add("active");
 
     }
 
     function confirmarBiblioteca() {
 
-      if (!jogoBibliotecaSelecionado)
-        return;
+      if (!jogoBibliotecaSelecionado) return;
 
       window.open(
         jogoBibliotecaSelecionado.url,
@@ -2098,11 +1624,9 @@
 
       document
         .getElementById("libraryModal")
-        .classList
-        .remove("active");
+        .classList.remove("active");
 
-      jogoBibliotecaSelecionado =
-        null;
+      jogoBibliotecaSelecionado = null;
 
     }
 
@@ -2124,55 +1648,54 @@
 
     function abrirJogo(id) {
 
-      const jogo =
-        jogos[id];
+      const jogo = jogos[id];
 
       if (!jogo) return;
 
-      jogoSelecionado =
-        jogo;
+      jogoSelecionado = jogo;
 
       document
         .getElementById("modalIcon")
-        .textContent =
-        jogo.icon;
+        .textContent = jogo.icon;
 
       document
         .getElementById("modalTitle")
-        .textContent =
-        jogo.nome;
+        .textContent = jogo.nome;
 
       document
         .getElementById("modalDescription")
-        .textContent =
-        jogo.descricao;
+        .textContent = jogo.descricao;
 
       document
         .getElementById("gameModal")
-        .classList
-        .add("active");
+        .classList.add("active");
 
     }
 
+    /* =========================
+       CONFIRMAR MEU JOGO
+    ========================= */
+
     function confirmarJogo() {
 
-      if (!jogoSelecionado)
-        return;
+      if (!jogoSelecionado) return;
 
       window.location.href =
         jogoSelecionado.url;
 
     }
 
+    /* =========================
+       FECHAR MODAL
+    ========================= */
+
     function fecharModal() {
 
       document
         .getElementById("gameModal")
-        .classList
-        .remove("active");
+        .classList.remove("active");
 
-      jogoSelecionado =
-        null;
+      jogoSelecionado = null;
 
     }
 
@@ -2184,8 +1707,7 @@
 
       document
         .getElementById("aboutModal")
-        .classList
-        .add("active");
+        .classList.add("active");
 
     }
 
@@ -2193,33 +1715,18 @@
 
       document
         .getElementById("aboutModal")
-        .classList
-        .remove("active");
+        .classList.remove("active");
 
     }
 
     /* =========================
-       IR PARA JOGOS
+       IR PARA MEUS JOGOS
     ========================= */
 
     function irParaJogos() {
 
       document
         .getElementById("jogos")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }
-
-    /* =========================
-       IR PARA AVALIAÇÕES
-    ========================= */
-
-    function irParaAvaliacoes() {
-
-      document
-        .getElementById("avaliacoes")
         .scrollIntoView({
           behavior: "smooth"
         });
@@ -2246,20 +1753,15 @@
       cards.forEach(card => {
 
         const nome =
-          card.dataset.name
-            .toLowerCase();
+          card.dataset.name.toLowerCase();
 
-        if (
-          nome.includes(texto)
-        ) {
+        if (nome.includes(texto)) {
 
-          card.style.display =
-            "";
+          card.style.display = "";
 
         } else {
 
-          card.style.display =
-            "none";
+          card.style.display = "none";
 
         }
 
@@ -2268,448 +1770,7 @@
     }
 
     /* =========================
-       AVISO CELULAR
-    ========================= */
-
-    function verificarCelular() {
-
-      const celular =
-        /Android|iPhone|iPad|iPod|Mobile/i
-        .test(navigator.userAgent);
-
-      if (celular) {
-
-        document
-          .getElementById("mobileWarning")
-          .style.display =
-          "block";
-
-      }
-
-    }
-
-    function fecharAvisoCelular() {
-
-      document
-        .getElementById("mobileWarning")
-        .style.display =
-        "none";
-
-    }
-
-    verificarCelular();
-
-    /* =========================
-       AVALIAÇÕES
-    ========================= */
-
-    /*
-      COLOQUE AQUI OS DADOS DO SEU SUPABASE
-    */
-
-    const SUPABASE_URL =
-      "COLE_AQUI_A_URL_DO_SEU_SUPABASE";
-
-    const SUPABASE_ANON_KEY =
-      "COLE_AQUI_A_CHAVE_ANON_DO_SEU_SUPABASE";
-
-    let supabaseClient =
-      null;
-
-    let notaSelecionada =
-      0;
-
-    if (
-
-      SUPABASE_URL.startsWith("https://")
-
-      &&
-
-      !SUPABASE_URL.includes("COLE_AQUI")
-
-      &&
-
-      SUPABASE_ANON_KEY
-
-      &&
-
-      !SUPABASE_ANON_KEY.includes("COLE_AQUI")
-
-      &&
-
-      window.supabase
-
-    ) {
-
-      supabaseClient =
-        window.supabase.createClient(
-
-          SUPABASE_URL,
-
-          SUPABASE_ANON_KEY
-
-        );
-
-    }
-
-    function selecionarNota(nota) {
-
-      notaSelecionada =
-        nota;
-
-      document
-        .querySelectorAll(".star-btn")
-        .forEach(botao => {
-
-          const valor =
-            Number(
-              botao.dataset.rating
-            );
-
-          botao.classList.toggle(
-            "active",
-            valor <= nota
-          );
-
-        });
-
-    }
-
-    function escapeHTML(texto) {
-
-      return String(
-        texto || ""
-      )
-
-      .replace(
-        /&/g,
-        "&amp;"
-      )
-
-      .replace(
-        /</g,
-        "&lt;"
-      )
-
-      .replace(
-        />/g,
-        "&gt;"
-      )
-
-      .replace(
-        /"/g,
-        "&quot;"
-      )
-
-      .replace(
-        /'/g,
-        "&#039;"
-      );
-
-    }
-
-    function mostrarMensagemAvaliacao(
-      mensagem,
-      erro = false
-    ) {
-
-      const elemento =
-        document
-          .getElementById(
-            "ratingMessage"
-          );
-
-      elemento.textContent =
-        mensagem;
-
-      elemento.style.color =
-        erro
-          ? "#fca5a5"
-          : "#93c5fd";
-
-    }
-
-    async function enviarAvaliacao() {
-
-      if (!supabaseClient) {
-
-        mostrarMensagemAvaliacao(
-
-          "As avaliações ainda não estão configuradas. Coloque a URL e a chave do Supabase no código.",
-
-          true
-
-        );
-
-        return;
-
-      }
-
-      if (!notaSelecionada) {
-
-        mostrarMensagemAvaliacao(
-
-          "Escolha uma nota de 1 a 5 estrelas.",
-
-          true
-
-        );
-
-        return;
-
-      }
-
-      const comentario =
-        document
-          .getElementById(
-            "ratingComment"
-          )
-          .value
-          .trim();
-
-      try {
-
-        const resultado =
-          await supabaseClient
-
-            .from("avaliacoes")
-
-            .insert([{
-
-              nota:
-                notaSelecionada,
-
-              comentario:
-                comentario
-
-            }]);
-
-        if (resultado.error)
-          throw resultado.error;
-
-        document
-          .getElementById(
-            "ratingComment"
-          )
-          .value =
-          "";
-
-        notaSelecionada =
-          0;
-
-        document
-          .querySelectorAll(
-            ".star-btn"
-          )
-          .forEach(botao => {
-
-            botao.classList
-              .remove("active");
-
-          });
-
-        mostrarMensagemAvaliacao(
-          "Avaliação enviada com sucesso! 💙"
-        );
-
-        carregarAvaliacoes();
-
-      } catch (erro) {
-
-        console.error(erro);
-
-        mostrarMensagemAvaliacao(
-
-          "Não foi possível enviar a avaliação agora. Verifique a configuração do Supabase.",
-
-          true
-
-        );
-
-      }
-
-    }
-
-    async function carregarAvaliacoes() {
-
-      const average =
-        document
-          .getElementById(
-            "ratingAverage"
-          );
-
-      const list =
-        document
-          .getElementById(
-            "reviewsList"
-          );
-
-      if (!supabaseClient) {
-
-        average.innerHTML =
-          "⭐ Configure o Supabase para mostrar as avaliações de todos os visitantes.";
-
-        list.innerHTML =
-          "";
-
-        return;
-
-      }
-
-      try {
-
-        const resultado =
-          await supabaseClient
-
-            .from("avaliacoes")
-
-            .select(
-              "id,nota,comentario,created_at"
-            )
-
-            .order(
-              "created_at",
-              {
-                ascending: false
-              }
-            );
-
-        if (resultado.error)
-          throw resultado.error;
-
-        const avaliacoes =
-          resultado.data || [];
-
-        const total =
-          avaliacoes.length;
-
-        const soma =
-          avaliacoes.reduce(
-            (
-              acc,
-              item
-            ) =>
-              acc +
-              Number(
-                item.nota || 0
-              ),
-            0
-          );
-
-        const media =
-          total
-            ? (
-                soma /
-                total
-              ).toFixed(1)
-            : "0.0";
-
-        average.innerHTML = `
-
-          <strong>
-            ⭐ ${media}/5
-          </strong>
-
-          <br>
-
-          ${total}
-          avaliação${total === 1 ? "" : "ões"}
-
-        `;
-
-        if (!total) {
-
-          list.innerHTML = `
-
-            <p class="rating-info">
-              Ainda não há avaliações.
-              Seja a primeira pessoa a avaliar! 💙
-            </p>
-
-          `;
-
-          return;
-
-        }
-
-        list.innerHTML =
-          avaliacoes
-            .map(item => {
-
-              const nota =
-                Math.max(
-                  1,
-                  Math.min(
-                    5,
-                    Number(
-                      item.nota
-                    )
-                  )
-                );
-
-              const estrelas =
-                "★".repeat(nota) +
-                "☆".repeat(
-                  5 - nota
-                );
-
-              const comentario =
-                escapeHTML(
-                  item.comentario ||
-                  "Sem comentário."
-                );
-
-              const data =
-                item.created_at
-                  ? new Date(
-                      item.created_at
-                    )
-                      .toLocaleDateString(
-                        "pt-BR"
-                      )
-                  : "";
-
-              return `
-
-                <div class="review-card">
-
-                  <div class="review-stars">
-                    ${estrelas}
-                  </div>
-
-                  <p>
-                    ${comentario}
-                  </p>
-
-                  <div class="review-date">
-                    ${data}
-                  </div>
-
-                </div>
-
-              `;
-
-            })
-            .join("");
-
-      } catch (erro) {
-
-        console.error(erro);
-
-        average.textContent =
-          "Não foi possível carregar as avaliações.";
-
-        list.innerHTML =
-          "";
-
-      }
-
-    }
-
-    carregarAvaliacoes();
-
-    /* =========================
-       FECHAR MODAIS
+       FECHAR MODAL BIBLIOTECA
     ========================= */
 
     document
@@ -2718,9 +1779,7 @@
         "click",
         function(e) {
 
-          if (
-            e.target === this
-          ) {
+          if (e.target === this) {
 
             fecharBibliotecaModal();
 
@@ -2729,15 +1788,17 @@
         }
       );
 
+    /* =========================
+       FECHAR MODAL JOGOS
+    ========================= */
+
     document
       .getElementById("gameModal")
       .addEventListener(
         "click",
         function(e) {
 
-          if (
-            e.target === this
-          ) {
+          if (e.target === this) {
 
             fecharModal();
 
@@ -2746,15 +1807,17 @@
         }
       );
 
+    /* =========================
+       FECHAR MODAL SOBRE
+    ========================= */
+
     document
       .getElementById("aboutModal")
       .addEventListener(
         "click",
         function(e) {
 
-          if (
-            e.target === this
-          ) {
+          if (e.target === this) {
 
             fecharSobre();
 
@@ -2771,9 +1834,7 @@
       "keydown",
       function(e) {
 
-        if (
-          e.key === "Escape"
-        ) {
+        if (e.key === "Escape") {
 
           fecharModal();
 
@@ -2785,6 +1846,190 @@
 
       }
     );
+
+    /* =========================
+       IR PARA AVALIAÇÕES
+    ========================= */
+
+    function irParaAvaliacoes() {
+      document
+        .getElementById("avaliacoes")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+    }
+
+    /* =========================
+       AVISO CELULAR
+    ========================= */
+
+    function verificarCelular() {
+      const celular = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+      if (celular) {
+        document.getElementById("mobileWarning").style.display = "block";
+      }
+    }
+
+    function fecharAvisoCelular() {
+      document.getElementById("mobileWarning").style.display = "none";
+    }
+
+    verificarCelular();
+
+    /* =========================
+       SUPABASE - AVALIAÇÕES
+    ========================= */
+
+    const SUPABASE_URL = "COLE_AQUI_A_URL_DO_SEU_SUPABASE";
+    const SUPABASE_ANON_KEY = "COLE_AQUI_A_CHAVE_ANON_DO_SEU_SUPABASE";
+
+    let supabaseClient = null;
+    let notaSelecionada = 0;
+
+    if (
+      SUPABASE_URL.startsWith("https://") &&
+      !SUPABASE_URL.includes("COLE_AQUI") &&
+      SUPABASE_ANON_KEY &&
+      !SUPABASE_ANON_KEY.includes("COLE_AQUI") &&
+      window.supabase
+    ) {
+      supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+      );
+    }
+
+    function selecionarNota(nota) {
+      notaSelecionada = nota;
+
+      document
+        .querySelectorAll(".star-btn")
+        .forEach(botao => {
+          const valor = Number(botao.dataset.rating);
+          botao.classList.toggle("active", valor <= nota);
+        });
+    }
+
+    function escapeHTML(texto) {
+      return String(texto || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function mostrarMensagemAvaliacao(mensagem, erro = false) {
+      const elemento = document.getElementById("ratingMessage");
+      elemento.textContent = mensagem;
+      elemento.style.color = erro ? "#fca5a5" : "#93c5fd";
+    }
+
+    async function enviarAvaliacao() {
+      if (!supabaseClient) {
+        mostrarMensagemAvaliacao(
+          "As avaliações ainda não estão configuradas. Coloque a URL e a chave do Supabase no código.",
+          true
+        );
+        return;
+      }
+
+      if (!notaSelecionada) {
+        mostrarMensagemAvaliacao("Escolha uma nota de 1 a 5 estrelas.", true);
+        return;
+      }
+
+      const comentario = document
+        .getElementById("ratingComment")
+        .value
+        .trim();
+
+      try {
+        const { error } = await supabaseClient
+          .from("avaliacoes")
+          .insert([{
+            nota: notaSelecionada,
+            comentario: comentario
+          }]);
+
+        if (error) throw error;
+
+        document.getElementById("ratingComment").value = "";
+        notaSelecionada = 0;
+        document.querySelectorAll(".star-btn").forEach(botao => {
+          botao.classList.remove("active");
+        });
+
+        mostrarMensagemAvaliacao("Avaliação enviada com sucesso! 💙");
+        carregarAvaliacoes();
+      } catch (erro) {
+        console.error(erro);
+        mostrarMensagemAvaliacao(
+          "Não foi possível enviar a avaliação agora. Verifique a configuração do Supabase.",
+          true
+        );
+      }
+    }
+
+    async function carregarAvaliacoes() {
+      const average = document.getElementById("ratingAverage");
+      const list = document.getElementById("reviewsList");
+
+      if (!supabaseClient) {
+        average.innerHTML = "⭐ Configure o Supabase para mostrar as avaliações de todos os visitantes.";
+        list.innerHTML = "";
+        return;
+      }
+
+      try {
+        const { data, error } = await supabaseClient
+          .from("avaliacoes")
+          .select("id,nota,comentario,created_at")
+          .order("created_at", { ascending: false });
+
+        if (error) throw error;
+
+        const avaliacoes = data || [];
+        const total = avaliacoes.length;
+        const soma = avaliacoes.reduce((acc, item) => acc + Number(item.nota || 0), 0);
+        const media = total ? (soma / total).toFixed(1) : "0.0";
+
+        average.innerHTML = `
+          <strong>⭐ ${media}/5</strong>
+          <br>
+          ${total} avaliação${total === 1 ? "" : "ões"}
+        `;
+
+        if (!total) {
+          list.innerHTML = '<p class="rating-info">Ainda não há avaliações. Seja a primeira pessoa a avaliar! 💙</p>';
+          return;
+        }
+
+        list.innerHTML = avaliacoes.map(item => {
+          const nota = Math.max(1, Math.min(5, Number(item.nota)));
+          const estrelas = "★".repeat(nota) + "☆".repeat(5 - nota);
+          const comentario = escapeHTML(item.comentario || "Sem comentário.");
+          const data = item.created_at
+            ? new Date(item.created_at).toLocaleDateString("pt-BR")
+            : "";
+
+          return `
+            <div class="review-card">
+              <div class="review-stars">${estrelas}</div>
+              <p>${comentario}</p>
+              <div class="review-date">${data}</div>
+            </div>
+          `;
+        }).join("");
+      } catch (erro) {
+        console.error(erro);
+        average.textContent = "Não foi possível carregar as avaliações.";
+        list.innerHTML = "";
+      }
+    }
+
+    carregarAvaliacoes();
 
   </script>
 
