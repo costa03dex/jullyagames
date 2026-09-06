@@ -1878,91 +1878,316 @@
     verificarCelular();
 
     /* =========================
-       SUPABASE - AVALIAÇÕES
-    ========================= */
+   SUPABASE - AVALIAÇÕES
+========================= */
 
-    const SUPABASE_URL = https://zmcqaeifrvvkaaboktiq.supabase.co
-    const SUPABASE_ANON_KEY = sb_publishable_xu7T_buQ6Ca2Sgg3_Y770A_Mx-T3YKl;
-    let supabaseClient = null;
-    let notaSelecionada = 0;
+const SUPABASE_URL = "https://zmcqaeifrvvkaaboktiq.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_xu7T_buQ6Ca2Sgg3_Y770A_Mx-T3YKl";
 
-    if (
-      SUPABASE_URL.startsWith("https://") &&
-      !SUPABASE_URL.includes(https://zmcqaeifrvvkaaboktiq.supabase.co) &&
-      SUPABASE_ANON_KEY &&
-      !SUPABASE_ANON_KEY.includes(sb_publishable_xu7T_buQ6Ca2Sgg3_Y770A_Mx-T3YKl) &&
-      window.supabase
-    ) {
-      supabaseClient = window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_ANON_KEY
+let supabaseClient = null;
+let notaSelecionada = 0;
+
+if (
+  SUPABASE_URL &&
+  SUPABASE_ANON_KEY &&
+  window.supabase
+) {
+  supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+}
+
+/* =========================
+   ESCOLHER NOTA
+========================= */
+
+function selecionarNota(nota) {
+
+  notaSelecionada = nota;
+
+  document
+    .querySelectorAll(".star-btn")
+    .forEach(botao => {
+
+      const valor =
+        Number(botao.dataset.rating);
+
+      botao.classList.toggle(
+        "active",
+        valor <= nota
       );
-    }
 
-    function selecionarNota(nota) {
-      notaSelecionada = nota;
+    });
 
-      document
-        .querySelectorAll(".star-btn")
-        .forEach(botao => {
-          const valor = Number(botao.dataset.rating);
-          botao.classList.toggle("active", valor <= nota);
-        });
-    }
+}
 
-    function escapeHTML(texto) {
-      return String(texto || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
+/* =========================
+   PROTEGER COMENTÁRIOS
+========================= */
 
-    function mostrarMensagemAvaliacao(mensagem, erro = false) {
-      const elemento = document.getElementById("ratingMessage");
-      elemento.textContent = mensagem;
-      elemento.style.color = erro ? "#fca5a5" : "#93c5fd";
-    }
+function escapeHTML(texto) {
 
-    async function enviarAvaliacao() {
-      if (!supabaseClient) {
-        mostrarMensagemAvaliacao(
-          "As avaliações ainda não estão configuradas. Coloque a URL e a chave do Supabase no código.",
-          true
-        );
-        return;
-      }
+  return String(texto || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
-      if (!notaSelecionada) {
-        mostrarMensagemAvaliacao("Escolha uma nota de 1 a 5 estrelas.", true);
-        return;
-      }
+}
 
-      const comentario = document
-        .getElementById("ratingComment")
-        .value
-        .trim();
+/* =========================
+   MENSAGEM
+========================= */
 
-      try {
-        const { error } = await supabaseClient
-          .from("avaliacoes")
-          .insert([{
+function mostrarMensagemAvaliacao(
+  mensagem,
+  erro = false
+) {
+
+  const elemento =
+    document.getElementById("ratingMessage");
+
+  elemento.textContent =
+    mensagem;
+
+  elemento.style.color =
+    erro
+      ? "#fca5a5"
+      : "#93c5fd";
+
+}
+
+/* =========================
+   ENVIAR AVALIAÇÃO
+========================= */
+
+async function enviarAvaliacao() {
+
+  if (!supabaseClient) {
+
+    mostrarMensagemAvaliacao(
+      "Não foi possível conectar ao sistema de avaliações.",
+      true
+    );
+
+    return;
+  }
+
+  if (!notaSelecionada) {
+
+    mostrarMensagemAvaliacao(
+      "Escolha uma nota de 1 a 5 estrelas.",
+      true
+    );
+
+    return;
+  }
+
+  const comentario =
+    document
+      .getElementById("ratingComment")
+      .value
+      .trim();
+
+  try {
+
+    const { error } =
+      await supabaseClient
+        .from("avaliacoes")
+        .insert([
+          {
             nota: notaSelecionada,
             comentario: comentario
-          }]);
+          }
+        ]);
 
-        if (error) throw error;
+    if (error) {
+      throw error;
+    }
 
-        document.getElementById("ratingComment").value = "";
-        notaSelecionada = 0;
-        document.querySelectorAll(".star-btn").forEach(botao => {
-          botao.classList.remove("active");
-        });
+    document
+      .getElementById("ratingComment")
+      .value = "";
 
-        mostrarMensagemAvaliacao("Avaliação enviada com sucesso! 💙");
-        carregarAvaliacoes();
-      } catch (erro) {
+    notaSelecionada = 0;
+
+    document
+      .querySelectorAll(".star-btn")
+      .forEach(botao => {
+        botao.classList.remove("active");
+      });
+
+    mostrarMensagemAvaliacao(
+      "Avaliação enviada com sucesso! 💙"
+    );
+
+    carregarAvaliacoes();
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao enviar avaliação:",
+      erro
+    );
+
+    mostrarMensagemAvaliacao(
+      "Não foi possível enviar a avaliação. Verifique o Supabase.",
+      true
+    );
+
+  }
+
+}
+
+/* =========================
+   CARREGAR AVALIAÇÕES
+========================= */
+
+async function carregarAvaliacoes() {
+
+  const average =
+    document.getElementById("ratingAverage");
+
+  const list =
+    document.getElementById("reviewsList");
+
+  if (!supabaseClient) {
+
+    average.innerHTML =
+      "⭐ Sistema de avaliações indisponível.";
+
+    list.innerHTML = "";
+
+    return;
+  }
+
+  try {
+
+    const { data, error } =
+      await supabaseClient
+        .from("avaliacoes")
+        .select(
+          "id,nota,comentario,created_at"
+        )
+        .order(
+          "created_at",
+          {
+            ascending: false
+          }
+        );
+
+    if (error) {
+      throw error;
+    }
+
+    const avaliacoes =
+      data || [];
+
+    const total =
+      avaliacoes.length;
+
+    const soma =
+      avaliacoes.reduce(
+        (acc, item) =>
+          acc + Number(item.nota || 0),
+        0
+      );
+
+    const media =
+      total
+        ? (soma / total).toFixed(1)
+        : "0.0";
+
+    average.innerHTML = `
+      <strong>⭐ ${media}/5</strong>
+      <br>
+      ${total} avaliação${total === 1 ? "" : "ões"}
+    `;
+
+    if (!total) {
+
+      list.innerHTML =
+        '<p class="rating-info">Ainda não há avaliações. Seja a primeira pessoa a avaliar! 💙</p>';
+
+      return;
+    }
+
+    list.innerHTML =
+      avaliacoes
+        .map(item => {
+
+          const nota =
+            Math.max(
+              1,
+              Math.min(
+                5,
+                Number(item.nota)
+              )
+            );
+
+          const estrelas =
+            "★".repeat(nota) +
+            "☆".repeat(5 - nota);
+
+          const comentario =
+            escapeHTML(
+              item.comentario ||
+              "Sem comentário."
+            );
+
+          const data =
+            item.created_at
+              ? new Date(
+                  item.created_at
+                ).toLocaleDateString(
+                  "pt-BR"
+                )
+              : "";
+
+          return `
+            <div class="review-card">
+
+              <div class="review-stars">
+                ${estrelas}
+              </div>
+
+              <p>
+                ${comentario}
+              </p>
+
+              <div class="review-date">
+                ${data}
+              </div>
+
+            </div>
+          `;
+
+        })
+        .join("");
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao carregar avaliações:",
+      erro
+    );
+
+    average.textContent =
+      "Não foi possível carregar as avaliações.";
+
+    list.innerHTML = "";
+
+  }
+
+}
+
+/* =========================
+   CARREGAR AO ABRIR O SITE
+========================= */
+
+carregarAvaliacoes();      } catch (erro) {
         console.error(erro);
         mostrarMensagemAvaliacao(
           "Não foi possível enviar a avaliação agora. Verifique a configuração do Supabase.",
