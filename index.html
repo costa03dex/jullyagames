@@ -25,10 +25,6 @@
       min-height: 100vh;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
-
     header {
       width: 100%;
       padding: 20px 7%;
@@ -73,10 +69,6 @@
       color: white;
     }
 
-    /* =========================
-       HERO
-    ========================= */
-
     .hero {
       text-align: center;
       padding: 90px 20px 55px;
@@ -117,10 +109,6 @@
       flex-wrap: wrap;
     }
 
-    /* =========================
-       BOTÕES
-    ========================= */
-
     .btn {
       border: none;
       padding: 14px 22px;
@@ -151,10 +139,6 @@
       background: #ffffff18;
     }
 
-    /* =========================
-       ESTATÍSTICAS
-    ========================= */
-
     .stats {
       max-width: 900px;
       margin: 0 auto 60px;
@@ -182,10 +166,6 @@
       color: #999;
     }
 
-    /* =========================
-       CONTAINER
-    ========================= */
-
     .container {
       max-width: 1150px;
       margin: auto;
@@ -196,10 +176,6 @@
       font-size: 28px;
       margin: 45px 0 20px;
     }
-
-    /* =========================
-       DESTAQUE
-    ========================= */
 
     .featured {
       display: grid;
@@ -236,10 +212,6 @@
       margin-bottom: 20px;
     }
 
-    /* =========================
-       PESQUISA
-    ========================= */
-
     .search-box {
       margin-bottom: 25px;
     }
@@ -258,10 +230,6 @@
     .search-box input:focus {
       border-color: #2563eb;
     }
-
-    /* =========================
-       JOGOS
-    ========================= */
 
     .games-grid {
       display: grid;
@@ -321,10 +289,6 @@
       width: 100%;
     }
 
-    /* =========================
-       FUTURO
-    ========================= */
-
     .future {
       margin-top: 35px;
       text-align: center;
@@ -333,10 +297,6 @@
       border-radius: 20px;
       color: #888;
     }
-
-    /* =========================
-       BIBLIOTECA
-    ========================= */
 
     #biblioteca {
       margin-top: 80px;
@@ -347,10 +307,6 @@
     #biblioteca .section-title {
       margin-top: 0;
     }
-
-    /* =========================
-       RODAPÉ
-    ========================= */
 
     footer {
       border-top: 1px solid #ffffff10;
@@ -369,10 +325,6 @@
       font-weight: bold;
       font-size: 18px;
     }
-
-    /* =========================
-       MODAIS
-    ========================= */
 
     .modal {
       display: none;
@@ -421,10 +373,6 @@
       justify-content: center;
     }
 
-    /* =========================
-       RESPONSIVO
-    ========================= */
-
     @media (max-width: 800px) {
 
       .games-grid {
@@ -448,10 +396,6 @@
       }
 
     }
-
-    /* =========================
-       AVALIAÇÕES
-    ========================= */
 
     .rating-section {
       margin-top: 80px;
@@ -554,10 +498,6 @@
       margin-top: 8px;
     }
 
-    /* =========================
-       AVISO CELULAR
-    ========================= */
-
     .mobile-warning {
       display: none;
       position: fixed;
@@ -589,14 +529,6 @@
       margin-top: 15px;
     }
 
-    .library-extra {
-      margin-top: 20px;
-    }
-
-    .library-extra iframe {
-      display: block;
-    }
-
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -604,10 +536,6 @@
 </head>
 
 <body>
-
-  <!-- =========================
-       AVISO CELULAR
-  ========================= -->
 
   <div class="mobile-warning" id="mobileWarning">
 
@@ -630,10 +558,6 @@
     </button>
 
   </div>
-
-  <!-- =========================
-       CABEÇALHO
-  ========================= -->
 
   <header>
 
@@ -662,10 +586,6 @@
     </nav>
 
   </header>
-
-  <!-- =========================
-       HERO
-  ========================= -->
 
   <section class="hero">
 
@@ -718,10 +638,6 @@
 
   </section>
 
-  <!-- =========================
-       ESTATÍSTICAS
-  ========================= -->
-
   <div class="stats">
 
     <div class="stat">
@@ -761,10 +677,6 @@
     </div>
 
   </div>
-
-  <!-- =========================
-       MEUS JOGOS
-  ========================= -->
 
   <main
     class="container"
@@ -824,8 +736,6 @@
       id="gamesGrid"
     >
 
-      <!-- JOGO DE MISTÉRIO -->
-
       <article
         class="game-card"
         data-name="misterio investigação aventura"
@@ -858,8 +768,6 @@
 
       </article>
 
-      <!-- PET WORLD -->
-
       <article
         class="game-card"
         data-name="pet world bichinho animal"
@@ -891,8 +799,6 @@
         </button>
 
       </article>
-
-      <!-- NÃO CLIQUE -->
 
       <article
         class="game-card"
@@ -945,10 +851,6 @@
 
   </main>
 
-  <!-- =========================
-       BIBLIOTECA
-  ========================= -->
-
   <section
     class="container"
     id="biblioteca"
@@ -970,8 +872,6 @@
     </p>
 
     <div class="games-grid">
-
-      <!-- MINECRAFT -->
 
       <article
         class="game-card"
@@ -1004,8 +904,6 @@
 
       </article>
 
-      <!-- SKRIBBL.IO -->
-
       <article
         class="game-card"
         data-name="skribbl desenho adivinhe palavras"
@@ -1036,8 +934,6 @@
         </button>
 
       </article>
-
-      <!-- GEOGUESSR -->
 
       <article
         class="game-card"
@@ -1070,8 +966,6 @@
 
       </article>
 
-      <!-- SLOW ROADS -->
-
       <article
         class="game-card"
         data-name="slow roads estrada dirigir carro"
@@ -1102,8 +996,6 @@
         </button>
 
       </article>
-
-      <!-- AMONG US -->
 
       <article
         class="game-card"
@@ -1136,8 +1028,6 @@
 
       </article>
 
-      <!-- GTA VICE CITY -->
-
       <article
         class="game-card"
         data-name="gta vice city online cidade ação"
@@ -1168,8 +1058,6 @@
         </button>
 
       </article>
-
-      <!-- GEOMETRY DASH -->
 
       <article
         class="game-card"
@@ -1202,8 +1090,6 @@
 
       </article>
 
-      <!-- SUBWAY SURFERS -->
-
       <article
         class="game-card"
         data-name="subway surfers corrida corrida infinita"
@@ -1234,8 +1120,6 @@
         </button>
 
       </article>
-
-      <!-- FIFA 2007 -->
 
       <article
         class="game-card"
@@ -1271,10 +1155,6 @@
     </div>
 
   </section>
-
-  <!-- =========================
-       AVALIAÇÕES
-  ========================= -->
 
   <section
     class="container rating-section"
@@ -1379,10 +1259,6 @@
 
   </section>
 
-  <!-- =========================
-       RODAPÉ
-  ========================= -->
-
   <footer>
 
     🎮
@@ -1406,10 +1282,6 @@
     </strong>
 
   </footer>
-
-  <!-- =========================
-       MODAL BIBLIOTECA
-  ========================= -->
 
   <div
     class="modal"
@@ -1456,10 +1328,6 @@
 
   </div>
 
-  <!-- =========================
-       MODAL DOS JOGOS
-  ========================= -->
-
   <div
     class="modal"
     id="gameModal"
@@ -1503,10 +1371,6 @@
     </div>
 
   </div>
-
-  <!-- =========================
-       MODAL SOBRE
-  ========================= -->
 
   <div
     class="modal"
@@ -1562,10 +1426,6 @@
 
   </div>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
 
     /* =========================
@@ -1602,6 +1462,7 @@
       }
 
     };
+
 
     /* =========================
        BIBLIOTECA
@@ -1692,324 +1553,13 @@
 
     };
 
+
     let jogoBibliotecaSelecionado = null;
-
-    /* =========================
-       ABRIR BIBLIOTECA
-    ========================= */
-
-    function abrirBiblioteca(id) {
-
-      const jogo = biblioteca[id];
-
-      if (!jogo) return;
-
-      jogoBibliotecaSelecionado = jogo;
-
-      document
-        .getElementById("libraryModalIcon")
-        .textContent = jogo.icon;
-
-      document
-        .getElementById("libraryModalTitle")
-        .textContent = jogo.nome;
-
-      document
-        .getElementById("libraryModalDescription")
-        .textContent = jogo.descricao;
-
-      document
-        .getElementById("libraryModal")
-        .classList.add("active");
-
-    }
-
-    function confirmarBiblioteca() {
-
-      if (!jogoBibliotecaSelecionado) return;
-
-      window.open(
-        jogoBibliotecaSelecionado.url,
-        "_blank",
-        "noopener,noreferrer"
-      );
-
-      fecharBibliotecaModal();
-
-    }
-
-    function fecharBibliotecaModal() {
-
-      document
-        .getElementById("libraryModal")
-        .classList.remove("active");
-
-      jogoBibliotecaSelecionado = null;
-
-    }
-
-    function irParaBiblioteca() {
-
-      document
-        .getElementById("biblioteca")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }
-
-    /* =========================
-       ABRIR MEUS JOGOS
-    ========================= */
-
     let jogoSelecionado = null;
 
-    function abrirJogo(id) {
-
-      const jogo = jogos[id];
-
-      if (!jogo) return;
-
-      jogoSelecionado = jogo;
-
-      document
-        .getElementById("modalIcon")
-        .textContent = jogo.icon;
-
-      document
-        .getElementById("modalTitle")
-        .textContent = jogo.nome;
-
-      document
-        .getElementById("modalDescription")
-        .textContent = jogo.descricao;
-
-      document
-        .getElementById("gameModal")
-        .classList.add("active");
-
-    }
 
     /* =========================
-       CONFIRMAR MEU JOGO
-    ========================= */
-
-    function confirmarJogo() {
-
-      if (!jogoSelecionado) return;
-
-      window.location.href =
-        jogoSelecionado.url;
-
-    }
-
-    /* =========================
-       FECHAR MODAL
-    ========================= */
-
-    function fecharModal() {
-
-      document
-        .getElementById("gameModal")
-        .classList.remove("active");
-
-      jogoSelecionado = null;
-
-    }
-
-    /* =========================
-       SOBRE
-    ========================= */
-
-    function mostrarSobre() {
-
-      document
-        .getElementById("aboutModal")
-        .classList.add("active");
-
-    }
-
-    function fecharSobre() {
-
-      document
-        .getElementById("aboutModal")
-        .classList.remove("active");
-
-    }
-
-    /* =========================
-       IR PARA MEUS JOGOS
-    ========================= */
-
-    function irParaJogos() {
-
-      document
-        .getElementById("jogos")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }
-
-    /* =========================
-       PESQUISA
-    ========================= */
-
-    function pesquisarJogos() {
-
-      const texto =
-        document
-          .getElementById("searchInput")
-          .value
-          .toLowerCase();
-
-      const cards =
-        document.querySelectorAll(
-          "#jogos .game-card"
-        );
-
-      cards.forEach(card => {
-
-        const nome =
-          card.dataset.name.toLowerCase();
-
-        if (nome.includes(texto)) {
-
-          card.style.display = "";
-
-        } else {
-
-          card.style.display = "none";
-
-        }
-
-      });
-
-    }
-
-    /* =========================
-       FECHAR MODAL BIBLIOTECA
-    ========================= */
-
-    document
-      .getElementById("libraryModal")
-      .addEventListener(
-        "click",
-        function(e) {
-
-          if (e.target === this) {
-
-            fecharBibliotecaModal();
-
-          }
-
-        }
-      );
-
-    /* =========================
-       FECHAR MODAL JOGOS
-    ========================= */
-
-    document
-      .getElementById("gameModal")
-      .addEventListener(
-        "click",
-        function(e) {
-
-          if (e.target === this) {
-
-            fecharModal();
-
-          }
-
-        }
-      );
-
-    /* =========================
-       FECHAR MODAL SOBRE
-    ========================= */
-
-    document
-      .getElementById("aboutModal")
-      .addEventListener(
-        "click",
-        function(e) {
-
-          if (e.target === this) {
-
-            fecharSobre();
-
-          }
-
-        }
-      );
-
-    /* =========================
-       TECLA ESC
-    ========================= */
-
-    document.addEventListener(
-      "keydown",
-      function(e) {
-
-        if (e.key === "Escape") {
-
-          fecharModal();
-          fecharBibliotecaModal();
-          fecharSobre();
-
-        }
-
-      }
-    );
-
-    /* =========================
-       IR PARA AVALIAÇÕES
-    ========================= */
-
-    function irParaAvaliacoes() {
-
-      document
-        .getElementById("avaliacoes")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }
-
-    /* =========================
-       AVISO CELULAR
-    ========================= */
-
-    function verificarCelular() {
-
-      const celular =
-        /Android|iPhone|iPad|iPod|Mobile/i.test(
-          navigator.userAgent
-        );
-
-      if (celular) {
-
-        document
-          .getElementById("mobileWarning")
-          .style.display = "block";
-
-      }
-
-    }
-
-    function fecharAvisoCelular() {
-
-      document
-        .getElementById("mobileWarning")
-        .style.display = "none";
-
-    }
-
-    verificarCelular();
-
-    /* =========================
-       SUPABASE - AVALIAÇÕES
+       SUPABASE
     ========================= */
 
     const SUPABASE_URL =
@@ -2021,6 +1571,7 @@
     let supabaseClient = null;
 
     let notaSelecionada = 0;
+
 
     if (
       SUPABASE_URL &&
@@ -2036,47 +1587,788 @@
 
     }
 
+
+    /* =========================
+       ANALYTICS
+    ========================= */
+
+    function gerarVisitorId() {
+
+      let visitorId =
+        localStorage.getItem(
+          "jullya_visitor_id"
+        );
+
+      if (!visitorId) {
+
+        if (
+          window.crypto &&
+          crypto.randomUUID
+        ) {
+
+          visitorId =
+            crypto.randomUUID();
+
+        } else {
+
+          visitorId =
+            "visitor-" +
+            Date.now() +
+            "-" +
+            Math.random()
+              .toString(36)
+              .substring(2);
+
+        }
+
+        localStorage.setItem(
+          "jullya_visitor_id",
+          visitorId
+        );
+
+      }
+
+      return visitorId;
+
+    }
+
+
+    /* =========================
+       REGISTRAR VISITA
+    ========================= */
+
+    async function registrarVisita() {
+
+      if (!supabaseClient) return;
+
+      const visitorId =
+        gerarVisitorId();
+
+      try {
+
+        const { error } =
+          await supabaseClient
+            .from("visitas")
+            .insert({
+
+              visitor_id:
+                visitorId
+
+            });
+
+        if (error) {
+
+          console.error(
+            "Erro ao registrar visita:",
+            error
+          );
+
+        }
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao registrar visita:",
+          erro
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       REGISTRAR EVENTO
+    ========================= */
+
+    async function registrarEventoJogo(
+      jogo,
+      tipo = "abriu"
+    ) {
+
+      if (!supabaseClient) return;
+
+      try {
+
+        const { error } =
+          await supabaseClient
+            .from("eventos_jogos")
+            .insert({
+
+              jogo:
+                jogo,
+
+              tipo:
+                tipo
+
+            });
+
+        if (error) {
+
+          console.error(
+            "Erro ao registrar evento:",
+            error
+          );
+
+        }
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao registrar evento:",
+          erro
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       JOGADOR ONLINE
+    ========================= */
+
+    let sessaoJogo = null;
+
+    async function iniciarJogadorOnline(
+      jogo
+    ) {
+
+      if (!supabaseClient) return;
+
+      if (
+        window.crypto &&
+        crypto.randomUUID
+      ) {
+
+        sessaoJogo =
+          crypto.randomUUID();
+
+      } else {
+
+        sessaoJogo =
+          "session-" +
+          Date.now() +
+          "-" +
+          Math.random()
+            .toString(36)
+            .substring(2);
+
+      }
+
+      try {
+
+        const { error } =
+          await supabaseClient
+            .from("jogadores_online")
+            .insert({
+
+              session_id:
+                sessaoJogo,
+
+              jogo:
+                jogo,
+
+              ultima_atividade:
+                new Date().toISOString()
+
+            });
+
+        if (error) {
+
+          console.error(
+            "Erro ao registrar jogador online:",
+            error
+          );
+
+        }
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao registrar jogador online:",
+          erro
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       ATUALIZAR ONLINE
+    ========================= */
+
+    async function atualizarJogadorOnline() {
+
+      if (
+        !supabaseClient ||
+        !sessaoJogo
+      ) return;
+
+      try {
+
+        const { error } =
+          await supabaseClient
+            .from("jogadores_online")
+            .update({
+
+              ultima_atividade:
+                new Date().toISOString()
+
+            })
+            .eq(
+              "session_id",
+              sessaoJogo
+            );
+
+        if (error) {
+
+          console.error(
+            "Erro ao atualizar jogador online:",
+            error
+          );
+
+        }
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao atualizar jogador online:",
+          erro
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       REGISTRAR VISITA
+    ========================= */
+
+    registrarVisita();
+
+
+    /* =========================
+       ABRIR BIBLIOTECA
+    ========================= */
+
+    function abrirBiblioteca(id) {
+
+      const jogo =
+        biblioteca[id];
+
+      if (!jogo) return;
+
+      jogoBibliotecaSelecionado =
+        jogo;
+
+      document
+        .getElementById(
+          "libraryModalIcon"
+        )
+        .textContent =
+        jogo.icon;
+
+      document
+        .getElementById(
+          "libraryModalTitle"
+        )
+        .textContent =
+        jogo.nome;
+
+      document
+        .getElementById(
+          "libraryModalDescription"
+        )
+        .textContent =
+        jogo.descricao;
+
+      document
+        .getElementById(
+          "libraryModal"
+        )
+        .classList.add(
+          "active"
+        );
+
+    }
+
+
+    /* =========================
+       CONFIRMAR BIBLIOTECA
+    ========================= */
+
+    async function confirmarBiblioteca() {
+
+      if (
+        !jogoBibliotecaSelecionado
+      ) return;
+
+      const jogo =
+        jogoBibliotecaSelecionado.nome;
+
+      await registrarEventoJogo(
+        jogo,
+        "abriu"
+      );
+
+      await iniciarJogadorOnline(
+        jogo
+      );
+
+      window.open(
+        jogoBibliotecaSelecionado.url,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+      fecharBibliotecaModal();
+
+    }
+
+
+    function fecharBibliotecaModal() {
+
+      document
+        .getElementById(
+          "libraryModal"
+        )
+        .classList.remove(
+          "active"
+        );
+
+      jogoBibliotecaSelecionado =
+        null;
+
+    }
+
+
+    function irParaBiblioteca() {
+
+      document
+        .getElementById(
+          "biblioteca"
+        )
+        .scrollIntoView({
+          behavior:
+            "smooth"
+        });
+
+    }
+
+
+    /* =========================
+       ABRIR MEUS JOGOS
+    ========================= */
+
+    function abrirJogo(id) {
+
+      const jogo =
+        jogos[id];
+
+      if (!jogo) return;
+
+      jogoSelecionado =
+        jogo;
+
+      document
+        .getElementById(
+          "modalIcon"
+        )
+        .textContent =
+        jogo.icon;
+
+      document
+        .getElementById(
+          "modalTitle"
+        )
+        .textContent =
+        jogo.nome;
+
+      document
+        .getElementById(
+          "modalDescription"
+        )
+        .textContent =
+        jogo.descricao;
+
+      document
+        .getElementById(
+          "gameModal"
+        )
+        .classList.add(
+          "active"
+        );
+
+    }
+
+
+    /* =========================
+       CONFIRMAR MEU JOGO
+    ========================= */
+
+    async function confirmarJogo() {
+
+      if (!jogoSelecionado)
+        return;
+
+      const jogo =
+        jogoSelecionado.nome;
+
+      await registrarEventoJogo(
+        jogo,
+        "abriu"
+      );
+
+      await iniciarJogadorOnline(
+        jogo
+      );
+
+      window.location.href =
+        jogoSelecionado.url;
+
+    }
+
+
+    /* =========================
+       FECHAR MODAL
+    ========================= */
+
+    function fecharModal() {
+
+      document
+        .getElementById(
+          "gameModal"
+        )
+        .classList.remove(
+          "active"
+        );
+
+      jogoSelecionado =
+        null;
+
+    }
+
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    function mostrarSobre() {
+
+      document
+        .getElementById(
+          "aboutModal"
+        )
+        .classList.add(
+          "active"
+        );
+
+    }
+
+
+    function fecharSobre() {
+
+      document
+        .getElementById(
+          "aboutModal"
+        )
+        .classList.remove(
+          "active"
+        );
+
+    }
+
+
+    /* =========================
+       IR PARA JOGOS
+    ========================= */
+
+    function irParaJogos() {
+
+      document
+        .getElementById(
+          "jogos"
+        )
+        .scrollIntoView({
+          behavior:
+            "smooth"
+        });
+
+    }
+
+
+    /* =========================
+       PESQUISA
+    ========================= */
+
+    function pesquisarJogos() {
+
+      const texto =
+        document
+          .getElementById(
+            "searchInput"
+          )
+          .value
+          .toLowerCase();
+
+      const cards =
+        document.querySelectorAll(
+          "#jogos .game-card"
+        );
+
+      cards.forEach(
+        card => {
+
+          const nome =
+            card.dataset.name
+              .toLowerCase();
+
+          if (
+            nome.includes(texto)
+          ) {
+
+            card.style.display =
+              "";
+
+          } else {
+
+            card.style.display =
+              "none";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* =========================
+       FECHAR MODAL BIBLIOTECA
+    ========================= */
+
+    document
+      .getElementById(
+        "libraryModal"
+      )
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (
+            e.target === this
+          ) {
+
+            fecharBibliotecaModal();
+
+          }
+
+        }
+      );
+
+
+    /* =========================
+       FECHAR MODAL JOGOS
+    ========================= */
+
+    document
+      .getElementById(
+        "gameModal"
+      )
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (
+            e.target === this
+          ) {
+
+            fecharModal();
+
+          }
+
+        }
+      );
+
+
+    /* =========================
+       FECHAR MODAL SOBRE
+    ========================= */
+
+    document
+      .getElementById(
+        "aboutModal"
+      )
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (
+            e.target === this
+          ) {
+
+            fecharSobre();
+
+          }
+
+        }
+      );
+
+
+    /* =========================
+       ESC
+    ========================= */
+
+    document.addEventListener(
+      "keydown",
+      function(e) {
+
+        if (
+          e.key === "Escape"
+        ) {
+
+          fecharModal();
+          fecharBibliotecaModal();
+          fecharSobre();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       AVALIAÇÕES
+    ========================= */
+
+    function irParaAvaliacoes() {
+
+      document
+        .getElementById(
+          "avaliacoes"
+        )
+        .scrollIntoView({
+          behavior:
+            "smooth"
+        });
+
+    }
+
+
+    /* =========================
+       AVISO CELULAR
+    ========================= */
+
+    function verificarCelular() {
+
+      const celular =
+        /Android|iPhone|iPad|iPod|Mobile/i.test(
+          navigator.userAgent
+        );
+
+      if (celular) {
+
+        document
+          .getElementById(
+            "mobileWarning"
+          )
+          .style.display =
+          "block";
+
+      }
+
+    }
+
+
+    function fecharAvisoCelular() {
+
+      document
+        .getElementById(
+          "mobileWarning"
+        )
+        .style.display =
+        "none";
+
+    }
+
+
+    verificarCelular();
+
+
     /* =========================
        ESCOLHER NOTA
     ========================= */
 
-    function selecionarNota(nota) {
+    function selecionarNota(
+      nota
+    ) {
 
-      notaSelecionada = nota;
+      notaSelecionada =
+        nota;
 
       document
-        .querySelectorAll(".star-btn")
-        .forEach(botao => {
+        .querySelectorAll(
+          ".star-btn"
+        )
+        .forEach(
+          botao => {
 
-          const valor =
-            Number(botao.dataset.rating);
+            const valor =
+              Number(
+                botao.dataset.rating
+              );
 
-          botao.classList.toggle(
-            "active",
-            valor <= nota
-          );
+            botao.classList.toggle(
+              "active",
+              valor <= nota
+            );
 
-        });
+          }
+        );
 
     }
+
 
     /* =========================
        PROTEGER COMENTÁRIOS
     ========================= */
 
-    function escapeHTML(texto) {
+    function escapeHTML(
+      texto
+    ) {
 
-      return String(texto || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+      return String(
+        texto || ""
+      )
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
 
     }
 
+
     /* =========================
-       MENSAGEM
+       MENSAGEM AVALIAÇÃO
     ========================= */
 
     function mostrarMensagemAvaliacao(
@@ -2099,6 +2391,7 @@
 
     }
 
+
     /* =========================
        ENVIAR AVALIAÇÃO
     ========================= */
@@ -2116,6 +2409,7 @@
 
       }
 
+
       if (!notaSelecionada) {
 
         mostrarMensagemAvaliacao(
@@ -2127,49 +2421,83 @@
 
       }
 
+
       const comentario =
         document
-          .getElementById("ratingComment")
+          .getElementById(
+            "ratingComment"
+          )
           .value
           .trim();
+
 
       try {
 
         const { error } =
           await supabaseClient
-            .from("avaliacoes")
+            .from(
+              "avaliacoes"
+            )
             .insert([
+
               {
-                nota: notaSelecionada,
-                comentario: comentario
+                nota:
+                  notaSelecionada,
+
+                comentario:
+                  comentario
               }
+
             ]);
 
+
         if (error) {
+
           throw error;
+
         }
 
-        document
-          .getElementById("ratingComment")
-          .value = "";
-
-        notaSelecionada = 0;
 
         document
-          .querySelectorAll(".star-btn")
-          .forEach(botao => {
+          .getElementById(
+            "ratingComment"
+          )
+          .value =
+          "";
 
-            botao.classList.remove(
-              "active"
-            );
 
-          });
+        notaSelecionada =
+          0;
+
+
+        document
+          .querySelectorAll(
+            ".star-btn"
+          )
+          .forEach(
+            botao => {
+
+              botao.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
 
         mostrarMensagemAvaliacao(
           "Avaliação enviada com sucesso! 💙"
         );
 
+
+        await registrarEventoJogo(
+          "Jullya Games",
+          "avaliou"
+        );
+
+
         carregarAvaliacoes();
+
 
       } catch (erro) {
 
@@ -2177,6 +2505,7 @@
           "Erro ao enviar avaliação:",
           erro
         );
+
 
         mostrarMensagemAvaliacao(
           "Não foi possível enviar a avaliação. Verifique o Supabase.",
@@ -2186,6 +2515,7 @@
       }
 
     }
+
 
     /* =========================
        CARREGAR AVALIAÇÕES
@@ -2203,61 +2533,91 @@
           "reviewsList"
         );
 
+
       if (!supabaseClient) {
 
         average.innerHTML =
           "⭐ Sistema de avaliações indisponível.";
 
-        list.innerHTML = "";
+        list.innerHTML =
+          "";
 
         return;
 
       }
 
+
       try {
 
         const { data, error } =
           await supabaseClient
-            .from("avaliacoes")
+            .from(
+              "avaliacoes"
+            )
             .select(
               "id,nota,comentario,created_at"
             )
             .order(
               "created_at",
               {
-                ascending: false
+                ascending:
+                  false
               }
             );
 
+
         if (error) {
+
           throw error;
+
         }
+
 
         const avaliacoes =
           data || [];
 
+
         const total =
           avaliacoes.length;
 
+
         const soma =
           avaliacoes.reduce(
-            (acc, item) =>
-              acc + Number(
-                item.nota || 0
+            (
+              acc,
+              item
+            ) =>
+              acc +
+              Number(
+                item.nota ||
+                0
               ),
             0
           );
 
+
         const media =
           total
-            ? (soma / total).toFixed(1)
+            ? (
+                soma /
+                total
+              ).toFixed(1)
             : "0.0";
 
+
         average.innerHTML = `
-          <strong>⭐ ${media}/5</strong>
+
+          <strong>
+            ⭐ ${media}/5
+          </strong>
+
           <br>
-          ${total} avaliação${total === 1 ? "" : "ões"}
+
+          ${total}
+          avaliação${total === 1 ? "" : "ões"}
+
         `;
+
 
         if (!total) {
 
@@ -2268,60 +2628,75 @@
 
         }
 
+
         list.innerHTML =
           avaliacoes
-            .map(item => {
+            .map(
+              item => {
 
-              const nota =
-                Math.max(
-                  1,
-                  Math.min(
-                    5,
-                    Number(item.nota)
-                  )
-                );
-
-              const estrelas =
-                "★".repeat(nota) +
-                "☆".repeat(
-                  5 - nota
-                );
-
-              const comentario =
-                escapeHTML(
-                  item.comentario ||
-                  "Sem comentário."
-                );
-
-              const data =
-                item.created_at
-                  ? new Date(
-                      item.created_at
-                    ).toLocaleDateString(
-                      "pt-BR"
+                const nota =
+                  Math.max(
+                    1,
+                    Math.min(
+                      5,
+                      Number(
+                        item.nota
+                      )
                     )
-                  : "";
+                  );
 
-              return `
-                <div class="review-card">
 
-                  <div class="review-stars">
-                    ${estrelas}
+                const estrelas =
+                  "★".repeat(
+                    nota
+                  ) +
+                  "☆".repeat(
+                    5 -
+                    nota
+                  );
+
+
+                const comentario =
+                  escapeHTML(
+                    item.comentario ||
+                    "Sem comentário."
+                  );
+
+
+                const data =
+                  item.created_at
+                    ? new Date(
+                        item.created_at
+                      ).toLocaleDateString(
+                        "pt-BR"
+                      )
+                    : "";
+
+
+                return `
+
+                  <div class="review-card">
+
+                    <div class="review-stars">
+                      ${estrelas}
+                    </div>
+
+                    <p>
+                      ${comentario}
+                    </p>
+
+                    <div class="review-date">
+                      ${data}
+                    </div>
+
                   </div>
 
-                  <p>
-                    ${comentario}
-                  </p>
+                `;
 
-                  <div class="review-date">
-                    ${data}
-                  </div>
-
-                </div>
-              `;
-
-            })
+              }
+            )
             .join("");
+
 
       } catch (erro) {
 
@@ -2330,17 +2705,32 @@
           erro
         );
 
+
         average.textContent =
           "Não foi possível carregar as avaliações.";
 
-        list.innerHTML = "";
+
+        list.innerHTML =
+          "";
 
       }
 
     }
 
+
     /* =========================
-       CARREGAR AO ABRIR O SITE
+       ATUALIZAR JOGADOR ONLINE
+       A CADA 30 SEGUNDOS
+    ========================= */
+
+    setInterval(
+      atualizarJogadorOnline,
+      30000
+    );
+
+
+    /* =========================
+       CARREGAR AVALIAÇÕES
     ========================= */
 
     carregarAvaliacoes();
