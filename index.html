@@ -1,1981 +1,2792 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jullya Games 🎮</title>
+  <title>Jullya Games 🎮</title>
 
-<style>
+  <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
-    background:
-        radial-gradient(circle at top left,#0d2a5c,transparent 35%),
-        radial-gradient(circle at bottom right,#061a3d,transparent 35%),
+    body {
+      background:
+        radial-gradient(circle at top left, #0d2a5c, transparent 35%),
+        radial-gradient(circle at bottom right, #061a3d, transparent 35%),
         #070b15;
-}
 
-/* =========================
-   HEADER
-========================= */
-
-header{
-    padding:20px 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(7,11,21,.9);
-    border-bottom:1px solid #ffffff10;
-    backdrop-filter:blur(10px);
-}
-
-.logo{
-    font-size:25px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#3b82f6;
-}
-
-nav{
-    display:flex;
-    gap:8px;
-}
-
-nav button{
-    background:transparent;
-    border:none;
-    color:#ddd;
-    padding:10px 13px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:14px;
-    transition:.2s;
-}
-
-nav button:hover{
-    background:#ffffff12;
-    color:white;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    text-align:center;
-    padding:90px 20px 55px;
-}
-
-.hero h1{
-    font-size:clamp(45px,8vw,80px);
-    margin-bottom:18px;
-    background:linear-gradient(90deg,#fff,#60a5fa);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.hero p{
-    max-width:650px;
-    margin:auto;
-    color:#aaa;
-    font-size:18px;
-    line-height:1.6;
-}
-
-.buttons{
-    margin-top:30px;
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    border:none;
-    border-radius:12px;
-    padding:13px 20px;
-    font-weight:bold;
-    cursor:pointer;
-    font-size:15px;
-    transition:.2s;
-}
-
-.btn-primary{
-    background:#2563eb;
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#3b82f6;
-    transform:translateY(-2px);
-}
-
-.btn-secondary{
-    background:#ffffff10;
-    color:white;
-    border:1px solid #ffffff15;
-}
-
-.btn-secondary:hover{
-    background:#ffffff18;
-}
-
-/* =========================
-   STATS
-========================= */
-
-.stats{
-    max-width:900px;
-    margin:20px auto 70px;
-    padding:0 20px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.stat{
-    background:#ffffff08;
-    border:1px solid #ffffff10;
-    border-radius:16px;
-    padding:22px;
-    text-align:center;
-}
-
-.stat h2{
-    font-size:28px;
-    margin-bottom:7px;
-}
-
-.stat p{
-    color:#888;
-}
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:0 20px 70px;
-}
-
-.section-title{
-    font-size:28px;
-    margin-bottom:25px;
-}
-
-/* =========================
-   FEATURED
-========================= */
-
-.featured{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-    background:linear-gradient(135deg,#2563eb22,#ffffff08);
-    border:1px solid #ffffff12;
-    border-radius:25px;
-    padding:30px;
-    margin-bottom:60px;
-}
-
-.featured-text h2{
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.featured-text p{
-    color:#aaa;
-    line-height:1.6;
-    margin-bottom:20px;
-}
-
-.featured-image{
-    min-height:230px;
-    border-radius:18px;
-    background:
-        linear-gradient(135deg,#2563eb44,#ffffff08),
-        #0c1425;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:90px;
-    border:1px solid #ffffff10;
-}
-
-/* =========================
-   GAME CARDS
-========================= */
-
-.games{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.game-card{
-    background:#ffffff08;
-    border:1px solid #ffffff12;
-    border-radius:20px;
-    padding:25px;
-    transition:.25s;
-}
-
-.game-card:hover{
-    transform:translateY(-5px);
-    border-color:#2563eb66;
-    background:#ffffff0c;
-}
-
-.game-icon{
-    height:150px;
-    border-radius:15px;
-    background:#ffffff08;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:65px;
-    margin-bottom:20px;
-}
-
-.game-card h3{
-    font-size:21px;
-    margin-bottom:10px;
-}
-
-.game-card p{
-    color:#999;
-    line-height:1.5;
-    font-size:14px;
-    min-height:65px;
-}
-
-.tag{
-    display:inline-block;
-    margin:12px 0;
-    padding:6px 10px;
-    border-radius:20px;
-    background:#2563eb22;
-    border:1px solid #2563eb33;
-    color:#60a5fa;
-    font-size:12px;
-}
-
-/* =========================
-   FUTURO
-========================= */
-
-.future{
-    margin-top:30px;
-    padding:30px;
-    border:1px dashed #ffffff20;
-    border-radius:20px;
-    text-align:center;
-}
-
-.future h3{
-    margin-bottom:8px;
-}
-
-.future p{
-    color:#777;
-}
-
-/* =========================
-   BIBLIOTECA
-========================= */
-
-#biblioteca{
-    border-top:1px solid #ffffff10;
-    padding-top:65px;
-}
-
-.library-card{
-    background:#ffffff08;
-    border:1px solid #ffffff12;
-    border-radius:20px;
-    padding:25px;
-    margin-bottom:20px;
-    transition:.2s;
-}
-
-.library-card:hover{
-    border-color:#2563eb55;
-    transform:translateY(-3px);
-}
-
-.library-card h3{
-    margin-bottom:8px;
-}
-
-.library-card p{
-    color:#999;
-    line-height:1.5;
-}
-
-.library-button{
-    margin-top:15px;
-}
-
-/* =========================
-   AVALIAÇÕES
-========================= */
-
-#avaliacoes{
-    border-top:1px solid #ffffff10;
-    padding-top:65px;
-}
-
-.rating-box{
-    background:#ffffff08;
-    border:1px solid #ffffff12;
-    border-radius:22px;
-    padding:30px;
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-}
-
-.rating-box h2{
-    margin-bottom:10px;
-}
-
-.rating-box > p{
-    color:#999;
-    margin-bottom:22px;
-}
-
-.stars{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin-bottom:20px;
-}
-
-.star{
-    background:transparent;
-    border:none;
-    color:#444;
-    font-size:40px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.star:hover{
-    transform:scale(1.12);
-}
-
-.star.active{
-    color:#facc15;
-}
-
-textarea{
-    width:100%;
-    min-height:110px;
-    resize:vertical;
-    padding:15px;
-    border-radius:14px;
-    border:1px solid #ffffff15;
-    background:#070b15;
-    color:white;
-    outline:none;
-    font-family:inherit;
-    margin-bottom:15px;
-}
-
-textarea:focus{
-    border-color:#2563eb;
-}
-
-.rating-message{
-    margin-top:15px;
-    color:#60a5fa;
-    font-weight:bold;
-}
-
-.rating-average{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid #ffffff10;
-    color:#aaa;
-}
-
-.reviews{
-    margin-top:20px;
-    text-align:left;
-}
-
-.review{
-    background:#ffffff06;
-    border:1px solid #ffffff0c;
-    border-radius:14px;
-    padding:15px;
-    margin-top:10px;
-}
-
-.review-stars{
-    color:#facc15;
-    margin-bottom:6px;
-}
-
-.review p{
-    color:#aaa;
-    line-height:1.5;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    border-top:1px solid #ffffff10;
-    text-align:center;
-    padding:35px 20px;
-    color:#777;
-}
-
-footer strong{
-    color:white;
-}
-
-footer .blessing{
-    margin-top:8px;
-    color:#60a5fa;
-}
-
-/* =========================
-   MODAIS
-========================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.78);
-    z-index:2000;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.modal-box{
-    background:#101827;
-    border:1px solid #ffffff12;
-    border-radius:22px;
-    padding:30px;
-    max-width:700px;
-    width:100%;
-    max-height:90vh;
-    overflow:auto;
-    position:relative;
-}
-
-.close{
-    position:absolute;
-    right:18px;
-    top:15px;
-    border:none;
-    background:transparent;
-    color:#aaa;
-    font-size:25px;
-    cursor:pointer;
-}
-
-.close:hover{
-    color:white;
-}
-
-.modal-box h2{
-    margin-bottom:15px;
-}
-
-.modal-box p{
-    color:#aaa;
-    line-height:1.6;
-}
-
-/* =========================
-   IFRAME
-========================= */
-
-.game-frame{
-    position:relative;
-    width:100%;
-    max-width:900px;
-    aspect-ratio:16/9;
-    margin:20px auto 0;
-}
-
-.game-frame iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    border:none;
-    border-radius:8px;
-}
-
-/* =========================
-   AVISO CELULAR
-========================= */
-
-.mobile-warning{
-    display:none;
-    position:fixed;
-    top:85px;
-    left:50%;
-    transform:translateX(-50%);
-    width:calc(100% - 30px);
-    max-width:600px;
-    background:#101827;
-    border:1px solid #2563eb55;
-    border-radius:18px;
-    padding:20px;
-    z-index:1500;
-    box-shadow:0 15px 40px #00000055;
-}
-
-.mobile-warning h3{
-    margin-bottom:8px;
-    color:#60a5fa;
-}
-
-.mobile-warning p{
-    color:#aaa;
-    line-height:1.5;
-    font-size:14px;
-}
-
-.mobile-warning button{
-    margin-top:15px;
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
-
-@media(max-width:800px){
-
-    header{
-        padding:15px 20px;
+      color: white;
+      min-height: 100vh;
     }
 
-    nav{
-        display:none;
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      width: 100%;
+      padding: 20px 7%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: rgba(7, 11, 21, 0.9);
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
+
+      backdrop-filter: blur(12px);
     }
 
-    .stats{
-        grid-template-columns:1fr;
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
     }
 
-    .games{
-        grid-template-columns:1fr;
+    .logo span {
+      color: #3b82f6;
     }
 
-    .featured{
-        grid-template-columns:1fr;
+    nav {
+      display: flex;
+      gap: 10px;
     }
 
-    .featured-image{
-        min-height:180px;
-    }
-}
+    nav button {
+      border: none;
+      background: transparent;
 
-</style>
+      color: #ddd;
+
+      padding: 10px 16px;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      font-size: 15px;
+
+      transition: .2s;
+    }
+
+    nav button:hover {
+      background: #ffffff12;
+      color: white;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 55px;
+    }
+
+    .badge {
+      display: inline-block;
+
+      background: #3b82f620;
+
+      border: 1px solid #3b82f655;
+
+      color: #93c5fd;
+
+      padding: 8px 15px;
+
+      border-radius: 30px;
+
+      margin-bottom: 20px;
+
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 80px);
+
+      margin-bottom: 15px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #60a5fa
+        );
+
+      -webkit-background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+
+      margin: auto;
+
+      color: #aaa;
+
+      font-size: 18px;
+
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    /* =========================
+       BOTÕES
+    ========================= */
+
+    .btn {
+      border: none;
+
+      padding: 14px 22px;
+
+      border-radius: 12px;
+
+      cursor: pointer;
+
+      font-weight: bold;
+
+      font-size: 15px;
+
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+
+      background: #3b82f6;
+    }
+
+    .btn-secondary {
+      background: #ffffff0d;
+
+      color: white;
+
+      border: 1px solid #ffffff18;
+    }
+
+    .btn-secondary:hover {
+      background: #ffffff18;
+    }
+
+    /* =========================
+       ESTATÍSTICAS
+    ========================= */
+
+    .stats {
+      max-width: 900px;
+
+      margin: 0 auto 60px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+
+      padding: 0 20px;
+    }
+
+    .stat {
+      background: #ffffff08;
+
+      border: 1px solid #ffffff10;
+
+      border-radius: 16px;
+
+      padding: 25px;
+
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+
+      font-size: 30px;
+
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      color: #999;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container {
+      max-width: 1150px;
+
+      margin: auto;
+
+      padding: 0 20px 70px;
+    }
+
+    .section-title {
+      font-size: 28px;
+
+      margin: 45px 0 20px;
+    }
+
+    /* =========================
+       DESTAQUE
+    ========================= */
+
+    .featured {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb22,
+          #ffffff08
+        );
+
+      border: 1px solid #ffffff12;
+
+      border-radius: 25px;
+
+      padding: 30px;
+
+      align-items: center;
+    }
+
+    .featured-icon {
+      font-size: 100px;
+
+      text-align: center;
+
+      background: #ffffff08;
+
+      border-radius: 20px;
+
+      padding: 30px;
+    }
+
+    .featured h2 {
+      font-size: 35px;
+
+      margin-bottom: 12px;
+    }
+
+    .featured p {
+      color: #aaa;
+
+      line-height: 1.6;
+
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       PESQUISA
+    ========================= */
+
+    .search-box {
+      margin-bottom: 25px;
+    }
+
+    .search-box input {
+      width: 100%;
+
+      padding: 16px 18px;
+
+      border-radius: 13px;
+
+      border: 1px solid #ffffff15;
+
+      background: #ffffff08;
+
+      color: white;
+
+      outline: none;
+
+      font-size: 16px;
+    }
+
+    .search-box input:focus {
+      border-color: #2563eb;
+    }
+
+    /* =========================
+       JOGOS
+    ========================= */
+
+    .games-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .game-card {
+      background: #ffffff08;
+
+      border: 1px solid #ffffff12;
+
+      border-radius: 20px;
+
+      padding: 25px;
+
+      transition: .25s;
+
+      overflow: hidden;
+    }
+
+    .game-card:hover {
+      transform: translateY(-7px);
+
+      border-color: #2563eb55;
+
+      background: #ffffff0d;
+    }
+
+    .game-icon {
+      font-size: 65px;
+
+      background: #ffffff08;
+
+      height: 150px;
+
+      border-radius: 15px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+
+      font-size: 11px;
+
+      color: #93c5fd;
+
+      background: #2563eb22;
+
+      padding: 6px 9px;
+
+      border-radius: 8px;
+
+      margin-bottom: 12px;
+    }
+
+    .game-card h3 {
+      font-size: 23px;
+
+      margin-bottom: 10px;
+    }
+
+    .game-card p {
+      color: #999;
+
+      line-height: 1.5;
+
+      min-height: 70px;
+
+      margin-bottom: 20px;
+    }
+
+    .play {
+      width: 100%;
+    }
+
+    /* =========================
+       FUTURO
+    ========================= */
+
+    .future {
+      margin-top: 35px;
+
+      text-align: center;
+
+      padding: 35px;
+
+      border: 1px dashed #ffffff20;
+
+      border-radius: 20px;
+
+      color: #888;
+    }
+
+    /* =========================
+       BIBLIOTECA
+    ========================= */
+
+    #biblioteca {
+      margin-top: 80px;
+
+      padding-top: 35px;
+
+      border-top: 1px solid #ffffff10;
+    }
+
+    #biblioteca .section-title {
+      margin-top: 0;
+    }
+
+    /* =========================
+       AVALIAÇÕES
+    ========================= */
+
+    #avaliacoes {
+      margin-top: 80px;
+      padding-top: 35px;
+      border-top: 1px solid #ffffff10;
+    }
+
+    .rating-box {
+      background: #ffffff08;
+      border: 1px solid #ffffff12;
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .star-btn {
+      border: none;
+      background: transparent;
+      color: #555;
+      font-size: 32px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .star-btn:hover,
+    .star-btn.active {
+      color: #facc15;
+      transform: scale(1.08);
+    }
+
+    .rating-box textarea {
+      width: 100%;
+      min-height: 100px;
+      resize: vertical;
+      padding: 15px;
+      border-radius: 13px;
+      border: 1px solid #ffffff15;
+      background: #ffffff08;
+      color: white;
+      outline: none;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .rating-box textarea:focus {
+      border-color: #2563eb;
+    }
+
+    .rating-info {
+      color: #999;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .rating-average {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #ffffff10;
+      color: #aaa;
+    }
+
+    .rating-average strong {
+      color: #facc15;
+      font-size: 24px;
+    }
+
+    .reviews-list {
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .review-card {
+      background: #ffffff08;
+      border: 1px solid #ffffff10;
+      border-radius: 15px;
+      padding: 16px;
+    }
+
+    .review-stars {
+      color: #facc15;
+      margin-bottom: 8px;
+    }
+
+    .review-card p {
+      color: #bbb;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .review-date {
+      color: #666;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       AVISO CELULAR
+    ========================= */
+
+    .mobile-warning {
+      display: none;
+      position: fixed;
+      top: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 30px);
+      max-width: 600px;
+      background: #101827;
+      border: 1px solid #2563eb55;
+      border-radius: 18px;
+      padding: 20px;
+      z-index: 1500;
+      box-shadow: 0 15px 40px #00000055;
+    }
+
+    .mobile-warning h3 {
+      margin-bottom: 8px;
+      color: #60a5fa;
+    }
+
+    .mobile-warning p {
+      color: #aaa;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .mobile-warning button {
+      margin-top: 15px;
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    footer {
+      border-top: 1px solid #ffffff10;
+
+      text-align: center;
+
+      padding: 35px;
+
+      color: #777;
+
+      line-height: 1.6;
+    }
+
+    footer strong {
+      color: #60a5fa;
+    }
+
+    .blessing {
+      color: #60a5fa;
+
+      font-weight: bold;
+
+      font-size: 18px;
+    }
+
+    /* =========================
+       MODAIS
+    ========================= */
+
+    .modal {
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(0,0,0,.78);
+
+      z-index: 500;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(500px, 100%);
+
+      background: #101827;
+
+      border: 1px solid #ffffff15;
+
+      border-radius: 22px;
+
+      padding: 30px;
+
+      text-align: center;
+
+      box-shadow:
+        0 20px 80px #000;
+    }
+
+    .modal-icon {
+      font-size: 65px;
+
+      margin-bottom: 15px;
+    }
+
+    .modal-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .modal-box p {
+      color: #999;
+
+      line-height: 1.5;
+
+      margin-bottom: 25px;
+    }
+
+    .modal-buttons {
+      display: flex;
+
+      gap: 10px;
+
+      justify-content: center;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+    }
+
+  </style>
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
-
 
 <body>
 
+  <!-- AVISO CELULAR -->
 
-<!-- =========================
-     AVISO CELULAR
-========================= -->
+  <div class="mobile-warning" id="mobileWarning">
 
-<div class="mobile-warning" id="mobileWarning">
-
-    <h3>📱 Está jogando pelo celular?</h3>
+    <h3>
+      📱 Está jogando pelo celular?
+    </h3>
 
     <p>
-        Para ter uma experiência melhor nos jogos,
-        recomendamos ativar a opção
-        <strong>"Versão para computador"</strong>
-        no navegador. 💙
+      Para ter uma experiência melhor nos jogos,
+      recomendamos ativar a opção
+      <strong>"Versão para computador"</strong>
+      no navegador. 💙
     </p>
 
-    <button class="btn btn-primary"
-            onclick="fecharAvisoCelular()">
-        Entendi 👍
+    <button
+      class="btn btn-primary"
+      onclick="fecharAvisoCelular()"
+    >
+      Entendi 👍
     </button>
 
-</div>
+  </div>
 
+  <!-- =========================
+       CABEÇALHO
+  ========================= -->
 
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
+  <header>
 
     <div class="logo">
-        🎮 <span>Jullya</span> Games
+      🎮 <span>Jullya</span> Games
     </div>
 
     <nav>
 
-        <button onclick="irParaJogos()">
-            🎮 Meus jogos
-        </button>
+      <button onclick="irParaJogos()">
+        🎮 Meus jogos
+      </button>
 
-        <button onclick="irParaBiblioteca()">
-            📚 Biblioteca
-        </button>
+      <button onclick="irParaBiblioteca()">
+        📚 Biblioteca
+      </button>
 
-        <button onclick="irParaAvaliacoes()">
-            ⭐ Avaliações
-        </button>
+      <button onclick="irParaAvaliacoes()">
+        ⭐ Avaliações
+      </button>
 
-        <button onclick="mostrarSobre()">
-            💙 Sobre
-        </button>
+      <button onclick="mostrarSobre()">
+        💙 Sobre
+      </button>
 
     </nav>
 
-</header>
+  </header>
 
+  <!-- =========================
+       HERO
+  ========================= -->
 
-<!-- =========================
-     HERO
-========================= -->
+  <section class="hero">
 
-<section class="hero">
+    <div class="badge">
+      ✨ Bem-vindo ao meu universo de jogos
+    </div>
 
-    <h1>Jullya Games</h1>
+    <h1>
+      Jullya Games
+    </h1>
 
     <p>
-        ✨ Bem-vindo ao meu universo de jogos!
-        Aqui você encontra jogos criados por mim,
-        experiências divertidas e vários jogos para jogar diretamente no navegador.
+      Um lugar para reunir todos os meus jogos
+      em um só site.
+      Escolha um jogo, clique em jogar
+      e divirta-se! 🎮💙
     </p>
 
-    <div class="buttons">
+    <div class="hero-buttons">
 
-        <button class="btn btn-primary"
-                onclick="irParaJogos()">
-            🎮 Ver meus jogos
-        </button>
+      <button
+        class="btn btn-primary"
+        onclick="irParaJogos()"
+      >
+        🎮 Ver meus jogos
+      </button>
 
-        <button class="btn btn-secondary"
-                onclick="irParaBiblioteca()">
-            📚 Explorar biblioteca
-        </button>
+      <button
+        class="btn btn-secondary"
+        onclick="irParaBiblioteca()"
+      >
+        📚 Biblioteca
+      </button>
 
-        <button class="btn btn-secondary"
-                onclick="irParaAvaliacoes()">
-            ⭐ Avaliar o site
-        </button>
+      <button
+        class="btn btn-secondary"
+        onclick="irParaAvaliacoes()"
+      >
+        ⭐ Avaliações
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="mostrarSobre()"
+      >
+        💙 Sobre
+      </button>
 
     </div>
 
-</section>
+  </section>
 
+  <!-- =========================
+       ESTATÍSTICAS
+  ========================= -->
 
-<!-- =========================
-     STATS
-========================= -->
-
-<section class="stats">
+  <div class="stats">
 
     <div class="stat">
 
-        <h2>3</h2>
+      <strong>
+        3
+      </strong>
 
-        <p>
-            Jogos criados por mim
-        </p>
+      <span>
+        Jogos criados por mim
+      </span>
 
     </div>
-
 
     <div class="stat">
 
-        <h2>∞</h2>
+      <strong>
+        ∞
+      </strong>
 
-        <p>
-            Diversão
-        </p>
+      <span>
+        Diversão
+      </span>
 
     </div>
-
 
     <div class="stat">
 
-        <h2>💙</h2>
+      <strong>
+        💙
+      </strong>
 
-        <p>
-            Feito com carinho
-        </p>
+      <span>
+        Feito com carinho
+      </span>
 
     </div>
 
-</section>
+  </div>
 
+  <!-- =========================
+       MEUS JOGOS
+  ========================= -->
 
-<!-- =========================
-     MEUS JOGOS
-========================= -->
+  <main
+    class="container"
+    id="jogos"
+  >
 
-<section class="container" id="jogos">
-
-    <h2 class="section-title">
-        🎮 Meus jogos
-    </h2>
-
+    <div class="section-title">
+      ⭐ Em destaque
+    </div>
 
     <div class="featured">
 
-        <div class="featured-text">
+      <div class="featured-icon">
+        🐾
+      </div>
 
-            <h2>
-                🐾 Pet World 2.0
-            </h2>
+      <div>
 
-            <p>
-                Cuide dos seus pets, explore o mundo e divirta-se
-                nessa aventura feita especialmente para você!
-            </p>
+        <h2>
+          Pet World 2.0
+        </h2>
 
-            <button class="btn btn-primary"
-                    onclick="abrirJogo('petworld')">
-                ▶ Jogar agora
-            </button>
+        <p>
+          Cuide do seu bichinho virtual,
+          alimente, brinque, dê banho,
+          coloque acessórios e divirta-se!
+        </p>
 
-        </div>
+        <button
+          class="btn btn-primary"
+          onclick="abrirJogo('pet')"
+        >
+          ▶ Jogar agora
+        </button>
 
-
-        <div class="featured-image">
-            🐶🐱
-        </div>
-
-    </div>
-
-
-    <div class="games">
-
-
-        <!-- JOGO DE MISTÉRIO -->
-
-        <div class="game-card">
-
-            <div class="game-icon">
-                🕵️
-            </div>
-
-            <h3>
-                Jogo de Mistério
-            </h3>
-
-            <span class="tag">
-                🕵️ MISTÉRIO
-            </span>
-
-            <p>
-                Resolva o mistério, investigue pistas e descubra
-                quem está por trás do acontecimento!
-            </p>
-
-            <button class="btn btn-primary"
-                    onclick="abrirJogo('misterio')">
-                ▶ Jogar
-            </button>
-
-        </div>
-
-
-        <!-- PET WORLD -->
-
-        <div class="game-card">
-
-            <div class="game-icon">
-                🐾
-            </div>
-
-            <h3>
-                Pet World 2.0
-            </h3>
-
-            <span class="tag">
-                🐶 AVENTURA
-            </span>
-
-            <p>
-                Explore o mundo dos pets e viva várias aventuras
-                nesse jogo cheio de diversão.
-            </p>
-
-            <button class="btn btn-primary"
-                    onclick="abrirJogo('petworld')">
-                ▶ Jogar
-            </button>
-
-        </div>
-
-
-        <!-- NÃO CLIQUE -->
-
-        <div class="game-card">
-
-            <div class="game-icon">
-                🔴
-            </div>
-
-            <h3>
-                Não Clique!
-            </h3>
-
-            <span class="tag">
-                🔴 DESAFIO
-            </span>
-
-            <p>
-                Você consegue resistir ao botão vermelho?
-                Clique por sua conta e risco!
-            </p>
-
-            <button class="btn btn-primary"
-                    onclick="abrirJogo('naoclique')">
-                ▶ Jogar
-            </button>
-
-        </div>
+      </div>
 
     </div>
 
+    <div class="section-title">
+      🎮 Meus jogos
+    </div>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Procurar um jogo..."
+        oninput="pesquisarJogos()"
+      >
+
+    </div>
+
+    <div
+      class="games-grid"
+      id="gamesGrid"
+    >
+
+      <article
+        class="game-card"
+        data-name="misterio investigação aventura"
+      >
+
+        <div class="game-icon">
+          🕵️
+        </div>
+
+        <span class="tag">
+          🕵️ AVENTURA
+        </span>
+
+        <h3>
+          Jogo de Mistério
+        </h3>
+
+        <p>
+          Entre em uma investigação
+          e descubra os segredos
+          escondidos por trás do mistério.
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirJogo('misterio')"
+        >
+          ▶ Jogar
+        </button>
+
+      </article>
+
+      <article
+        class="game-card"
+        data-name="pet world bichinho animal"
+      >
+
+        <div class="game-icon">
+          🐾
+        </div>
+
+        <span class="tag">
+          🐾 SIMULAÇÃO
+        </span>
+
+        <h3>
+          Pet World 2.0
+        </h3>
+
+        <p>
+          Tenha seu próprio pet virtual!
+          Cuide dele, brinque e desbloqueie
+          acessórios.
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirJogo('pet')"
+        >
+          ▶ Jogar
+        </button>
+
+      </article>
+
+      <article
+        class="game-card"
+        data-name="nao clique desafio clique"
+      >
+
+        <div class="game-icon">
+          🚫
+        </div>
+
+        <span class="tag">
+          😂 DESAFIO
+        </span>
+
+        <h3>
+          Não Clique!
+        </h3>
+
+        <p>
+          Você realmente deveria clicar?
+          Descubra desafios, segredos
+          e surpresas!
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirJogo('naoclique')"
+        >
+          ▶ Jogar
+        </button>
+
+      </article>
+
+    </div>
 
     <div class="future">
 
-        <h3>
-            🚀 Mais jogos em breve!
-        </h3>
+      🚀
 
-        <p>
-            Os jogos estão em constante evolução e novas aventuras
-            serão adicionadas em breve.
-        </p>
+      <strong>
+        Mais jogos em breve!
+      </strong>
+
+      <br><br>
+
+      Novos jogos podem aparecer aqui
+      no futuro. 🎮
 
     </div>
 
-</section>
+  </main>
 
+  <!-- =========================
+       BIBLIOTECA
+  ========================= -->
 
-<!-- =========================
-     BIBLIOTECA
-========================= -->
+  <section
+    class="container"
+    id="biblioteca"
+  >
 
-<section class="container" id="biblioteca">
+    <div class="section-title">
+      📚 Biblioteca de jogos
+    </div>
 
-    <h2 class="section-title">
-        📚 Biblioteca de jogos
-    </h2>
+    <p
+      style="
+        color:#999;
+        margin-bottom:25px;
+        line-height:1.6;
+      "
+    >
+      Jogos e experiências de outros projetos,
+      separados das criações da Jullya Games.
+    </p>
 
+    <div class="games-grid">
 
-    <!-- MINECRAFT -->
+      <!-- MINECRAFT -->
 
-    <div class="library-card">
+      <article
+        class="game-card"
+        data-name="minecraft eaglercraft minecraft 1.8.8"
+      >
 
-        <h3>
-            ⛏️ Minecraft 1.8.8
-        </h3>
+        <div class="game-icon">
+          ⛏️
+        </div>
 
         <span class="tag">
-            ⛏️ SANDBOX
+          ⛏️ MINECRAFT
         </span>
-
-        <p>
-            Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.
-        </p>
-
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('minecraft')">
-            ▶ Jogar Minecraft
-        </button>
-
-    </div>
-
-
-    <!-- SKRIBBL -->
-
-    <div class="library-card">
 
         <h3>
-            🎨 skribbl.io
+          Minecraft 1.8.8
         </h3>
 
-        <span class="tag">
-            🎨 DESENHO
-        </span>
-
         <p>
-            Desenhe, adivinhe as palavras e tente conseguir
-            a maior pontuação!
+          Jogue Minecraft no navegador
+          através do EaglercraftX 1.8.8 em WASM.
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('skribbl')">
-            ▶ Jogar skribbl.io
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('minecraft')"
+        >
+          ▶ Jogar Minecraft
         </button>
 
-    </div>
+      </article>
 
+      <!-- SKRIBBL -->
 
-    <!-- GEOGUESSR -->
+      <article
+        class="game-card"
+        data-name="skribbl desenho palavras"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🎨
+        </div>
+
+        <span class="tag">
+          🎨 DESENHO
+        </span>
 
         <h3>
-            🌎 GeoGuessr
+          skribbl.io
         </h3>
 
-        <span class="tag">
-            🌎 GEOGRAFIA
-        </span>
-
         <p>
-            Explore o mundo e tente descobrir em qual lugar você está!
+          Desenhe, adivinhe as palavras
+          e tente conseguir a maior pontuação!
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('geoguessr')">
-            ▶ Jogar GeoGuessr
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('skribbl')"
+        >
+          ▶ Jogar skribbl.io
         </button>
 
-    </div>
+      </article>
 
+      <!-- GEOGUESSR -->
 
-    <!-- SLOW ROADS -->
+      <article
+        class="game-card"
+        data-name="geoguessr geografia mundo"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🌎
+        </div>
+
+        <span class="tag">
+          🌎 GEOGRAFIA
+        </span>
 
         <h3>
-            🚗 Slow Roads
+          GeoGuessr
         </h3>
 
-        <span class="tag">
-            🚗 DIRIGIR
-        </span>
-
         <p>
-            Pegue a estrada, relaxe e explore paisagens
-            geradas proceduralmente.
+          Explore o mundo e tente descobrir
+          em qual lugar você está!
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('slowroads')">
-            ▶ Jogar Slow Roads
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('geoguessr')"
+        >
+          ▶ Jogar GeoGuessr
         </button>
 
-    </div>
+      </article>
 
+      <!-- SLOW ROADS -->
 
-    <!-- AMONG US -->
+      <article
+        class="game-card"
+        data-name="slow roads estrada carro dirigir"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🛣️
+        </div>
+
+        <span class="tag">
+          🛣️ DIRIGIR
+        </span>
 
         <h3>
-            🚀 Among Us Online
+          Slow Roads
         </h3>
 
-        <span class="tag">
-            🚀 MULTIPLAYER
-        </span>
-
         <p>
-            Entre na nave, descubra o impostor e tente
-            sobreviver às partidas!
+          Dirija por estradas infinitas
+          e explore paisagens.
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('amongus')">
-            ▶ Jogar Among Us
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('slowroads')"
+        >
+          ▶ Jogar Slow Roads
         </button>
 
-    </div>
+      </article>
 
+      <!-- AMONG US -->
 
-    <!-- GTA VICE CITY -->
+      <article
+        class="game-card"
+        data-name="among us impostor tripulante"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🚀
+        </div>
+
+        <span class="tag">
+          🚀 MULTIPLAYER
+        </span>
 
         <h3>
-            🚘 GTA Vice City Online
+          Among Us Online
         </h3>
 
-        <span class="tag">
-            🚘 AÇÃO
-        </span>
-
         <p>
-            Experimente GTA Vice City diretamente pelo navegador.
+          Descubra quem é o impostor
+          e tente completar as tarefas.
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('vicecity')">
-            ▶ Jogar GTA Vice City
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('amongus')"
+        >
+          ▶ Jogar Among Us
         </button>
 
-    </div>
+      </article>
 
+      <!-- GTA -->
 
-    <!-- GEOMETRY DASH -->
+      <article
+        class="game-card"
+        data-name="gta vice city online"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🚗
+        </div>
+
+        <span class="tag">
+          🚗 AÇÃO
+        </span>
 
         <h3>
-            🔷 Geometry Dash
+          GTA Vice City Online
         </h3>
 
-        <span class="tag">
-            🔷 RITMO
-        </span>
-
         <p>
-            Pule, desvie dos obstáculos e tente completar
-            os desafios no ritmo da música.
+          Explore uma versão para navegador
+          inspirada no clássico Vice City.
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('geometry')">
-            ▶ Jogar Geometry Dash
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('vicecity')"
+        >
+          ▶ Jogar GTA Vice City
         </button>
 
-    </div>
+      </article>
 
+      <!-- GEOMETRY DASH -->
 
-    <!-- SUBWAY SURFERS -->
+      <article
+        class="game-card"
+        data-name="geometry dash plataforma ritmo"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🔷
+        </div>
+
+        <span class="tag">
+          🔷 PLATAFORMA
+        </span>
 
         <h3>
-            🚆 Subway Surfers
+          Geometry Dash
         </h3>
 
-        <span class="tag">
-            🚆 CORRIDA
-        </span>
-
         <p>
-            Corra pelos trilhos, desvie dos obstáculos e tente
-            chegar o mais longe possível.
+          Supere obstáculos, acompanhe
+          o ritmo e tente chegar ao final.
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('subway')">
-            ▶ Jogar Subway Surfers
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('geometrydash')"
+        >
+          ▶ Jogar Geometry Dash
         </button>
 
-    </div>
+      </article>
 
+      <!-- SUBWAY -->
 
-    <!-- FIFA 2007 -->
+      <article
+        class="game-card"
+        data-name="subway surfers corrida"
+      >
 
-    <div class="library-card">
+        <div class="game-icon">
+          🚆
+        </div>
+
+        <span class="tag">
+          🚆 CORRIDA
+        </span>
 
         <h3>
-            ⚽ FIFA 2007
+          Subway Surfers
         </h3>
 
-        <span class="tag">
-            ⚽ FUTEBOL
-        </span>
-
         <p>
-            Reviva o clássico FIFA 2007 diretamente no navegador.
+          Corra, desvie dos obstáculos
+          e tente conseguir uma pontuação alta.
         </p>
 
-        <button class="btn btn-primary library-button"
-                onclick="abrirBiblioteca('fifa')">
-            ▶ Jogar FIFA 2007
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('subwaysurfers')"
+        >
+          ▶ Jogar Subway Surfers
         </button>
+
+      </article>
+
+      <!-- FIFA -->
+
+      <article
+        class="game-card"
+        data-name="fifa 2007 futebol"
+      >
+
+        <div class="game-icon">
+          ⚽
+        </div>
+
+        <span class="tag">
+          ⚽ FUTEBOL
+        </span>
+
+        <h3>
+          FIFA 2007
+        </h3>
+
+        <p>
+          Entre em campo e reviva
+          um clássico jogo de futebol.
+        </p>
+
+        <button
+          class="btn btn-primary play"
+          onclick="abrirBiblioteca('fifa2007')"
+        >
+          ▶ Jogar FIFA 2007
+        </button>
+
+      </article>
 
     </div>
 
-</section>
+  </section>
 
+  <!-- =========================
+       JOGOS NO NAVEGADOR
+  ========================= -->
 
-<!-- =========================
-     AVALIAÇÕES
-========================= -->
+  <section
+    class="container"
+    id="jogos-navegador"
+  >
 
-<section class="container" id="avaliacoes">
+    <div class="section-title">
+      🎮 Jogos para jogar aqui
+    </div>
 
-    <h2 class="section-title">
-        ⭐ Avaliações
-    </h2>
+    <div class="game-card">
 
+      <span class="tag">
+        🚆 CORRIDA
+      </span>
+
+      <h3>
+        Subway Surfers
+      </h3>
+
+      <p>
+        Jogue diretamente nesta página.
+      </p>
+
+      <div
+        style="
+          position:relative;
+          width:100%;
+          max-width:900px;
+          aspect-ratio:16/9;
+        "
+      >
+
+        <iframe
+          src="https://nite.games/embed/subway-surfers"
+          style="
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            border:none;
+            border-radius:8px;
+          "
+          allow="fullscreen; autoplay; gamepad; pointer-lock"
+        ></iframe>
+
+      </div>
+
+      <p
+        style="
+          font-size:12px;
+          margin-top:8px;
+        "
+      >
+        <a
+          href="https://nite.games"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="
+            font-size:0;
+            line-height:0;
+          "
+        >
+          Nite.Games
+        </a>
+      </p>
+
+    </div>
+
+    <div
+      class="game-card"
+      style="margin-top:20px;"
+    >
+
+      <span class="tag">
+        ⚽ FUTEBOL
+      </span>
+
+      <h3>
+        FIFA 2007
+      </h3>
+
+      <p>
+        Jogue diretamente nesta página.
+      </p>
+
+      <div
+        style="
+          position:relative;
+          width:100%;
+          max-width:900px;
+          aspect-ratio:16/9;
+        "
+      >
+
+        <iframe
+          src="https://nite.games/embed/fifa-2007"
+          style="
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            border:none;
+            border-radius:8px;
+          "
+          allow="fullscreen; autoplay; gamepad; pointer-lock"
+        ></iframe>
+
+      </div>
+
+      <p
+        style="
+          font-size:12px;
+          margin-top:8px;
+        "
+      >
+        <a
+          href="https://nite.games"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="
+            font-size:0;
+            line-height:0;
+          "
+        >
+          Nite.Games
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       AVALIAÇÕES
+  ========================= -->
+
+  <section
+    class="container"
+    id="avaliacoes"
+  >
+
+    <div class="section-title">
+      ⭐ Avaliações
+    </div>
 
     <div class="rating-box">
 
-        <h2>
-            O que você achou do Jullya Games?
-        </h2>
+      <h3>
+        O que você achou da Jullya Games?
+      </h3>
 
-        <p>
-            Deixe sua avaliação e conte o que você achou do site! 💙
-        </p>
+      <p class="rating-info">
+        Escolha uma nota e, se quiser,
+        deixe um comentário.
+        Sua avaliação ajuda o site a melhorar! 💙
+      </p>
 
+      <div
+        class="stars"
+        id="ratingStars"
+      >
 
-        <div class="stars">
-
-            <button class="star"
-                    data-rating="1">
-                ★
-            </button>
-
-            <button class="star"
-                    data-rating="2">
-                ★
-            </button>
-
-            <button class="star"
-                    data-rating="3">
-                ★
-            </button>
-
-            <button class="star"
-                    data-rating="4">
-                ★
-            </button>
-
-            <button class="star"
-                    data-rating="5">
-                ★
-            </button>
-
-        </div>
-
-
-        <textarea
-            id="ratingComment"
-            placeholder="Escreva um comentário (opcional)..."></textarea>
-
-
-        <button class="btn btn-primary"
-                onclick="enviarAvaliacao()">
-            ⭐ Enviar avaliação
+        <button
+          class="star-btn"
+          data-rating="1"
+          onclick="selecionarNota(1)"
+        >
+          ★
         </button>
 
+        <button
+          class="star-btn"
+          data-rating="2"
+          onclick="selecionarNota(2)"
+        >
+          ★
+        </button>
 
-        <div id="ratingMessage"
-             class="rating-message">
-        </div>
+        <button
+          class="star-btn"
+          data-rating="3"
+          onclick="selecionarNota(3)"
+        >
+          ★
+        </button>
 
+        <button
+          class="star-btn"
+          data-rating="4"
+          onclick="selecionarNota(4)"
+        >
+          ★
+        </button>
 
-        <div id="ratingAverage"
-             class="rating-average">
-        </div>
+        <button
+          class="star-btn"
+          data-rating="5"
+          onclick="selecionarNota(5)"
+        >
+          ★
+        </button>
 
+      </div>
 
-        <div id="reviews"
-             class="reviews">
-        </div>
+      <textarea
+        id="ratingComment"
+        maxlength="500"
+        placeholder="Escreva um comentário (opcional)..."
+      ></textarea>
+
+      <button
+        class="btn btn-primary"
+        onclick="enviarAvaliacao()"
+      >
+        ⭐ Enviar avaliação
+      </button>
+
+      <p
+        id="ratingMessage"
+        class="rating-info"
+        style="
+          margin-top:15px;
+          margin-bottom:0;
+        "
+      ></p>
+
+      <div
+        class="rating-average"
+        id="ratingAverage"
+      >
+        Carregando avaliações...
+      </div>
+
+      <div
+        class="reviews-list"
+        id="reviewsList"
+      ></div>
 
     </div>
 
-</section>
+  </section>
 
+  <!-- =========================
+       RODAPÉ
+  ========================= -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <footer>
 
-<footer>
+    🎮
 
     <strong>
-        Jullya Games
+      Jullya Games
     </strong>
 
+    <br><br>
+
     <div class="blessing">
+      Deus abençoe! 🙏💙
+    </div>
+
+    <br>
+
+    Feito com carinho por
+
+    <strong>
+      Anna Jullya
+    </strong>
+
+  </footer>
+
+  <!-- =========================
+       MODAL BIBLIOTECA
+  ========================= -->
+
+  <div
+    class="modal"
+    id="libraryModal"
+  >
+
+    <div class="modal-box">
+
+      <div
+        class="modal-icon"
+        id="libraryModalIcon"
+      >
+        ⛏️
+      </div>
+
+      <h2 id="libraryModalTitle">
+        Minecraft 1.8.8
+      </h2>
+
+      <p id="libraryModalDescription">
+        Você está prestes a abrir o Minecraft
+        1.8.8 no Eaglercraft.
+      </p>
+
+      <div class="modal-buttons">
+
+        <button
+          class="btn btn-secondary"
+          onclick="fecharBibliotecaModal()"
+        >
+          Voltar
+        </button>
+
+        <button
+          class="btn btn-primary"
+          onclick="confirmarBiblioteca()"
+        >
+          🚀 Jogar!
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+       MODAL DOS JOGOS
+  ========================= -->
+
+  <div
+    class="modal"
+    id="gameModal"
+  >
+
+    <div class="modal-box">
+
+      <div
+        class="modal-icon"
+        id="modalIcon"
+      >
+        🎮
+      </div>
+
+      <h2 id="modalTitle">
+        Abrir jogo
+      </h2>
+
+      <p id="modalDescription">
+        Você está prestes a abrir um jogo.
+      </p>
+
+      <div class="modal-buttons">
+
+        <button
+          class="btn btn-secondary"
+          onclick="fecharModal()"
+        >
+          Voltar
+        </button>
+
+        <button
+          class="btn btn-primary"
+          onclick="confirmarJogo()"
+        >
+          🚀 Jogar!
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+       MODAL SOBRE
+  ========================= -->
+
+  <div
+    class="modal"
+    id="aboutModal"
+  >
+
+    <div class="modal-box">
+
+      <div class="modal-icon">
+        💙
+      </div>
+
+      <h2>
+        Sobre a Jullya Games
+      </h2>
+
+      <p>
+
+        A Jullya Games é um site central
+        para reunir os jogos criados por
+        Anna Jullya.
+
+        <br><br>
+
+        Aqui você pode encontrar meus jogos
+        e também uma biblioteca com jogos
+        de outros projetos. 🎮✨
+
+        <br><br>
+
+        Os jogos estão em constante evolução
+        e novas atualizações podem chegar
+        no futuro.
+
+        <br><br>
+
         Deus abençoe! 🙏💙
-    </div>
 
-    <p style="margin-top:10px;">
-        Feito com carinho por Anna Jullya
-    </p>
+        <br><br>
 
-</footer>
+        E isso é só o começo...
 
+      </p>
 
-<!-- =========================
-     MODAL BIBLIOTECA
-========================= -->
-
-<div class="modal"
-     id="bibliotecaModal">
-
-    <div class="modal-box">
-
-        <button class="close"
-                onclick="fecharBibliotecaModal()">
-            ×
-        </button>
-
-        <h2 id="bibliotecaTitulo">
-            🎮 Jogo
-        </h2>
-
-        <p id="bibliotecaDescricao">
-            Você será direcionado para o jogo.
-        </p>
-
-        <div style="margin-top:25px;">
-
-            <button class="btn btn-primary"
-                    onclick="confirmarBiblioteca()">
-                ▶ Continuar
-            </button>
-
-            <button class="btn btn-secondary"
-                    onclick="fecharBibliotecaModal()">
-                Cancelar
-            </button>
-
-        </div>
+      <button
+        class="btn btn-primary"
+        onclick="fecharSobre()"
+      >
+        Fechar
+      </button>
 
     </div>
 
-</div>
+  </div>
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
-<!-- =========================
-     MODAL JOGOS
-========================= -->
+  <script>
 
-<div class="modal"
-     id="gameModal">
+    /* =========================
+       MEUS JOGOS
+    ========================= */
 
-    <div class="modal-box">
+    const jogos = {
 
-        <button class="close"
-                onclick="fecharModal()">
-            ×
-        </button>
+      misterio: {
 
-        <h2 id="gameTitulo">
-            🎮 Jogo
-        </h2>
+        nome:
+          "🕵️ Jogo de Mistério",
 
-        <p id="gameDescricao">
-            Você será direcionado para o jogo.
-        </p>
+        icon:
+          "🕵️",
 
-        <div style="margin-top:25px;">
+        descricao:
+          "Entre em uma investigação e descubra os segredos escondidos por trás do mistério.",
 
-            <button class="btn btn-primary"
-                    onclick="confirmarJogo()">
-                ▶ Continuar
-            </button>
+        url:
+          "https://costa03dex.github.io/meu-jogo-de-misterio/"
 
-            <button class="btn btn-secondary"
-                    onclick="fecharModal()">
-                Cancelar
-            </button>
+      },
 
-        </div>
+      pet: {
 
-    </div>
+        nome:
+          "🐾 Pet World 2.0",
 
-</div>
+        icon:
+          "🐾",
 
+        descricao:
+          "Cuide do seu bichinho virtual, brinque, dê banho, alimente e divirta-se!",
 
-<!-- =========================
-     MODAL SOBRE
-========================= -->
+        url:
+          "https://costa03dex.github.io/Pet-World/"
 
-<div class="modal"
-     id="sobreModal">
+      },
 
-    <div class="modal-box">
+      naoclique: {
 
-        <button class="close"
-                onclick="fecharSobre()">
-            ×
-        </button>
+        nome:
+          "🚫 Não Clique!",
 
-        <h2>
-            💙 Sobre o Jullya Games
-        </h2>
+        icon:
+          "🚫",
 
-        <p>
-            O Jullya Games é um projeto criado por Anna Jullya
-            para reunir jogos divertidos em um só lugar.
-        </p>
+        descricao:
+          "Você realmente deveria clicar? Descubra desafios, segredos e surpresas!",
 
-        <br>
+        url:
+          "https://costa03dex.github.io/N-o-clique/"
 
-        <p>
-            🎮 Os jogos estão em constante evolução e novas
-            atualizações poderão aparecer por aqui.
-        </p>
+      }
 
-        <br>
+    };
 
-        <p>
-            💙 Peço perdão se algum resultado ainda não estiver
-            perfeito. Estou começando na área da programação
-            e cada atualização é uma oportunidade de aprender!
-        </p>
+    /* =========================
+       BIBLIOTECA
+    ========================= */
 
-        <br>
+    const biblioteca = {
 
-        <p>
-            Obrigada por visitar o Jullya Games! 🙏💙
-        </p>
+      minecraft: {
 
-    </div>
+        nome:
+          "⛏️ Minecraft 1.8.8",
 
-</div>
+        icon:
+          "⛏️",
 
+        descricao:
+          "Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.",
 
-<!-- =========================
-     MODAL IFRAME
-========================= -->
+        url:
+          "https://eaglercraft.com/play?version=1.8.8-wasm"
 
-<div class="modal"
-     id="iframeModal">
+      },
 
-    <div class="modal-box"
-         style="max-width:950px;">
+      skribbl: {
 
-        <button class="close"
-                onclick="fecharIframeModal()">
-            ×
-        </button>
+        nome:
+          "🎨 skribbl.io",
 
-        <h2 id="iframeTitulo">
-            🎮 Jogo
-        </h2>
+        icon:
+          "🎨",
 
-        <div class="game-frame">
+        descricao:
+          "Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!",
 
-            <iframe
-                id="gameIframe"
-                src=""
-                allow="fullscreen; autoplay; gamepad; pointer-lock">
-            </iframe>
+        url:
+          "https://skribbl.io/"
 
-        </div>
+      },
 
-        <p style="font-size:12px;margin-top:8px;">
+      geoguessr: {
 
-            <a
-                href="https://nite.games"
-                target="_blank"
-                rel="noopener noreferrer"
-                style="color:#60a5fa;text-decoration:none;">
-                Nite.Games
-            </a>
+        nome:
+          "🌎 GeoGuessr",
 
-        </p>
+        icon:
+          "🌎",
 
-    </div>
+        descricao:
+          "Explore o mundo e tente descobrir em qual lugar você está!",
 
-</div>
+        url:
+          "https://www.geoguessr.com/"
 
+      },
 
-<script>
+      slowroads: {
 
-/* =========================
-   JOGOS
-========================= */
+        nome:
+          "🛣️ Slow Roads",
 
-const jogos = {
+        icon:
+          "🛣️",
 
-    misterio:{
-        nome:"🕵️ Jogo de Mistério",
-        descricao:"Resolva o mistério, investigue pistas e descubra quem está por trás do acontecimento!",
-        url:"https://costa03dex.github.io/meu-jogo-de-misterio/"
-    },
+        descricao:
+          "Dirija por estradas infinitas e relaxe explorando paisagens.",
 
-    petworld:{
-        nome:"🐾 Pet World 2.0",
-        descricao:"Cuide dos seus pets, explore o mundo e divirta-se nessa aventura!",
-        url:"https://costa03dex.github.io/Pet-World/"
-    },
+        url:
+          "https://slowroads.io/"
 
-    naoclique:{
-        nome:"🔴 Não Clique!",
-        descricao:"Você consegue resistir ao botão vermelho? Clique por sua conta e risco!",
-        url:"https://costa03dex.github.io/N-o-clique/"
+      },
+
+      amongus: {
+
+        nome:
+          "🚀 Among Us Online",
+
+        icon:
+          "🚀",
+
+        descricao:
+          "Descubra quem é o impostor e tente completar as tarefas.",
+
+        url:
+          "https://amongus-online.net/game/amongus"
+
+      },
+
+      vicecity: {
+
+        nome:
+          "🚗 GTA Vice City Online",
+
+        icon:
+          "🚗",
+
+        descricao:
+          "Explore uma versão para navegador inspirada no clássico Vice City.",
+
+        url:
+          "https://quenq.com/apps/vice-city-online/"
+
+      },
+
+      geometrydash: {
+
+        nome:
+          "🔷 Geometry Dash",
+
+        icon:
+          "🔷",
+
+        descricao:
+          "Supere obstáculos, acompanhe o ritmo e tente chegar ao final.",
+
+        url:
+          "https://www.geometrydash.com/"
+
+      },
+
+      subwaysurfers: {
+
+        nome:
+          "🚆 Subway Surfers",
+
+        icon:
+          "🚆",
+
+        descricao:
+          "Corra, desvie dos obstáculos e tente conseguir uma pontuação alta.",
+
+        url:
+          "https://nite.games/embed/subway-surfers"
+
+      },
+
+      fifa2007: {
+
+        nome:
+          "⚽ FIFA 2007",
+
+        icon:
+          "⚽",
+
+        descricao:
+          "Entre em campo e reviva um clássico jogo de futebol no navegador.",
+
+        url:
+          "https://nite.games/embed/fifa-2007"
+
+      }
+
+    };
+
+    let jogoBibliotecaSelecionado = null;
+
+    function abrirBiblioteca(id) {
+
+      const jogo =
+        biblioteca[id];
+
+      if (!jogo) return;
+
+      jogoBibliotecaSelecionado =
+        jogo;
+
+      document
+        .getElementById("libraryModalIcon")
+        .textContent =
+        jogo.icon;
+
+      document
+        .getElementById("libraryModalTitle")
+        .textContent =
+        jogo.nome;
+
+      document
+        .getElementById("libraryModalDescription")
+        .textContent =
+        jogo.descricao;
+
+      document
+        .getElementById("libraryModal")
+        .classList
+        .add("active");
+
     }
 
-};
+    function confirmarBiblioteca() {
 
+      if (!jogoBibliotecaSelecionado)
+        return;
 
-/* =========================
-   BIBLIOTECA
-========================= */
+      window.open(
+        jogoBibliotecaSelecionado.url,
+        "_blank",
+        "noopener,noreferrer"
+      );
 
-const biblioteca = {
+      fecharBibliotecaModal();
 
-    minecraft:{
-        nome:"⛏️ Minecraft 1.8.8",
-        descricao:"Jogue Minecraft no navegador através do EaglercraftX 1.8.8 em WASM.",
-        url:"https://eaglercraft.com/play?version=1.8.8-wasm"
-    },
-
-    skribbl:{
-        nome:"🎨 skribbl.io",
-        descricao:"Desenhe, adivinhe as palavras e tente conseguir a maior pontuação!",
-        url:"https://skribbl.io/"
-    },
-
-    geoguessr:{
-        nome:"🌎 GeoGuessr",
-        descricao:"Explore o mundo e tente descobrir em qual lugar você está!",
-        url:"https://www.geoguessr.com/"
-    },
-
-    slowroads:{
-        nome:"🚗 Slow Roads",
-        descricao:"Pegue a estrada, relaxe e explore paisagens geradas proceduralmente.",
-        url:"https://slowroads.io/"
-    },
-
-    amongus:{
-        nome:"🚀 Among Us Online",
-        descricao:"Entre na nave, descubra o impostor e tente sobreviver às partidas!",
-        url:"https://amongus-online.net/game/amongus"
-    },
-
-    vicecity:{
-        nome:"🚘 GTA Vice City Online",
-        descricao:"Experimente GTA Vice City diretamente pelo navegador.",
-        url:"https://quenq.com/apps/vice-city-online/"
-    },
-
-    geometry:{
-        nome:"🔷 Geometry Dash",
-        descricao:"Pule, desvie dos obstáculos e tente completar os desafios.",
-        url:"https://www.geometrydash.com/"
-    },
-
-    subway:{
-        nome:"🚆 Subway Surfers",
-        descricao:"Corra pelos trilhos, desvie dos obstáculos e tente chegar o mais longe possível.",
-        iframe:"https://nite.games/embed/subway-surfers"
-    },
-
-    fifa:{
-        nome:"⚽ FIFA 2007",
-        descricao:"Reviva o clássico FIFA 2007 diretamente no navegador.",
-        iframe:"https://nite.games/embed/fifa-2007"
     }
 
-};
+    function fecharBibliotecaModal() {
 
+      document
+        .getElementById("libraryModal")
+        .classList
+        .remove("active");
 
-/* =========================
-   NAVEGAÇÃO
-========================= */
+      jogoBibliotecaSelecionado =
+        null;
 
-function irParaJogos(){
+    }
 
-    document
-        .getElementById("jogos")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    function irParaBiblioteca() {
 
-}
-
-
-function irParaBiblioteca(){
-
-    document
+      document
         .getElementById("biblioteca")
         .scrollIntoView({
-            behavior:"smooth"
+          behavior: "smooth"
         });
 
-}
+    }
 
+    /* =========================
+       ABRIR MEUS JOGOS
+    ========================= */
 
-function irParaAvaliacoes(){
+    let jogoSelecionado = null;
 
-    document
+    function abrirJogo(id) {
+
+      const jogo =
+        jogos[id];
+
+      if (!jogo) return;
+
+      jogoSelecionado =
+        jogo;
+
+      document
+        .getElementById("modalIcon")
+        .textContent =
+        jogo.icon;
+
+      document
+        .getElementById("modalTitle")
+        .textContent =
+        jogo.nome;
+
+      document
+        .getElementById("modalDescription")
+        .textContent =
+        jogo.descricao;
+
+      document
+        .getElementById("gameModal")
+        .classList
+        .add("active");
+
+    }
+
+    function confirmarJogo() {
+
+      if (!jogoSelecionado)
+        return;
+
+      window.location.href =
+        jogoSelecionado.url;
+
+    }
+
+    function fecharModal() {
+
+      document
+        .getElementById("gameModal")
+        .classList
+        .remove("active");
+
+      jogoSelecionado =
+        null;
+
+    }
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    function mostrarSobre() {
+
+      document
+        .getElementById("aboutModal")
+        .classList
+        .add("active");
+
+    }
+
+    function fecharSobre() {
+
+      document
+        .getElementById("aboutModal")
+        .classList
+        .remove("active");
+
+    }
+
+    /* =========================
+       IR PARA JOGOS
+    ========================= */
+
+    function irParaJogos() {
+
+      document
+        .getElementById("jogos")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+    /* =========================
+       IR PARA AVALIAÇÕES
+    ========================= */
+
+    function irParaAvaliacoes() {
+
+      document
         .getElementById("avaliacoes")
         .scrollIntoView({
-            behavior:"smooth"
+          behavior: "smooth"
         });
 
-}
-
-
-/* =========================
-   JOGOS
-========================= */
-
-let jogoSelecionado = null;
-
-
-function abrirJogo(id){
-
-    jogoSelecionado = jogos[id];
-
-    document.getElementById("gameTitulo").innerText =
-        jogoSelecionado.nome;
-
-    document.getElementById("gameDescricao").innerText =
-        jogoSelecionado.descricao;
-
-    document.getElementById("gameModal").style.display =
-        "flex";
-
-}
-
-
-function confirmarJogo(){
-
-    if(jogoSelecionado){
-
-        window.open(
-            jogoSelecionado.url,
-            "_blank"
-        );
-
     }
 
-    fecharModal();
+    /* =========================
+       PESQUISA
+    ========================= */
 
-}
+    function pesquisarJogos() {
 
-
-function fecharModal(){
-
-    document.getElementById("gameModal").style.display =
-        "none";
-
-}
-
-
-/* =========================
-   BIBLIOTECA
-========================= */
-
-let bibliotecaSelecionada = null;
-
-
-function abrirBiblioteca(id){
-
-    bibliotecaSelecionada = biblioteca[id];
-
-    if(bibliotecaSelecionada.iframe){
-
-        abrirIframe(
-            bibliotecaSelecionada.nome,
-            bibliotecaSelecionada.iframe
-        );
-
-        return;
-    }
-
-    document.getElementById("bibliotecaTitulo").innerText =
-        bibliotecaSelecionada.nome;
-
-    document.getElementById("bibliotecaDescricao").innerText =
-        bibliotecaSelecionada.descricao;
-
-    document.getElementById("bibliotecaModal").style.display =
-        "flex";
-
-}
-
-
-function confirmarBiblioteca(){
-
-    if(bibliotecaSelecionada){
-
-        window.open(
-            bibliotecaSelecionada.url,
-            "_blank"
-        );
-
-    }
-
-    fecharBibliotecaModal();
-
-}
-
-
-function fecharBibliotecaModal(){
-
-    document.getElementById("bibliotecaModal").style.display =
-        "none";
-
-}
-
-
-/* =========================
-   IFRAME
-========================= */
-
-function abrirIframe(titulo,url){
-
-    document.getElementById("iframeTitulo").innerText =
-        titulo;
-
-    document.getElementById("gameIframe").src =
-        url;
-
-    document.getElementById("iframeModal").style.display =
-        "flex";
-
-}
-
-
-function fecharIframeModal(){
-
-    document.getElementById("iframeModal").style.display =
-        "none";
-
-    document.getElementById("gameIframe").src =
-        "";
-
-}
-
-
-/* =========================
-   SOBRE
-========================= */
-
-function mostrarSobre(){
-
-    document.getElementById("sobreModal").style.display =
-        "flex";
-
-}
-
-
-function fecharSobre(){
-
-    document.getElementById("sobreModal").style.display =
-        "none";
-
-}
-
-
-/* =========================
-   AVALIAÇÕES
-========================= */
-
-let notaSelecionada = 0;
-
-const estrelas =
-    document.querySelectorAll(".star");
-
-
-estrelas.forEach(star => {
-
-    star.addEventListener("click",function(){
-
-        notaSelecionada =
-            Number(this.dataset.rating);
-
-        estrelas.forEach(s => {
-
-            s.classList.toggle(
-                "active",
-                Number(s.dataset.rating) <= notaSelecionada
-            );
-
-        });
-
-    });
-
-});
-
-
-function enviarAvaliacao(){
-
-    if(notaSelecionada === 0){
-
-        document.getElementById("ratingMessage").innerText =
-            "⭐ Escolha uma nota antes de enviar!";
-
-        return;
-    }
-
-
-    const comentario =
+      const texto =
         document
-            .getElementById("ratingComment")
-            .value
-            .trim();
+          .getElementById("searchInput")
+          .value
+          .toLowerCase();
 
+      const cards =
+        document.querySelectorAll(
+          "#jogos .game-card"
+        );
 
-    const avaliacoes =
-        JSON.parse(
-            localStorage.getItem("jullyaAvaliacoes")
-        ) || [];
+      cards.forEach(card => {
 
+        const nome =
+          card.dataset.name
+            .toLowerCase();
 
-    avaliacoes.push({
+        if (
+          nome.includes(texto)
+        ) {
 
-        nota:notaSelecionada,
-
-        comentario:comentario
-
-    });
-
-
-    localStorage.setItem(
-        "jullyaAvaliacoes",
-        JSON.stringify(avaliacoes)
-    );
-
-
-    document.getElementById("ratingMessage").innerText =
-        "Obrigado por avaliar o Jullya Games! 💙";
-
-
-    document.getElementById("ratingComment").value =
-        "";
-
-    notaSelecionada = 0;
-
-
-    estrelas.forEach(star => {
-
-        star.classList.remove("active");
-
-    });
-
-
-    mostrarAvaliacoes();
-
-}
-
-
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-
-}
-
-
-function mostrarAvaliacoes(){
-
-    const avaliacoes =
-        JSON.parse(
-            localStorage.getItem("jullyaAvaliacoes")
-        ) || [];
-
-
-    const average =
-        document.getElementById("ratingAverage");
-
-    const reviews =
-        document.getElementById("reviews");
-
-
-    if(avaliacoes.length === 0){
-
-        average.innerHTML =
-            "Ainda não há avaliações. Seja o primeiro! 💙";
-
-        reviews.innerHTML =
+          card.style.display =
             "";
 
-        return;
+        } else {
+
+          card.style.display =
+            "none";
+
+        }
+
+      });
 
     }
 
+    /* =========================
+       AVISO CELULAR
+    ========================= */
 
-    const soma =
-        avaliacoes.reduce(
-            (total,av) => total + av.nota,
-            0
+    function verificarCelular() {
+
+      const celular =
+        /Android|iPhone|iPad|iPod|Mobile/i
+        .test(navigator.userAgent);
+
+      if (celular) {
+
+        document
+          .getElementById("mobileWarning")
+          .style.display =
+          "block";
+
+      }
+
+    }
+
+    function fecharAvisoCelular() {
+
+      document
+        .getElementById("mobileWarning")
+        .style.display =
+        "none";
+
+    }
+
+    verificarCelular();
+
+    /* =========================
+       AVALIAÇÕES
+    ========================= */
+
+    /*
+      COLOQUE AQUI OS DADOS DO SEU SUPABASE
+    */
+
+    const SUPABASE_URL =
+      "COLE_AQUI_A_URL_DO_SEU_SUPABASE";
+
+    const SUPABASE_ANON_KEY =
+      "COLE_AQUI_A_CHAVE_ANON_DO_SEU_SUPABASE";
+
+    let supabaseClient =
+      null;
+
+    let notaSelecionada =
+      0;
+
+    if (
+
+      SUPABASE_URL.startsWith("https://")
+
+      &&
+
+      !SUPABASE_URL.includes("COLE_AQUI")
+
+      &&
+
+      SUPABASE_ANON_KEY
+
+      &&
+
+      !SUPABASE_ANON_KEY.includes("COLE_AQUI")
+
+      &&
+
+      window.supabase
+
+    ) {
+
+      supabaseClient =
+        window.supabase.createClient(
+
+          SUPABASE_URL,
+
+          SUPABASE_ANON_KEY
+
         );
 
+    }
 
-    const media =
-        (soma / avaliacoes.length).toFixed(1);
+    function selecionarNota(nota) {
 
+      notaSelecionada =
+        nota;
 
-    average.innerHTML =
-        `⭐ Média: <strong>${media}/5</strong> · ${avaliacoes.length} avaliação(ões)`;
+      document
+        .querySelectorAll(".star-btn")
+        .forEach(botao => {
 
+          const valor =
+            Number(
+              botao.dataset.rating
+            );
 
-    reviews.innerHTML =
-        "<h3 style='margin-top:20px;'>💬 Comentários</h3>";
-
-
-    avaliacoes
-        .slice()
-        .reverse()
-        .forEach(av => {
-
-            const review =
-                document.createElement("div");
-
-            review.className =
-                "review";
-
-
-            let stars = "";
-
-            for(let i = 0; i < av.nota; i++){
-
-                stars += "★";
-
-            }
-
-
-            review.innerHTML = `
-
-                <div class="review-stars">
-                    ${stars}
-                </div>
-
-                ${
-                    av.comentario
-                    ? `<p>${escapeHTML(av.comentario)}</p>`
-                    : `<p>⭐ Usuário deixou apenas uma avaliação.</p>`
-                }
-
-            `;
-
-
-            reviews.appendChild(review);
+          botao.classList.toggle(
+            "active",
+            valor <= nota
+          );
 
         });
 
-}
+    }
 
+    function escapeHTML(texto) {
 
-/* =========================
-   AVISO CELULAR
-========================= */
+      return String(
+        texto || ""
+      )
 
-function verificarCelular(){
+      .replace(
+        /&/g,
+        "&amp;"
+      )
 
-    const celular =
-        /Android|iPhone|iPad|iPod|Mobile/i.test(
-            navigator.userAgent
+      .replace(
+        /</g,
+        "&lt;"
+      )
+
+      .replace(
+        />/g,
+        "&gt;"
+      )
+
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+    }
+
+    function mostrarMensagemAvaliacao(
+      mensagem,
+      erro = false
+    ) {
+
+      const elemento =
+        document
+          .getElementById(
+            "ratingMessage"
+          );
+
+      elemento.textContent =
+        mensagem;
+
+      elemento.style.color =
+        erro
+          ? "#fca5a5"
+          : "#93c5fd";
+
+    }
+
+    async function enviarAvaliacao() {
+
+      if (!supabaseClient) {
+
+        mostrarMensagemAvaliacao(
+
+          "As avaliações ainda não estão configuradas. Coloque a URL e a chave do Supabase no código.",
+
+          true
+
         );
 
+        return;
 
-    if(celular){
+      }
 
-        document.getElementById("mobileWarning").style.display =
-            "block";
+      if (!notaSelecionada) {
+
+        mostrarMensagemAvaliacao(
+
+          "Escolha uma nota de 1 a 5 estrelas.",
+
+          true
+
+        );
+
+        return;
+
+      }
+
+      const comentario =
+        document
+          .getElementById(
+            "ratingComment"
+          )
+          .value
+          .trim();
+
+      try {
+
+        const resultado =
+          await supabaseClient
+
+            .from("avaliacoes")
+
+            .insert([{
+
+              nota:
+                notaSelecionada,
+
+              comentario:
+                comentario
+
+            }]);
+
+        if (resultado.error)
+          throw resultado.error;
+
+        document
+          .getElementById(
+            "ratingComment"
+          )
+          .value =
+          "";
+
+        notaSelecionada =
+          0;
+
+        document
+          .querySelectorAll(
+            ".star-btn"
+          )
+          .forEach(botao => {
+
+            botao.classList
+              .remove("active");
+
+          });
+
+        mostrarMensagemAvaliacao(
+          "Avaliação enviada com sucesso! 💙"
+        );
+
+        carregarAvaliacoes();
+
+      } catch (erro) {
+
+        console.error(erro);
+
+        mostrarMensagemAvaliacao(
+
+          "Não foi possível enviar a avaliação agora. Verifique a configuração do Supabase.",
+
+          true
+
+        );
+
+      }
 
     }
 
-}
+    async function carregarAvaliacoes() {
 
+      const average =
+        document
+          .getElementById(
+            "ratingAverage"
+          );
 
-function fecharAvisoCelular(){
+      const list =
+        document
+          .getElementById(
+            "reviewsList"
+          );
 
-    document.getElementById("mobileWarning").style.display =
-        "none";
+      if (!supabaseClient) {
 
-}
+        average.innerHTML =
+          "⭐ Configure o Supabase para mostrar as avaliações de todos os visitantes.";
 
+        list.innerHTML =
+          "";
 
-/* =========================
-   FECHAR MODAIS
-========================= */
+        return;
 
-window.addEventListener(
-    "click",
-    function(event){
+      }
 
-        if(event.target ===
-            document.getElementById("bibliotecaModal")){
+      try {
+
+        const resultado =
+          await supabaseClient
+
+            .from("avaliacoes")
+
+            .select(
+              "id,nota,comentario,created_at"
+            )
+
+            .order(
+              "created_at",
+              {
+                ascending: false
+              }
+            );
+
+        if (resultado.error)
+          throw resultado.error;
+
+        const avaliacoes =
+          resultado.data || [];
+
+        const total =
+          avaliacoes.length;
+
+        const soma =
+          avaliacoes.reduce(
+            (
+              acc,
+              item
+            ) =>
+              acc +
+              Number(
+                item.nota || 0
+              ),
+            0
+          );
+
+        const media =
+          total
+            ? (
+                soma /
+                total
+              ).toFixed(1)
+            : "0.0";
+
+        average.innerHTML = `
+
+          <strong>
+            ⭐ ${media}/5
+          </strong>
+
+          <br>
+
+          ${total}
+          avaliação${total === 1 ? "" : "ões"}
+
+        `;
+
+        if (!total) {
+
+          list.innerHTML = `
+
+            <p class="rating-info">
+              Ainda não há avaliações.
+              Seja a primeira pessoa a avaliar! 💙
+            </p>
+
+          `;
+
+          return;
+
+        }
+
+        list.innerHTML =
+          avaliacoes
+            .map(item => {
+
+              const nota =
+                Math.max(
+                  1,
+                  Math.min(
+                    5,
+                    Number(
+                      item.nota
+                    )
+                  )
+                );
+
+              const estrelas =
+                "★".repeat(nota) +
+                "☆".repeat(
+                  5 - nota
+                );
+
+              const comentario =
+                escapeHTML(
+                  item.comentario ||
+                  "Sem comentário."
+                );
+
+              const data =
+                item.created_at
+                  ? new Date(
+                      item.created_at
+                    )
+                      .toLocaleDateString(
+                        "pt-BR"
+                      )
+                  : "";
+
+              return `
+
+                <div class="review-card">
+
+                  <div class="review-stars">
+                    ${estrelas}
+                  </div>
+
+                  <p>
+                    ${comentario}
+                  </p>
+
+                  <div class="review-date">
+                    ${data}
+                  </div>
+
+                </div>
+
+              `;
+
+            })
+            .join("");
+
+      } catch (erro) {
+
+        console.error(erro);
+
+        average.textContent =
+          "Não foi possível carregar as avaliações.";
+
+        list.innerHTML =
+          "";
+
+      }
+
+    }
+
+    carregarAvaliacoes();
+
+    /* =========================
+       FECHAR MODAIS
+    ========================= */
+
+    document
+      .getElementById("libraryModal")
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (
+            e.target === this
+          ) {
 
             fecharBibliotecaModal();
 
-        }
+          }
 
-        if(event.target ===
-            document.getElementById("gameModal")){
+        }
+      );
+
+    document
+      .getElementById("gameModal")
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (
+            e.target === this
+          ) {
 
             fecharModal();
 
-        }
+          }
 
-        if(event.target ===
-            document.getElementById("sobreModal")){
+        }
+      );
+
+    document
+      .getElementById("aboutModal")
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (
+            e.target === this
+          ) {
 
             fecharSobre();
 
-        }
-
-        if(event.target ===
-            document.getElementById("iframeModal")){
-
-            fecharIframeModal();
+          }
 
         }
+      );
 
-    }
-);
+    /* =========================
+       TECLA ESC
+    ========================= */
 
+    document.addEventListener(
+      "keydown",
+      function(e) {
 
-/* =========================
-   TECLA ESC
-========================= */
+        if (
+          e.key === "Escape"
+        ) {
 
-document.addEventListener(
-    "keydown",
-    function(event){
+          fecharModal();
 
-        if(event.key === "Escape"){
+          fecharBibliotecaModal();
 
-            fecharModal();
-
-            fecharBibliotecaModal();
-
-            fecharSobre();
-
-            fecharIframeModal();
+          fecharSobre();
 
         }
 
-    }
-);
+      }
+    );
 
-
-/* =========================
-   INICIALIZAÇÃO
-========================= */
-
-mostrarAvaliacoes();
-
-verificarCelular();
-
-</script>
+  </script>
 
 </body>
 </html>
